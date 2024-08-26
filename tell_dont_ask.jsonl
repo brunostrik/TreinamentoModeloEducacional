@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class OrderProcessor { public void processOrder(Order order) { if (order.isPaid()) { // Lógica de processamento } } }",
+      "completion": "Problema: O `OrderProcessor` está violando o princípio Tell, Don’t Ask ao verificar diretamente o estado de `Order` com `order.isPaid()`. Em vez disso, o método deveria dizer ao objeto `Order` para se processar, por exemplo, `order.processIfPaid()`."
+    },
+    {
+      "prompt": "class Car { public void start() { if (engine.isReady()) { engine.ignite(); } } }",
+      "completion": "Problema: A classe `Car` está violando o princípio Tell, Don’t Ask ao verificar o estado de `engine` com `engine.isReady()`. Em vez de perguntar ao motor se está pronto, o método deveria ser algo como `engine.start()` e deixar que o motor se gerencie."
+    },
+    {
+      "prompt": "class EmployeeManager { public void promoteEmployee(Employee employee) { if (employee.getPerformanceRating() > 4) { employee.promote(); } } }",
+      "completion": "Problema: `EmployeeManager` está perguntando pela classificação de desempenho (`getPerformanceRating()`) em vez de dizer ao objeto `Employee` o que fazer. Deveria ser algo como `employee.evaluateForPromotion()` para encapsular a lógica."
+    },
+    {
+      "prompt": "class AccountManager { public void closeAccount(Account account) { if (account.getBalance() == 0) { account.close(); } } }",
+      "completion": "Problema: A classe `AccountManager` está violando o princípio Tell, Don’t Ask ao perguntar sobre o saldo da conta antes de fechá-la. Deveria dizer ao `Account` para tentar fechar-se, por exemplo, `account.closeIfBalanceZero()`."
+    },
+    {
+      "prompt": "class PaymentProcessor { public void processPayment(Payment payment) { if (payment.isValid()) { payment.execute(); } } }",
+      "completion": "Problema: `PaymentProcessor` está perguntando se o pagamento é válido (`isValid()`) antes de processá-lo, o que viola o princípio Tell, Don’t Ask. Em vez disso, deveria dizer a `payment` para se processar, por exemplo, `payment.process()`."
+    },
+    {
+      "prompt": "class ShoppingCart { public void checkout() { if (cart.isEmpty()) { throw new RuntimeException('Cart is empty'); } cart.processPayment(); } }",
+      "completion": "Problema: A classe `ShoppingCart` está perguntando se o carrinho está vazio antes de continuar (`cart.isEmpty()`), violando o princípio Tell, Don’t Ask. Deveria dizer ao carrinho para se verificar e processar, como `cart.checkout()`."
+    },
+    {
+      "prompt": "class TemperatureController { public void controlTemperature(Room room) { if (room.getTemperature() < 18) { room.increaseHeat(); } } }",
+      "completion": "Problema: `TemperatureController` está perguntando pela temperatura do quarto antes de agir, violando o princípio Tell, Don’t Ask. Deveria dizer ao `Room` para ajustar sua temperatura, por exemplo, `room.adjustTemperature()`."
+    },
+    {
+      "prompt": "class InvoiceService { public void processInvoice(Invoice invoice) { if (!invoice.isPaid()) { invoice.sendReminder(); } } }",
+      "completion": "Problema: A classe `InvoiceService` está verificando o estado de `Invoice` (`isPaid()`) antes de agir, o que viola o princípio Tell, Don’t Ask. Em vez disso, deveria ser algo como `invoice.processPayment()` ou `invoice.handleUnpaid()`."
+    },
+    {
+      "prompt": "class DoorController { public void unlockDoor(Door door) { if (door.isLocked()) { door.unlock(); } } }",
+      "completion": "Problema: `DoorController` está perguntando se a porta está trancada antes de destrancá-la, violando o princípio Tell, Don’t Ask. A lógica deveria ser encapsulada em `door.unlockIfNeeded()` ou simplesmente `door.unlock()`."
+    },
+    {
+      "prompt": "class UserNotifier { public void notifyUser(User user) { if (user.hasUnreadMessages()) { user.sendNotification(); } } }",
+      "completion": "Problema: `UserNotifier` está perguntando se o usuário tem mensagens não lidas antes de agir, violando o princípio Tell, Don’t Ask. Deveria ser algo como `user.notifyIfNeeded()` ou `user.sendNotifications()`."
+    }
+  ]
+  

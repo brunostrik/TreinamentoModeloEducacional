@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class UserService { private MySQLDatabase database = new MySQLDatabase(); public void saveUser(User user) { database.save(user); } }",
+      "completion": "Problema: A classe `UserService` depende diretamente de uma implementação concreta de `MySQLDatabase`, violando o DIP. Para resolver, `UserService` deveria depender de uma abstração (interface) como `Database`, e `MySQLDatabase` deveria implementar essa interface."
+    },
+    {
+      "prompt": "class PaymentProcessor { private StripePaymentGateway gateway = new StripePaymentGateway(); public void processPayment(double amount) { gateway.charge(amount); } }",
+      "completion": "Problema: A classe `PaymentProcessor` depende diretamente da implementação concreta `StripePaymentGateway`, o que viola o DIP. O correto seria `PaymentProcessor` depender de uma abstração como `PaymentGateway`, e `StripePaymentGateway` implementaria essa abstração."
+    },
+    {
+      "prompt": "class ReportGenerator { private PDFExporter exporter = new PDFExporter(); public void generateReport() { exporter.export(); } }",
+      "completion": "Problema: A classe `ReportGenerator` depende diretamente da implementação concreta `PDFExporter`, violando o DIP. Ela deveria depender de uma abstração como `Exporter`, permitindo que diferentes exportadores sejam usados sem mudar a classe de alto nível."
+    },
+    {
+      "prompt": "class NotificationService { private EmailSender emailSender = new EmailSender(); public void sendNotification(String message) { emailSender.send(message); } }",
+      "completion": "Problema: A classe `NotificationService` depende diretamente da implementação concreta `EmailSender`, o que viola o DIP. O ideal seria depender de uma abstração como `NotificationSender` para permitir a troca entre diferentes métodos de envio."
+    },
+    {
+      "prompt": "class OrderProcessor { private ShippingService shippingService = new ShippingService(); public void processOrder(Order order) { shippingService.ship(order); } }",
+      "completion": "Problema: A classe `OrderProcessor` depende diretamente de uma implementação concreta `ShippingService`, violando o DIP. Ela deveria depender de uma abstração como `IShippingService`, e `ShippingService` deveria implementá-la."
+    },
+    {
+      "prompt": "class DataAnalyzer { private CSVReader reader = new CSVReader(); public void analyze() { reader.read(); } }",
+      "completion": "Problema: A classe `DataAnalyzer` depende diretamente de uma implementação concreta `CSVReader`, o que viola o DIP. O correto seria a classe depender de uma abstração como `FileReader`, e `CSVReader` seria uma das implementações possíveis."
+    },
+    {
+      "prompt": "class EmployeeManager { private SQLDatabase database = new SQLDatabase(); public void manageEmployee(Employee employee) { database.update(employee); } }",
+      "completion": "Problema: A classe `EmployeeManager` depende diretamente da implementação concreta `SQLDatabase`, violando o DIP. Ela deveria depender de uma abstração como `Database`, permitindo que diferentes bancos de dados sejam usados sem alterar a lógica de alto nível."
+    },
+    {
+      "prompt": "class WeatherService { private OpenWeatherMapAPI api = new OpenWeatherMapAPI(); public void fetchWeather(String location) { api.getWeather(location); } }",
+      "completion": "Problema: A classe `WeatherService` depende diretamente da implementação concreta `OpenWeatherMapAPI`, violando o DIP. A classe deveria depender de uma abstração como `WeatherAPI`, permitindo o uso de diferentes APIs de clima sem modificar a lógica de alto nível."
+    },
+    {
+      "prompt": "class FileBackup { private LocalFileStorage storage = new LocalFileStorage(); public void backup(String data) { storage.store(data); } }",
+      "completion": "Problema: A classe `FileBackup` depende diretamente da implementação concreta `LocalFileStorage`, violando o DIP. Ela deveria depender de uma abstração como `FileStorage`, e `LocalFileStorage` seria apenas uma implementação dessa abstração."
+    },
+    {
+      "prompt": "class InvoiceGenerator { private HTMLRenderer renderer = new HTMLRenderer(); public void generateInvoice(Invoice invoice) { renderer.render(invoice); } }",
+      "completion": "Problema: A classe `InvoiceGenerator` depende diretamente de uma implementação concreta `HTMLRenderer`, violando o DIP. Ela deveria depender de uma abstração como `Renderer`, permitindo o uso de diferentes renderizadores sem alterar a lógica de alto nível."
+    }
+  ]
+  

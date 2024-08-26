@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class User { public void saveToDatabase() { /* salvar no banco de dados */ } public void validateInput() { /* validar entrada do usuário */ } public void sendWelcomeEmail() { /* enviar e-mail de boas-vindas */ } }",
+      "completion": "Problema: A classe `User` sofre de Divergent Change, pois precisa ser modificada tanto para mudar a lógica de validação, de persistência no banco de dados, quanto para envio de e-mails. Cada responsabilidade deveria ser extraída para uma classe específica, como `UserRepository`, `UserValidator`, e `EmailService`."
+    },
+    {
+      "prompt": "class Order { public void calculateTotal() { /* calcular o total do pedido */ } public void printInvoice() { /* imprimir fatura */ } public void saveToDatabase() { /* salvar no banco de dados */ } }",
+      "completion": "Problema: A classe `Order` sofre de Divergent Change, pois deve ser alterada para modificar tanto a lógica de cálculo, de impressão, quanto de persistência. Essas responsabilidades deveriam ser extraídas para classes separadas como `OrderCalculator`, `InvoicePrinter`, e `OrderRepository`."
+    },
+    {
+      "prompt": "class Report { public void generate() { /* gerar relatório */ } public void format() { /* formatar relatório */ } public void exportToPDF() { /* exportar para PDF */ } }",
+      "completion": "Problema: A classe `Report` precisa ser modificada por diferentes razões: geração, formatação e exportação de relatórios. Isso caracteriza Divergent Change. Essas responsabilidades deveriam ser separadas em classes como `ReportGenerator`, `ReportFormatter`, e `PDFExporter`."
+    },
+    {
+      "prompt": "class Employee { public void calculateSalary() { /* calcular salário */ } public void updateDatabase() { /* atualizar banco de dados */ } public void sendPayroll() { /* enviar folha de pagamento */ } }",
+      "completion": "Problema: A classe `Employee` sofre de Divergent Change, pois diferentes motivos podem exigir mudanças na classe: cálculo de salário, persistência e envio da folha de pagamento. Essas responsabilidades deveriam ser delegadas para classes separadas como `SalaryCalculator`, `EmployeeRepository`, e `PayrollService`."
+    },
+    {
+      "prompt": "class Product { public void updateStock() { /* atualizar estoque */ } public void calculateDiscount() { /* calcular desconto */ } public void updateDatabase() { /* salvar no banco de dados */ } }",
+      "completion": "Problema: A classe `Product` precisa ser modificada por diferentes razões, como gerenciamento de estoque, cálculo de desconto e persistência. Isso caracteriza Divergent Change, e essas responsabilidades deveriam ser extraídas para classes como `StockManager`, `DiscountCalculator`, e `ProductRepository`."
+    },
+    {
+      "prompt": "class PaymentProcessor { public void processPayment() { /* processar pagamento */ } public void logTransaction() { /* registrar transação */ } public void sendReceipt() { /* enviar recibo */ } }",
+      "completion": "Problema: A classe `PaymentProcessor` sofre de Divergent Change, pois é responsável por processar pagamentos, registrar transações e enviar recibos. Essas responsabilidades devem ser separadas em classes como `TransactionLogger`, `ReceiptSender`, e `PaymentHandler`."
+    },
+    {
+      "prompt": "class Customer { public void createProfile() { /* criar perfil */ } public void updateProfile() { /* atualizar perfil */ } public void sendPromotionalEmails() { /* enviar e-mails promocionais */ } }",
+      "completion": "Problema: A classe `Customer` deve ser modificada por diferentes razões: criação de perfil, atualização de perfil e envio de e-mails promocionais. Isso caracteriza Divergent Change. Essas responsabilidades deveriam ser extraídas para classes como `ProfileManager` e `EmailMarketingService`."
+    },
+    {
+      "prompt": "class Account { public void deposit() { /* depositar */ } public void withdraw() { /* sacar */ } public void calculateInterest() { /* calcular juros */ } }",
+      "completion": "Problema: A classe `Account` precisa ser alterada para modificar a lógica de depósito, saque e cálculo de juros, caracterizando Divergent Change. Essas responsabilidades deveriam ser separadas em classes como `TransactionManager` e `InterestCalculator`."
+    },
+    {
+      "prompt": "class Invoice { public void generateInvoice() { /* gerar fatura */ } public void sendToCustomer() { /* enviar para o cliente */ } public void logInvoice() { /* registrar fatura */ } }",
+      "completion": "Problema: A classe `Invoice` precisa ser modificada por diferentes razões: geração, envio e registro de faturas, o que caracteriza Divergent Change. Essas responsabilidades deveriam ser extraídas para classes como `InvoiceGenerator`, `InvoiceSender`, e `InvoiceLogger`."
+    },
+    {
+      "prompt": "class ShoppingCart { public void addItem(Item item) { /* adicionar item */ } public void calculateTotal() { /* calcular total */ } public void applyDiscount() { /* aplicar desconto */ } }",
+      "completion": "Problema: A classe `ShoppingCart` precisa ser modificada por diferentes razões: adicionar itens, calcular o total e aplicar descontos, o que caracteriza Divergent Change. Essas responsabilidades deveriam ser separadas em classes como `CartManager`, `TotalCalculator`, e `DiscountApplier`."
+    }
+  ]
+  

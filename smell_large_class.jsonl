@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class UserAccount { private String username; private String password; private String email; private String address; private String phoneNumber; public void login() { /* lógica de login */ } public void logout() { /* lógica de logout */ } public void updateProfile() { /* lógica de atualização de perfil */ } public void sendEmailNotification() { /* lógica de envio de e-mail */ } public void changePassword() { /* lógica de mudança de senha */ } public void validateAddress() { /* lógica de validação de endereço */ } }",
+      "completion": "Problema: A classe `UserAccount` é uma Large Class, pois gerencia login, logout, atualização de perfil, envio de e-mails, validação de endereço e mudanças de senha. Essa classe poderia ser dividida em classes menores, como `AuthenticationService`, `ProfileService` e `NotificationService`."
+    },
+    {
+      "prompt": "class OrderManager { private List<Order> orders; public void createOrder() { /* lógica de criação de pedido */ } public void updateOrder() { /* lógica de atualização de pedido */ } public void calculateTotal() { /* lógica de cálculo de total */ } public void applyDiscount() { /* lógica de aplicação de desconto */ } public void generateInvoice() { /* lógica de geração de fatura */ } public void sendOrderConfirmation() { /* lógica de envio de confirmação de pedido */ } }",
+      "completion": "Problema: A classe `OrderManager` é uma Large Class que realiza múltiplas responsabilidades, como criação de pedidos, cálculo de totais, geração de faturas e envio de confirmações. Ela poderia ser refatorada em classes menores, como `OrderService`, `InvoiceService`, e `DiscountService`."
+    },
+    {
+      "prompt": "class ShoppingCart { private List<Item> items; private double totalPrice; public void addItem() { /* lógica de adição de item */ } public void removeItem() { /* lógica de remoção de item */ } public void calculateTotal() { /* lógica de cálculo de total */ } public void applyCoupon() { /* lógica de aplicação de cupom */ } public void checkout() { /* lógica de finalização de compra */ } public void updateInventory() { /* lógica de atualização de estoque */ } }",
+      "completion": "Problema: A classe `ShoppingCart` é uma Large Class que gerencia itens, cálculos, cupons, checkout e estoque. Ela poderia ser dividida em classes como `CartManager`, `PricingService`, e `InventoryService`."
+    },
+    {
+      "prompt": "class BankAccount { private double balance; private List<Transaction> transactions; public void deposit() { /* lógica de depósito */ } public void withdraw() { /* lógica de saque */ } public void generateStatement() { /* lógica de geração de extrato */ } public void calculateInterest() { /* lógica de cálculo de juros */ } public void notifyAccountHolder() { /* lógica de notificação do titular da conta */ } }",
+      "completion": "Problema: A classe `BankAccount` é uma Large Class que lida com depósito, saque, extratos, juros e notificações. Ela poderia ser dividida em classes menores, como `TransactionService`, `InterestCalculator`, e `NotificationService`."
+    },
+    {
+      "prompt": "class EmployeeManager { private List<Employee> employees; public void addEmployee() { /* lógica de adição de funcionário */ } public void removeEmployee() { /* lógica de remoção de funcionário */ } public void calculatePayroll() { /* lógica de cálculo de folha de pagamento */ } public void generateReports() { /* lógica de geração de relatórios */ } public void trackAttendance() { /* lógica de rastreamento de presença */ } }",
+      "completion": "Problema: A classe `EmployeeManager` é uma Large Class com responsabilidades diversas, como gerenciamento de funcionários, folha de pagamento, relatórios e presença. Isso poderia ser refatorado em classes como `PayrollService`, `AttendanceTracker`, e `EmployeeReportGenerator`."
+    },
+    {
+      "prompt": "class Vehicle { private String make; private String model; private int year; private double fuelLevel; private int mileage; public void startEngine() { /* lógica de partida */ } public void stopEngine() { /* lógica de parada */ } public void refuel() { /* lógica de reabastecimento */ } public void performMaintenance() { /* lógica de manutenção */ } public void calculateFuelEfficiency() { /* lógica de cálculo de eficiência de combustível */ } }",
+      "completion": "Problema: A classe `Vehicle` é uma Large Class que lida com várias responsabilidades, como gerenciamento de combustível, manutenção e eficiência. Ela poderia ser refatorada em classes menores, como `FuelManager`, `MaintenanceService`, e `EfficiencyCalculator`."
+    },
+    {
+      "prompt": "class HotelBookingSystem { private List<Room> rooms; private List<Reservation> reservations; public void checkRoomAvailability() { /* lógica de verificação de disponibilidade de quarto */ } public void makeReservation() { /* lógica de criação de reserva */ } public void cancelReservation() { /* lógica de cancelamento de reserva */ } public void processPayment() { /* lógica de processamento de pagamento */ } public void generateInvoice() { /* lógica de geração de fatura */ } public void sendConfirmationEmail() { /* lógica de envio de e-mail de confirmação */ } }",
+      "completion": "Problema: A classe `HotelBookingSystem` é uma Large Class que faz muitas coisas, como gerenciar quartos, reservas, pagamentos e e-mails. Isso poderia ser dividido em várias classes, como `RoomManager`, `ReservationService`, `PaymentProcessor`, e `NotificationService`."
+    },
+    {
+      "prompt": "class FlightBooking { private List<Flight> flights; private List<Ticket> tickets; public void searchFlights() { /* lógica de busca de voos */ } public void bookTicket() { /* lógica de reserva de bilhete */ } public void cancelTicket() { /* lógica de cancelamento de bilhete */ } public void generateTicket() { /* lógica de geração de bilhete */ } public void processRefund() { /* lógica de processamento de reembolso */ } }",
+      "completion": "Problema: A classe `FlightBooking` é uma Large Class que lida com busca de voos, reservas, cancelamentos e reembolsos. Ela poderia ser dividida em classes menores, como `FlightService`, `TicketingService`, e `RefundProcessor`."
+    },
+    {
+      "prompt": "class GameEngine { private List<Player> players; private List<Level> levels; public void startGame() { /* lógica de início do jogo */ } public void endGame() { /* lógica de fim do jogo */ } public void updateScores() { /* lógica de atualização de pontuações */ } public void renderGraphics() { /* lógica de renderização de gráficos */ } public void manageAudio() { /* lógica de gerenciamento de áudio */ } }",
+      "completion": "Problema: A classe `GameEngine` é uma Large Class que gerencia muitos aspectos do jogo, como jogadores, níveis, pontuações, gráficos e áudio. Ela poderia ser refatorada em classes específicas, como `ScoreManager`, `GraphicsEngine`, e `AudioManager`."
+    },
+    {
+      "prompt": "class EcommercePlatform { private List<Product> products; private List<Order> orders; private List<Customer> customers; public void browseProducts() { /* lógica de navegação de produtos */ } public void placeOrder() { /* lógica de colocação de pedido */ } public void processPayment() { /* lógica de processamento de pagamento */ } public void trackShipment() { /* lógica de rastreamento de envio */ } public void handleReturns() { /* lógica de devoluções */ } public void sendPromotionalEmails() { /* lógica de envio de e-mails promocionais */ } }",
+      "completion": "Problema: A classe `EcommercePlatform` é uma Large Class que lida com produtos, pedidos, pagamentos, rastreamento e marketing. Ela pode ser dividida em classes como `ProductCatalog`, `OrderService`, `PaymentProcessor`, `ShippingTracker`, e `MarketingService`."
+    }
+  ]
+  

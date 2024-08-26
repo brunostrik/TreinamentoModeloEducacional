@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class OrderProcessor { public void processOrder(String customerName, String customerAddress, String customerPhone, String productName, double productPrice) { /* lógica de processamento */ } }",
+      "completion": "Problema: Os parâmetros `customerName`, `customerAddress`, e `customerPhone` estão relacionados e aparecem juntos. Isso é um Data Clump e sugere que eles deveriam ser agrupados em uma classe `Customer`. O mesmo vale para `productName` e `productPrice`, que poderiam ser encapsulados em uma classe `Product`."
+    },
+    {
+      "prompt": "class ReportGenerator { public void generateReport(String title, String authorName, String authorEmail, int pageCount, String content) { /* lógica de geração de relatório */ } }",
+      "completion": "Problema: Os parâmetros `authorName` e `authorEmail` frequentemente aparecem juntos. Isso é um Data Clump e sugere que eles poderiam ser encapsulados em uma classe `Author`. Os parâmetros `title`, `pageCount` e `content` também podem ser agrupados em uma classe `Report`."
+    },
+    {
+      "prompt": "class EventManager { public void createEvent(String eventName, String eventLocation, String eventDate, String eventTime) { /* lógica de criação de evento */ } }",
+      "completion": "Problema: Os parâmetros `eventName`, `eventLocation`, `eventDate`, e `eventTime` estão relacionados e sempre aparecem juntos. Eles formam um Data Clump e devem ser encapsulados em uma classe `Event` para melhorar a coesão."
+    },
+    {
+      "prompt": "class PaymentService { public void processPayment(String cardNumber, String cardHolder, String expirationDate, String cvv, double amount) { /* lógica de processamento de pagamento */ } }",
+      "completion": "Problema: Os parâmetros `cardNumber`, `cardHolder`, `expirationDate`, e `cvv` estão relacionados e aparecem juntos. Isso é um Data Clump, e eles deveriam ser encapsulados em uma classe `CreditCard`."
+    },
+    {
+      "prompt": "class ReservationSystem { public void makeReservation(String guestName, String guestEmail, String guestPhone, String roomType, String checkInDate, String checkOutDate) { /* lógica de reserva */ } }",
+      "completion": "Problema: Os parâmetros `guestName`, `guestEmail`, e `guestPhone` estão relacionados e formam um Data Clump. Eles poderiam ser encapsulados em uma classe `Guest`. Da mesma forma, `roomType`, `checkInDate`, e `checkOutDate` poderiam ser agrupados em uma classe `Reservation`."
+    },
+    {
+      "prompt": "class InvoiceService { public void createInvoice(String customerName, String customerAddress, String itemDescription, int itemQuantity, double itemPrice) { /* lógica de criação de fatura */ } }",
+      "completion": "Problema: Os parâmetros `customerName` e `customerAddress` formam um Data Clump e deveriam ser encapsulados em uma classe `Customer`. Da mesma forma, `itemDescription`, `itemQuantity`, e `itemPrice` poderiam ser encapsulados em uma classe `InvoiceItem`."
+    },
+    {
+      "prompt": "class EmployeeManager { public void addEmployee(String firstName, String lastName, String email, String department, double salary) { /* lógica de adição de funcionário */ } }",
+      "completion": "Problema: Os parâmetros `firstName`, `lastName`, e `email` formam um Data Clump e poderiam ser encapsulados em uma classe `Employee`. Da mesma forma, `department` e `salary` também podem ser agrupados."
+    },
+    {
+      "prompt": "class WeatherService { public void reportWeather(String locationName, double latitude, double longitude, String weatherCondition, double temperature, double humidity) { /* lógica de relatório de clima */ } }",
+      "completion": "Problema: Os parâmetros `locationName`, `latitude`, e `longitude` formam um Data Clump e poderiam ser encapsulados em uma classe `Location`. Da mesma forma, `weatherCondition`, `temperature`, e `humidity` podem ser agrupados em uma classe `WeatherReport`."
+    },
+    {
+      "prompt": "class ShipmentService { public void shipPackage(String senderName, String senderAddress, String recipientName, String recipientAddress, double weight, double cost) { /* lógica de envio de pacote */ } }",
+      "completion": "Problema: Os parâmetros `senderName` e `senderAddress`, assim como `recipientName` e `recipientAddress`, formam Data Clumps. Eles poderiam ser agrupados em classes `Sender` e `Recipient`. Da mesma forma, `weight` e `cost` podem ser encapsulados em uma classe `Package`."
+    },
+    {
+      "prompt": "class TravelAgency { public void bookFlight(String passengerName, String passengerEmail, String departureCity, String destinationCity, String flightDate, String flightTime) { /* lógica de reserva de voo */ } }",
+      "completion": "Problema: Os parâmetros `passengerName` e `passengerEmail` formam um Data Clump e podem ser encapsulados em uma classe `Passenger`. Da mesma forma, `departureCity`, `destinationCity`, `flightDate`, e `flightTime` formam um conjunto de dados relacionados e podem ser encapsulados em uma classe `Flight`."
+    }
+  ]
+  

@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class PayPal { public void makePayment(double amount) { /* PayPal payment logic */ } } class CreditCard { public void processPayment(double amount) { /* Credit card payment logic */ } }",
+      "completion": "Problema: As classes `PayPal` e `CreditCard` executam ações semelhantes (processar pagamento), mas possuem interfaces diferentes (`makePayment()` e `processPayment()`). Isso cria inconsistência. Considere criar uma interface comum (ex.: `PaymentMethod`) para uniformizar o comportamento."
+    },
+    {
+      "prompt": "class XMLParser { public void parseXML(String data) { /* XML parsing logic */ } } class JSONParser { public void convertFromJSON(String data) { /* JSON parsing logic */ } }",
+      "completion": "Problema: As classes `XMLParser` e `JSONParser` fazem o mesmo tipo de trabalho (parsing de dados), mas usam métodos com diferentes interfaces (`parseXML()` e `convertFromJSON()`). Uma interface comum de parsing melhoraria a consistência e a usabilidade."
+    },
+    {
+      "prompt": "class LocalFileStorage { public void saveToFile(String data) { /* Save data locally */ } } class CloudFileStorage { public void uploadFile(String data) { /* Upload data to the cloud */ } }",
+      "completion": "Problema: Ambas as classes `LocalFileStorage` e `CloudFileStorage` executam operações de armazenamento, mas suas interfaces diferem (`saveToFile()` e `uploadFile()`). Uma interface comum de armazenamento ajudaria a unificar as operações."
+    },
+    {
+      "prompt": "class MySQLDatabase { public void connectToMySQL() { /* MySQL connection logic */ } } class PostgreSQLDatabase { public void establishPostgresConnection() { /* PostgreSQL connection logic */ } }",
+      "completion": "Problema: As classes `MySQLDatabase` e `PostgreSQLDatabase` representam conexões de banco de dados, mas possuem interfaces diferentes (`connectToMySQL()` e `establishPostgresConnection()`). Isso cria inconsistência. Use uma interface comum para conexões de banco de dados."
+    },
+    {
+      "prompt": "class PDFExporter { public void exportAsPDF(String content) { /* Export as PDF */ } } class CSVExporter { public void exportToCSV(String content) { /* Export as CSV */ } }",
+      "completion": "Problema: As classes `PDFExporter` e `CSVExporter` fazem exportação de dados, mas suas interfaces diferem (`exportAsPDF()` e `exportToCSV()`). Uma interface comum de exportação padronizaria o processo e simplificaria o código."
+    },
+    {
+      "prompt": "class OracleDatabase { public void queryOracle(String query) { /* Oracle query logic */ } } class MongoDBDatabase { public void runMongoQuery(String query) { /* MongoDB query logic */ } }",
+      "completion": "Problema: Ambas as classes `OracleDatabase` e `MongoDBDatabase` executam consultas em bancos de dados, mas têm diferentes interfaces (`queryOracle()` e `runMongoQuery()`). Usar uma interface comum para consultas de banco de dados aumentaria a coesão do código."
+    },
+    {
+      "prompt": "class EmailNotification { public void sendEmail(String message) { /* Email sending logic */ } } class SMSNotification { public void sendText(String message) { /* SMS sending logic */ } }",
+      "completion": "Problema: As classes `EmailNotification` e `SMSNotification` enviam notificações, mas têm diferentes interfaces (`sendEmail()` e `sendText()`). Uma interface comum de notificações melhoraria a consistência."
+    },
+    {
+      "prompt": "class AESFileEncryptor { public void encryptFile(String filePath) { /* AES encryption logic */ } } class RSAFileEncryptor { public void performRSAEncryption(String filePath) { /* RSA encryption logic */ } }",
+      "completion": "Problema: Ambas as classes `AESFileEncryptor` e `RSAFileEncryptor` realizam criptografia de arquivos, mas possuem interfaces diferentes (`encryptFile()` e `performRSAEncryption()`). Usar uma interface comum para criptografia unificaria o processo."
+    },
+    {
+      "prompt": "class GoogleDriveUploader { public void uploadToGoogleDrive(String file) { /* Upload to Google Drive */ } } class DropboxUploader { public void uploadToDropbox(String file) { /* Upload to Dropbox */ } }",
+      "completion": "Problema: As classes `GoogleDriveUploader` e `DropboxUploader` fazem upload de arquivos para diferentes serviços, mas usam interfaces distintas (`uploadToGoogleDrive()` e `uploadToDropbox()`). Considere uma interface comum para uploads de arquivos."
+    },
+    {
+      "prompt": "class PayPalPayment { public void handlePayPalPayment(double amount) { /* PayPal payment logic */ } } class StripePayment { public void manageStripePayment(double amount) { /* Stripe payment logic */ } }",
+      "completion": "Problema: Ambas as classes `PayPalPayment` e `StripePayment` processam pagamentos, mas suas interfaces diferem (`handlePayPalPayment()` e `manageStripePayment()`). Uma interface comum para métodos de pagamento padronizaria o processo."
+    }
+  ]
+  

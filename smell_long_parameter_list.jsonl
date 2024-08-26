@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class OrderProcessor { public void processOrder(String productId, int quantity, double price, String customerName, String customerAddress, String paymentMethod, String shippingMethod) { /* lógica de processamento */ } }",
+      "completion": "Problema: O método `processOrder()` tem uma Long Parameter List com muitos parâmetros. Isso pode ser refatorado encapsulando os parâmetros em classes como `Order`, `Customer`, e `PaymentDetails`."
+    },
+    {
+      "prompt": "class ReportGenerator { public void generateReport(String title, String author, String content, int pageCount, String dateCreated, String format) { /* lógica de geração de relatório */ } }",
+      "completion": "Problema: `generateReport()` tem uma Long Parameter List com muitos parâmetros. Esses parâmetros poderiam ser encapsulados em uma classe `Report` que contenha todos os dados necessários para a geração do relatório."
+    },
+    {
+      "prompt": "class EmailService { public void sendEmail(String to, String from, String subject, String body, String cc, String bcc, String attachmentPath) { /* lógica de envio de e-mail */ } }",
+      "completion": "Problema: O método `sendEmail()` possui muitos parâmetros. Refatorar esses parâmetros para uma classe `EmailMessage` ou utilizar o padrão *Builder* simplificaria a chamada do método."
+    },
+    {
+      "prompt": "class PaymentProcessor { public void processPayment(String cardNumber, String cardHolder, String expirationDate, String cvv, double amount, String currency, String paymentGateway) { /* lógica de processamento de pagamento */ } }",
+      "completion": "Problema: O método `processPayment()` tem uma Long Parameter List. Parâmetros relacionados ao cartão de crédito e pagamento podem ser encapsulados em classes como `CreditCard` e `PaymentDetails`."
+    },
+    {
+      "prompt": "class FlightBookingService { public void bookFlight(String departureCity, String destinationCity, String flightDate, String returnDate, String passengerName, String passengerEmail, String seatPreference) { /* lógica de reserva de voo */ } }",
+      "completion": "Problema: O método `bookFlight()` tem muitos parâmetros. Esses parâmetros podem ser encapsulados em classes como `FlightDetails` e `Passenger` para simplificar o método."
+    },
+    {
+      "prompt": "class UserRegistrationService { public void registerUser(String firstName, String lastName, String email, String password, String address, String phoneNumber, String birthDate) { /* lógica de registro de usuário */ } }",
+      "completion": "Problema: O método `registerUser()` possui uma Long Parameter List. Esses parâmetros poderiam ser agrupados em uma classe `User` ou `UserProfile` para melhorar a coesão e facilitar o uso."
+    },
+    {
+      "prompt": "class ProductManager { public void addProduct(String productName, String productCode, String description, double price, String category, String supplierName, String supplierContact) { /* lógica de adição de produto */ } }",
+      "completion": "Problema: O método `addProduct()` tem muitos parâmetros. Esses dados podem ser encapsulados em classes como `Product` e `Supplier`, reduzindo a quantidade de parâmetros no método."
+    },
+    {
+      "prompt": "class InvoiceService { public void generateInvoice(String invoiceNumber, String customerName, String customerAddress, double totalAmount, double taxAmount, String paymentMethod, String dueDate) { /* lógica de geração de fatura */ } }",
+      "completion": "Problema: `generateInvoice()` possui uma Long Parameter List. Esses parâmetros poderiam ser encapsulados em classes como `Invoice` e `Customer`, tornando o método mais simples."
+    },
+    {
+      "prompt": "class ReservationSystem { public void makeReservation(String guestName, String guestEmail, String checkInDate, String checkOutDate, String roomType, int roomNumber, String paymentMethod) { /* lógica de reserva */ } }",
+      "completion": "Problema: O método `makeReservation()` tem muitos parâmetros. Esses dados poderiam ser encapsulados em classes como `Reservation` e `Guest` para reduzir a lista de parâmetros."
+    },
+    {
+      "prompt": "class ShoppingCartService { public void checkout(String cartId, String customerId, String paymentMethod, String shippingAddress, String billingAddress, String couponCode, double totalAmount) { /* lógica de finalização de compra */ } }",
+      "completion": "Problema: O método `checkout()` tem uma Long Parameter List. Parâmetros relacionados ao pagamento, envio e cliente poderiam ser encapsulados em classes como `Cart`, `Customer`, e `PaymentDetails`."
+    }
+  ]
+  

@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class User { private String name; private String email; public String getName() { return name; } public void setName(String name) { this.name = name; } public String getEmail() { return email; } public void setEmail(String email) { this.email = email; } }",
+      "completion": "Problema: A classe `User` é uma Data Class que contém apenas dados e métodos acessores. Para evitar esse code smell, a lógica associada ao usuário, como validação de e-mail ou manipulação de dados do usuário, poderia ser adicionada à própria classe."
+    },
+    {
+      "prompt": "class Product { private String name; private double price; public String getName() { return name; } public void setName(String name) { this.name = name; } public double getPrice() { return price; } public void setPrice(double price) { this.price = price; } }",
+      "completion": "Problema: `Product` é uma Data Class com apenas getters e setters. O comportamento relacionado ao produto, como calcular descontos ou aplicar impostos, poderia ser movido para essa classe para torná-la mais rica em comportamento."
+    },
+    {
+      "prompt": "class Address { private String street; private String city; private String zipCode; public String getStreet() { return street; } public void setStreet(String street) { this.street = street; } public String getCity() { return city; } public void setCity(String city) { this.city = city; } public String getZipCode() { return zipCode; } public void setZipCode(String zipCode) { this.zipCode = zipCode; } }",
+      "completion": "Problema: A classe `Address` é uma Data Class que apenas mantém dados. Lógicas como validação de CEP ou formatação de endereços poderiam ser incluídas diretamente nessa classe para melhorar sua utilidade."
+    },
+    {
+      "prompt": "class Order { private int id; private String status; public int getId() { return id; } public void setId(int id) { this.id = id; } public String getStatus() { return status; } public void setStatus(String status) { this.status = status; } }",
+      "completion": "Problema: A classe `Order` é uma Data Class. Lógica como a atualização de status ou o cálculo de totais do pedido deveria ser movida para dentro da própria classe `Order`."
+    },
+    {
+      "prompt": "class Customer { private String firstName; private String lastName; public String getFirstName() { return firstName; } public void setFirstName(String firstName) { this.firstName = firstName; } public String getLastName() { return lastName; } public void setLastName(String lastName) { this.lastName = lastName; } }",
+      "completion": "Problema: A classe `Customer` é uma Data Class com apenas getters e setters. Comportamentos relacionados ao cliente, como a criação de nome completo ou a validação de dados, poderiam ser adicionados à classe."
+    },
+    {
+      "prompt": "class Book { private String title; private String author; public String getTitle() { return title; } public void setTitle(String title) { this.title = title; } public String getAuthor() { return author; } public void setAuthor(String author) { this.author = author; } }",
+      "completion": "Problema: `Book` é uma Data Class. Funcionalidades relacionadas ao livro, como formatação de título ou cálculo de royalties, poderiam ser movidas para dentro da classe `Book`."
+    },
+    {
+      "prompt": "class BankAccount { private String accountNumber; private double balance; public String getAccountNumber() { return accountNumber; } public void setAccountNumber(String accountNumber) { this.accountNumber = accountNumber; } public double getBalance() { return balance; } public void setBalance(double balance) { this.balance = balance; } }",
+      "completion": "Problema: A classe `BankAccount` é uma Data Class com apenas getters e setters. Lógicas como saques, depósitos ou cálculo de juros deveriam ser movidas para essa classe, tornando-a mais útil e rica em comportamento."
+    },
+    {
+      "prompt": "class Invoice { private String number; private double amount; public String getNumber() { return number; } public void setNumber(String number) { this.number = number; } public double getAmount() { return amount; } public void setAmount(double amount) { this.amount = amount; } }",
+      "completion": "Problema: A classe `Invoice` é uma Data Class. Lógicas como a aplicação de impostos ou a verificação de pagamento poderiam ser movidas para dentro da classe `Invoice`."
+    },
+    {
+      "prompt": "class Car { private String make; private String model; private int year; public String getMake() { return make; } public void setMake(String make) { this.make = make; } public String getModel() { return model; } public void setModel(String model) { this.model = model; } public int getYear() { return year; } public void setYear(int year) { this.year = year; } }",
+      "completion": "Problema: A classe `Car` é uma Data Class com apenas campos e métodos acessores. Lógicas como cálculo de valor depreciado ou verificação de quilometragem deveriam ser movidas para essa classe."
+    },
+    {
+      "prompt": "class Employee { private String id; private String department; public String getId() { return id; } public void setId(String id) { this.id = id; } public String getDepartment() { return department; } public void setDepartment(String department) { this.department = department; } }",
+      "completion": "Problema: A classe `Employee` é uma Data Class que contém apenas dados e métodos acessores. Lógicas como cálculo de salário ou troca de departamento deveriam ser movidas para essa classe."
+    }
+  ]
+  

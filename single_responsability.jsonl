@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class User { public void saveUserToDatabase() { /* salvar no banco de dados */ } public void validateUserInput() { /* validar entrada do usuário */ } public void sendWelcomeEmail() { /* enviar e-mail de boas-vindas */ } }",
+      "completion": "Problema: A classe `User` viola o Princípio da Responsabilidade Única (SRP), pois está lidando com a persistência no banco de dados, validação de entrada e envio de e-mail. Essas responsabilidades devem ser separadas em classes distintas, como `UserRepository`, `UserValidator`, e `EmailService`."
+    },
+    {
+      "prompt": "class Order { public void calculateTotal() { /* calcular total */ } public void printInvoice() { /* imprimir fatura */ } public void saveToDatabase() { /* salvar no banco de dados */ } }",
+      "completion": "Problema: A classe `Order` viola o SRP porque está lidando com cálculos, impressão e persistência no banco de dados. Cada uma dessas responsabilidades deve ser delegada a classes diferentes, como `OrderCalculator`, `InvoicePrinter`, e `OrderRepository`."
+    },
+    {
+      "prompt": "class Report { public void generateReport() { /* gerar relatório */ } public void formatReport() { /* formatar relatório */ } public void exportToPDF() { /* exportar para PDF */ } }",
+      "completion": "Problema: A classe `Report` está violando o SRP, pois está gerando, formatando e exportando relatórios. Essas responsabilidades devem ser separadas em classes específicas, como `ReportGenerator`, `ReportFormatter`, e `PDFExporter`."
+    },
+    {
+      "prompt": "class PaymentProcessor { public void processPayment() { /* processar pagamento */ } public void logTransaction() { /* registrar transação */ } public void sendReceiptEmail() { /* enviar e-mail de recibo */ } }",
+      "completion": "Problema: A classe `PaymentProcessor` viola o SRP ao lidar com o processamento de pagamentos, registro de transações e envio de e-mails. Essas responsabilidades devem ser divididas em classes separadas, como `TransactionLogger` e `EmailService`."
+    },
+    {
+      "prompt": "class Product { public void calculateDiscount() { /* calcular desconto */ } public void saveProductToDatabase() { /* salvar no banco de dados */ } public void sendStockAlert() { /* enviar alerta de estoque */ } }",
+      "completion": "Problema: A classe `Product` viola o SRP ao combinar lógica de negócios (cálculo de desconto), persistência no banco de dados e envio de alertas. Cada uma dessas responsabilidades deve ser separada em classes como `DiscountCalculator`, `ProductRepository`, e `StockNotifier`."
+    },
+    {
+      "prompt": "class Notification { public void sendEmail(String message) { /* enviar e-mail */ } public void sendSMS(String message) { /* enviar SMS */ } public void logNotification(String message) { /* registrar notificação */ } }",
+      "completion": "Problema: A classe `Notification` viola o SRP ao combinar o envio de e-mails, envio de SMS e registro de notificações. Essas responsabilidades devem ser divididas em classes distintas, como `EmailSender`, `SMSSender`, e `NotificationLogger`."
+    },
+    {
+      "prompt": "class Employee { public void calculateSalary() { /* calcular salário */ } public void generatePayslip() { /* gerar holerite */ } public void saveEmployeeData() { /* salvar dados do funcionário */ } }",
+      "completion": "Problema: A classe `Employee` viola o SRP ao lidar com o cálculo de salário, geração de holerite e persistência de dados. Essas responsabilidades devem ser separadas em classes específicas, como `SalaryCalculator`, `PayslipGenerator`, e `EmployeeRepository`."
+    },
+    {
+      "prompt": "class ShoppingCart { public void addItem(Item item) { /* adicionar item */ } public void calculateTotal() { /* calcular total */ } public void sendOrderConfirmation() { /* enviar confirmação de pedido */ } }",
+      "completion": "Problema: A classe `ShoppingCart` viola o SRP ao combinar a adição de itens, cálculo de totais e envio de confirmações. Essas responsabilidades devem ser separadas em classes específicas, como `CartManager`, `TotalCalculator`, e `OrderConfirmationSender`."
+    },
+    {
+      "prompt": "class Logger { public void logToFile(String message) { /* registrar no arquivo */ } public void logToDatabase(String message) { /* registrar no banco de dados */ } public void logToConsole(String message) { /* registrar no console */ } }",
+      "completion": "Problema: A classe `Logger` viola o SRP ao lidar com diferentes formas de registro (arquivo, banco de dados, console). Essas responsabilidades devem ser separadas em classes específicas como `FileLogger`, `DatabaseLogger`, e `ConsoleLogger`."
+    },
+    {
+      "prompt": "class Customer { public void createProfile() { /* criar perfil */ } public void updateProfile() { /* atualizar perfil */ } public void sendPromotionalEmail() { /* enviar e-mail promocional */ } }",
+      "completion": "Problema: A classe `Customer` viola o SRP ao lidar com a criação de perfil, atualização de perfil e envio de e-mails promocionais. Essas responsabilidades devem ser separadas em classes específicas, como `CustomerProfileManager` e `EmailMarketingService`."
+    }
+  ]
+  

@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class OrderProcessor { public void processOnlineOrder(Order order) { double total = order.getPrice() * order.getQuantity(); sendConfirmationEmail(order); } public void processInStoreOrder(Order order) { double total = order.getPrice() * order.getQuantity(); sendConfirmationEmail(order); } }",
+      "completion": "Problema: O cálculo do total e o envio do e-mail de confirmação são duplicados em `processOnlineOrder()` e `processInStoreOrder()`. Esse código duplicado pode ser extraído para um método compartilhado, como `calculateTotal()` e `sendConfirmation()`."
+    },
+    {
+      "prompt": "class UserService { public void createUser(User user) { if (user.getEmail() != null && user.getName() != null) { saveUser(user); } } public void updateUser(User user) { if (user.getEmail() != null && user.getName() != null) { saveUser(user); } } }",
+      "completion": "Problema: A verificação de `email` e `name` está duplicada em `createUser()` e `updateUser()`. Esse código duplicado pode ser extraído para um método de validação compartilhado, como `validateUser()`."
+    },
+    {
+      "prompt": "class PaymentProcessor { public void processCreditCardPayment(double amount) { logTransaction(amount); sendReceipt(amount); } public void processPaypalPayment(double amount) { logTransaction(amount); sendReceipt(amount); } }",
+      "completion": "Problema: `logTransaction()` e `sendReceipt()` são duplicados em ambos os métodos de pagamento. Esse código duplicado pode ser extraído para um método comum, como `processPayment()`."
+    },
+    {
+      "prompt": "class ReportGenerator { public void generatePdfReport(String content) { String header = \"Report Header\"; String footer = \"Report Footer\"; } public void generateHtmlReport(String content) { String header = \"Report Header\"; String footer = \"Report Footer\"; } }",
+      "completion": "Problema: O código para `header` e `footer` está duplicado em ambos os métodos de geração de relatórios. Isso pode ser extraído para um método comum, como `generateReportSkeleton()`."
+    },
+    {
+      "prompt": "class DiscountCalculator { public double calculateHolidayDiscount(Product product) { double discount = product.getPrice() * 0.1; return discount; } public double calculateSeasonalDiscount(Product product) { double discount = product.getPrice() * 0.1; return discount; } }",
+      "completion": "Problema: O cálculo de desconto é duplicado nos métodos `calculateHolidayDiscount()` e `calculateSeasonalDiscount()`. Esse código pode ser extraído para um método compartilhado, como `calculateDiscount()`."
+    },
+    {
+      "prompt": "class FileService { public void readFile(String filePath) { File file = new File(filePath); if (file.exists()) { // Lê o arquivo } } public void writeFile(String filePath, String content) { File file = new File(filePath); if (file.exists()) { // Escreve no arquivo } } }",
+      "completion": "Problema: A verificação `if (file.exists())` está duplicada em `readFile()` e `writeFile()`. Esse código duplicado pode ser extraído para um método compartilhado, como `checkFileExists()`."
+    },
+    {
+      "prompt": "class InvoiceService { public void generateInvoice() { String date = new SimpleDateFormat(\"yyyy-MM-dd\").format(new Date()); System.out.println(date); } public void generateReceipt() { String date = new SimpleDateFormat(\"yyyy-MM-dd\").format(new Date()); System.out.println(date); } }",
+      "completion": "Problema: O formato da data e a impressão estão duplicados em `generateInvoice()` e `generateReceipt()`. Esse código pode ser extraído para um método compartilhado, como `formatAndPrintDate()`."
+    },
+    {
+      "prompt": "class OrderService { public void placeOrder(Order order) { double shippingCost = calculateShipping(order); double tax = calculateTax(order); } public void processReturn(Order order) { double shippingCost = calculateShipping(order); double tax = calculateTax(order); } }",
+      "completion": "Problema: O cálculo de `shippingCost` e `tax` está duplicado em `placeOrder()` e `processReturn()`. Esse código duplicado pode ser extraído para métodos compartilhados, como `applyCosts()`."
+    },
+    {
+      "prompt": "class EmailService { public void sendWelcomeEmail(User user) { String message = \"Welcome \" + user.getName(); System.out.println(message); } public void sendGoodbyeEmail(User user) { String message = \"Goodbye \" + user.getName(); System.out.println(message); } }",
+      "completion": "Problema: A criação da mensagem `message` está duplicada em ambos os métodos. Esse código pode ser extraído para um método compartilhado, como `createMessage()`."
+    },
+    {
+      "prompt": "class ShoppingCart { public void addItemToCart(Product product) { int stock = checkStock(product); if (stock > 0) { // Adiciona o produto ao carrinho } } public void removeItemFromCart(Product product) { int stock = checkStock(product); if (stock > 0) { // Remove o produto do carrinho } } }",
+      "completion": "Problema: A verificação de `checkStock(product)` está duplicada em ambos os métodos. Esse código pode ser extraído para um método compartilhado, como `verifyStockAndProceed()`."
+    }
+  ]
+  

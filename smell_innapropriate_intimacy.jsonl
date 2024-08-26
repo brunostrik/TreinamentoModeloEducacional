@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class OrderProcessor { public void processOrder(Order order) { order.getCustomer().setDiscount(10); } }",
+      "completion": "Problema: `OrderProcessor` está acessando e modificando o estado interno da classe `Customer` diretamente através do método `setDiscount()`. Isso é um exemplo de Inappropriate Intimacy. A solução seria fornecer um método no `Order` para aplicar descontos sem expor diretamente os detalhes internos da `Customer`."
+    },
+    {
+      "prompt": "class ReportGenerator { public void generateReport(Report report) { report.getHeader().setDate(new Date()); } }",
+      "completion": "Problema: `ReportGenerator` está modificando diretamente o estado interno da `Header` do `Report`. Isso quebra o encapsulamento e é um exemplo de Inappropriate Intimacy. A `Header` deveria ter métodos para definir a data sem permitir acesso direto aos seus atributos internos."
+    },
+    {
+      "prompt": "class EmployeeManager { public void adjustSalary(Employee employee, double adjustment) { employee.getSalaryDetails().setBaseSalary(employee.getSalaryDetails().getBaseSalary() + adjustment); } }",
+      "completion": "Problema: `EmployeeManager` está acessando e modificando diretamente os detalhes de salário através de `SalaryDetails`. Isso demonstra Inappropriate Intimacy. Melhor seria fornecer um método em `Employee` para ajustar o salário sem expor os detalhes internos de `SalaryDetails`."
+    },
+    {
+      "prompt": "class BookStore { public void applyDiscount(Book book, double discount) { book.getPrice().setAmount(book.getPrice().getAmount() - discount); } }",
+      "completion": "Problema: `BookStore` está acessando diretamente o preço do livro e ajustando-o, o que quebra o encapsulamento e é um exemplo de Inappropriate Intimacy. `Book` deveria ter um método para aplicar descontos sem expor diretamente os detalhes internos do preço."
+    },
+    {
+      "prompt": "class NotificationService { public void sendNotification(Notification notification) { notification.getContent().setBody('New update available'); } }",
+      "completion": "Problema: `NotificationService` está modificando diretamente o conteúdo do `Notification`. Isso é Inappropriate Intimacy. `Notification` deveria ter métodos para atualizar o conteúdo sem expor diretamente seus detalhes internos."
+    },
+    {
+      "prompt": "class CarRepairShop { public void scheduleRepair(Car car, Date date) { car.getMaintenanceLog().addEntry(date, 'Scheduled repair'); } }",
+      "completion": "Problema: `CarRepairShop` está acessando diretamente o log de manutenção do `Car`. Isso quebra o encapsulamento e é um exemplo de Inappropriate Intimacy. O `Car` deveria ter métodos para agendar reparos e atualizar o log sem expor diretamente o `MaintenanceLog`."
+    },
+    {
+      "prompt": "class UserAccountManager { public void changeUserPassword(User user, String newPassword) { user.getPasswordManager().setPassword(newPassword); } }",
+      "completion": "Problema: `UserAccountManager` está acessando diretamente o `PasswordManager` do `User` e modificando a senha, o que demonstra Inappropriate Intimacy. O `User` deveria ter um método para alterar a senha sem expor diretamente o `PasswordManager`."
+    },
+    {
+      "prompt": "class Library { public void updateBookAvailability(Book book, boolean available) { book.getAvailabilityStatus().setAvailable(available); } }",
+      "completion": "Problema: `Library` está acessando diretamente o status de disponibilidade do `Book`. Isso quebra o encapsulamento e é um exemplo de Inappropriate Intimacy. `Book` deveria ter métodos para atualizar a disponibilidade sem expor diretamente o `AvailabilityStatus`."
+    },
+    {
+      "prompt": "class PaymentService { public void processPayment(Payment payment) { payment.getTransaction().setStatus('Processed'); } }",
+      "completion": "Problema: `PaymentService` está acessando diretamente a transação do `Payment` e modificando seu status. Isso é Inappropriate Intimacy. `Payment` deveria ter um método para processar pagamentos e atualizar o status sem expor diretamente o `Transaction`."
+    },
+    {
+      "prompt": "class EventManager { public void setEventDate(Event event, Date date) { event.getEventDetails().setDate(date); } }",
+      "completion": "Problema: `EventManager` está acessando diretamente os detalhes do evento e modificando a data. Isso demonstra Inappropriate Intimacy. O `Event` deveria ter métodos para definir a data sem expor diretamente os detalhes internos."
+    }
+  ]
+  

@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class UserValidator { public boolean isValid(User user) { return user.getName() != null && user.getEmail() != null; } }",
+      "completion": "Problema: `UserValidator` é uma Lazy Class com apenas um método simples. Essa lógica poderia ser movida para a própria classe `User`, eliminando a necessidade de uma classe separada."
+    },
+    {
+      "prompt": "class EmailSender { public void sendEmail(String email, String message) { // Envia e-mail } }",
+      "completion": "Problema: `EmailSender` é uma Lazy Class com um único método que pode ser combinado com outra classe, como `NotificationService`, que já lida com notificações de e-mail."
+    },
+    {
+      "prompt": "class DatabaseConnector { public void connect() { // Conecta ao banco de dados } }",
+      "completion": "Problema: `DatabaseConnector` é uma Lazy Class com uma responsabilidade mínima. Esse método poderia ser movido para uma classe `Database` maior, que lida com todas as operações de banco de dados."
+    },
+    {
+      "prompt": "class DiscountCalculator { public double calculateDiscount(double price) { return price * 0.1; } }",
+      "completion": "Problema: `DiscountCalculator` é uma Lazy Class com uma lógica simples de desconto. Esse método poderia ser movido para a classe `Product` ou `Order`, onde o desconto é realmente aplicado."
+    },
+    {
+      "prompt": "class Logger { public void log(String message) { System.out.println(message); } }",
+      "completion": "Problema: `Logger` é uma Lazy Class com um único método básico. Essa funcionalidade de registro poderia ser movida para uma classe existente que lida com operações de sistema, eliminando a necessidade de uma classe separada."
+    },
+    {
+      "prompt": "class PasswordHasher { public String hashPassword(String password) { return password.hashCode(); } }",
+      "completion": "Problema: `PasswordHasher` é uma Lazy Class com um único método de hash. Esse método poderia ser movido para a própria classe `User` ou `AuthenticationService`."
+    },
+    {
+      "prompt": "class OrderPrinter { public void print(Order order) { System.out.println(order.toString()); } }",
+      "completion": "Problema: `OrderPrinter` é uma Lazy Class com uma função muito simples de imprimir. Esse método poderia ser movido para a classe `Order` ou para um serviço maior, como `OrderService`."
+    },
+    {
+      "prompt": "class CurrencyConverter { public double convert(double amount, String currency) { return amount * 1.1; } }",
+      "completion": "Problema: `CurrencyConverter` é uma Lazy Class com uma única função de conversão. Esse método poderia ser incorporado em uma classe financeira maior, como `TransactionService`."
+    },
+    {
+      "prompt": "class DateFormatter { public String format(Date date) { return date.toString(); } }",
+      "completion": "Problema: `DateFormatter` é uma Lazy Class com uma única função de formatação. Isso poderia ser movido para um utilitário de data ou ser diretamente utilizado onde necessário, eliminando a classe separada."
+    },
+    {
+      "prompt": "class FileDeleter { public void deleteFile(String filePath) { new File(filePath).delete(); } }",
+      "completion": "Problema: `FileDeleter` é uma Lazy Class com um único método de exclusão de arquivos. Isso poderia ser movido para um serviço maior de manipulação de arquivos, como `FileManager`."
+    }
+  ]
+  

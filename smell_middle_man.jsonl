@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class CustomerService { private CustomerRepository customerRepository; public Customer getCustomerById(int id) { return customerRepository.findCustomerById(id); } }",
+      "completion": "Problema: `CustomerService` é uma classe Middle Man, pois sua única função é delegar chamadas para `CustomerRepository`. O código poderia interagir diretamente com `CustomerRepository`, eliminando a necessidade de `CustomerService`."
+    },
+    {
+      "prompt": "class OrderManager { private OrderRepository orderRepository; public void saveOrder(Order order) { orderRepository.save(order); } public Order getOrderById(int id) { return orderRepository.findById(id); } }",
+      "completion": "Problema: A classe `OrderManager` serve apenas como intermediária para `OrderRepository`, tornando-a uma classe Middle Man. É melhor interagir diretamente com `OrderRepository`, eliminando o `OrderManager`."
+    },
+    {
+      "prompt": "class PaymentService { private PaymentGateway paymentGateway; public void processPayment(double amount) { paymentGateway.process(amount); } }",
+      "completion": "Problema: `PaymentService` é uma classe Middle Man que apenas repassa chamadas para `PaymentGateway`. Interagir diretamente com `PaymentGateway` eliminaria a necessidade de `PaymentService`."
+    },
+    {
+      "prompt": "class EmailService { private EmailClient emailClient; public void sendEmail(String to, String message) { emailClient.send(to, message); } }",
+      "completion": "Problema: `EmailService` não faz nada além de repassar chamadas para `EmailClient`. Isso é um exemplo de Middle Man, e a solução seria interagir diretamente com `EmailClient`, eliminando a classe intermediária."
+    },
+    {
+      "prompt": "class InventoryManager { private Inventory inventory; public int getStockLevel(Product product) { return inventory.getStockLevel(product); } }",
+      "completion": "Problema: A classe `InventoryManager` é apenas uma intermediária que delega chamadas a `Inventory`. Esse é um caso claro de Middle Man, e a solução seria eliminar `InventoryManager` e interagir diretamente com `Inventory`."
+    },
+    {
+      "prompt": "class AccountService { private AccountRepository accountRepository; public Account findAccountByNumber(String accountNumber) { return accountRepository.findByAccountNumber(accountNumber); } }",
+      "completion": "Problema: `AccountService` é uma classe intermediária que apenas delega o trabalho a `AccountRepository`. É um exemplo de Middle Man, e o código poderia interagir diretamente com `AccountRepository`."
+    },
+    {
+      "prompt": "class LoggerService { private Logger logger; public void logMessage(String message) { logger.log(message); } }",
+      "completion": "Problema: `LoggerService` é uma classe Middle Man que apenas repassa mensagens para `Logger`. A classe intermediária poderia ser eliminada, interagindo diretamente com `Logger`."
+    },
+    {
+      "prompt": "class AuthenticationManager { private AuthService authService; public boolean authenticate(String username, String password) { return authService.authenticate(username, password); } }",
+      "completion": "Problema: `AuthenticationManager` é uma classe intermediária que repassa chamadas para `AuthService`. Este é um caso de Middle Man, e o código poderia interagir diretamente com `AuthService`."
+    },
+    {
+      "prompt": "class FileStorageService { private FileSystem fileSystem; public void saveFile(String fileName, byte[] data) { fileSystem.writeFile(fileName, data); } }",
+      "completion": "Problema: `FileStorageService` serve apenas como intermediária para o `FileSystem`, o que torna a classe redundante. O código poderia interagir diretamente com `FileSystem`, eliminando o Middle Man."
+    },
+    {
+      "prompt": "class UserNotificationService { private NotificationSender notificationSender; public void notifyUser(User user, String message) { notificationSender.sendNotification(user, message); } }",
+      "completion": "Problema: A classe `UserNotificationService` não faz nada além de repassar a responsabilidade para `NotificationSender`, sendo uma Middle Man. Interagir diretamente com `NotificationSender` eliminaria a classe intermediária."
+    }
+  ]
+  

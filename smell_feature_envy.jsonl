@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class Invoice { public double calculateTotal(Customer customer) { return customer.getDiscountRate() * customer.getPreviousPurchases(); } }",
+      "completion": "Problema: O método `calculateTotal` na classe `Invoice` está mais interessado nos dados da classe `Customer` (taxa de desconto e compras anteriores) do que nos dados da própria classe. Esse método provavelmente deveria ser movido para a classe `Customer`."
+    },
+    {
+      "prompt": "class Car { public double calculateFuelEfficiency(Engine engine) { return engine.getHorsePower() / engine.getFuelConsumption(); } }",
+      "completion": "Problema: O método `calculateFuelEfficiency` na classe `Car` está mais interessado nos dados da classe `Engine` (potência e consumo de combustível). Esse método deveria ser movido para a classe `Engine`."
+    },
+    {
+      "prompt": "class EmployeeManager { public double calculateBonus(Employee employee) { return employee.getSalary() * employee.getPerformanceRating(); } }",
+      "completion": "Problema: O método `calculateBonus` na classe `EmployeeManager` está focado nos dados da classe `Employee`. Ele deveria ser movido para a própria classe `Employee`, já que essa lógica pertence ao empregado."
+    },
+    {
+      "prompt": "class OrderProcessor { public double calculateShippingCost(Order order) { return order.getWeight() * order.getDistance(); } }",
+      "completion": "Problema: O método `calculateShippingCost` na classe `OrderProcessor` depende fortemente dos dados da classe `Order` (peso e distância). Esse método deveria estar na classe `Order` em vez de `OrderProcessor`."
+    },
+    {
+      "prompt": "class AccountService { public void transferMoney(Account from, Account to, double amount) { if (from.getBalance() >= amount) { from.debit(amount); to.credit(amount); } } }",
+      "completion": "Problema: O método `transferMoney` na classe `AccountService` está muito focado nos dados da classe `Account`. A lógica de transferência provavelmente deveria estar na classe `Account`, encapsulando esse comportamento."
+    },
+    {
+      "prompt": "class ReportGenerator { public String generateReport(Order order) { return \"Total: \" + order.getTotal() + \", Date: \" + order.getDate(); } }",
+      "completion": "Problema: O método `generateReport` na classe `ReportGenerator` está focado demais nos dados da classe `Order`. Esse método deveria estar na própria classe `Order`, já que é responsável por expor seus dados."
+    },
+    {
+      "prompt": "class BankService { public double calculateInterest(Account account) { return account.getBalance() * account.getInterestRate(); } }",
+      "completion": "Problema: O método `calculateInterest` na classe `BankService` está mais interessado nos dados da classe `Account`. A lógica de cálculo de juros deveria ser movida para a classe `Account`."
+    },
+    {
+      "prompt": "class VehicleService { public double calculateInsurance(Vehicle vehicle) { return vehicle.getAge() * vehicle.getValue() / 100; } }",
+      "completion": "Problema: O método `calculateInsurance` na classe `VehicleService` está mais interessado nos dados da classe `Vehicle`. Esse comportamento provavelmente deveria ser movido para a classe `Vehicle`."
+    },
+    {
+      "prompt": "class ShoppingCart { public double calculateTotal(Product product) { return product.getPrice() * product.getQuantity(); } }",
+      "completion": "Problema: O método `calculateTotal` na classe `ShoppingCart` está mais focado nos dados da classe `Product`. Esse comportamento deveria ser movido para a própria classe `Product`."
+    },
+    {
+      "prompt": "class ReservationSystem { public double calculateReservationCost(Room room) { return room.getRate() * room.getNumberOfNights(); } }",
+      "completion": "Problema: O método `calculateReservationCost` na classe `ReservationSystem` está focado nos dados da classe `Room`. Esse comportamento deveria estar na classe `Room`, onde os dados estão."
+    }
+  ]
+  

@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class User { // Método que salva o usuário no banco de dados public void saveUser() { /* lógica para salvar no banco de dados */ } }",
+      "completion": "Problema: O comentário 'Método que salva o usuário no banco de dados' é desnecessário, pois o nome do método `saveUser()` já deveria comunicar isso. Nomes de métodos e variáveis mais claros podem eliminar a necessidade de comentários redundantes."
+    },
+    {
+      "prompt": "class Calculator { // Método para adicionar dois números public int add(int a, int b) { return a + b; } }",
+      "completion": "Problema: O comentário 'Método para adicionar dois números' é redundante. O nome do método `add()` já descreve claramente sua função. Melhorar os nomes do método e evitar comentários óbvios pode simplificar o código."
+    },
+    {
+      "prompt": "class Order { // Calcula o total do pedido public double calculateTotal() { /* lógica de cálculo */ return 0.0; } }",
+      "completion": "Problema: O comentário 'Calcula o total do pedido' é redundante, pois o nome do método `calculateTotal()` já descreve essa função. Um código bem nomeado elimina a necessidade de comentários excessivos."
+    },
+    {
+      "prompt": "class ReportGenerator { // Gera o relatório em formato PDF public void generatePDF() { /* lógica de geração de PDF */ } }",
+      "completion": "Problema: O comentário 'Gera o relatório em formato PDF' é desnecessário, pois o nome do método `generatePDF()` já comunica isso claramente. Comentários redundantes podem ser eliminados com bons nomes de métodos."
+    },
+    {
+      "prompt": "class Payment { // Este método processa o pagamento public void processPayment() { /* lógica de processamento */ } }",
+      "completion": "Problema: O comentário 'Este método processa o pagamento' é supérfluo. O nome `processPayment()` já descreve a função do método, tornando o comentário desnecessário. Um código claro deve ser autoexplicativo."
+    },
+    {
+      "prompt": "class Employee { // Calcula o bônus do funcionário public double calculateBonus() { return 0.0; } }",
+      "completion": "Problema: O comentário 'Calcula o bônus do funcionário' é redundante. O método `calculateBonus()` já comunica isso. Comentários que explicam o óbvio indicam que o código pode ser melhorado para ser mais legível sem comentários."
+    },
+    {
+      "prompt": "class Vehicle { // Este método inicia o veículo public void start() { /* lógica de inicialização */ } }",
+      "completion": "Problema: O comentário 'Este método inicia o veículo' é desnecessário, já que o nome `start()` já descreve claramente a função do método. O código deveria ser claro o suficiente para dispensar esse tipo de comentário."
+    },
+    {
+      "prompt": "class ShoppingCart { // Adiciona um item ao carrinho de compras public void addItem(Item item) { /* lógica de adição */ } }",
+      "completion": "Problema: O comentário 'Adiciona um item ao carrinho de compras' é desnecessário, pois o nome do método `addItem()` já comunica essa intenção. Evitar comentários que explicam o óbvio melhora a legibilidade do código."
+    },
+    {
+      "prompt": "class Logger { // Este método grava a mensagem no arquivo public void logToFile(String message) { /* lógica de gravação */ } }",
+      "completion": "Problema: O comentário 'Este método grava a mensagem no arquivo' é supérfluo. O nome `logToFile()` já descreve a função do método. Melhorar os nomes de métodos e variáveis pode eliminar a necessidade de comentários triviais."
+    },
+    {
+      "prompt": "class DataParser { // Faz o parsing dos dados em JSON public void parseJSON(String data) { /* lógica de parsing */ } }",
+      "completion": "Problema: O comentário 'Faz o parsing dos dados em JSON' é desnecessário, pois o nome do método `parseJSON()` já comunica isso de forma clara. Comentários redundantes podem ser eliminados com bons nomes de métodos e variáveis."
+    }
+  ]
+  

@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "interface Worker { void work(); void eat(); } class Robot implements Worker { public void work() { /* robot working */ } public void eat() { throw new UnsupportedOperationException(); /* robots don't eat */ } }",
+      "completion": "Problema: A interface `Worker` viola o Princípio de Segregação de Interface, pois a classe `Robot` é forçada a implementar o método `eat()`, que não faz sentido para robôs. A interface deveria ser dividida em interfaces menores, como `Workable` e `Eatable`."
+    },
+    {
+      "prompt": "interface Document { void open(); void print(); void fax(); void scan(); } class PDFDocument implements Document { public void open() { /* logic */ } public void print() { /* logic */ } public void fax() { throw new UnsupportedOperationException(); } public void scan() { throw new UnsupportedOperationException(); } }",
+      "completion": "Problema: A interface `Document` é muito grande e viola o ISP, pois a classe `PDFDocument` é forçada a implementar métodos como `fax()` e `scan()` que ela não utiliza. A interface deveria ser dividida em várias interfaces específicas, como `Printable`, `Scannable`, e `Faxable`."
+    },
+    {
+      "prompt": "interface Vehicle { void drive(); void fly(); } class Car implements Vehicle { public void drive() { /* logic */ } public void fly() { throw new UnsupportedOperationException(); /* cars don't fly */ } }",
+      "completion": "Problema: A interface `Vehicle` viola o ISP, pois a classe `Car` não deveria ser forçada a implementar o método `fly()`. O correto seria separar a interface em `Driveable` e `Flyable`."
+    },
+    {
+      "prompt": "interface PaymentProcessor { void processCreditCard(); void processPaypal(); void processBitcoin(); } class CreditCardProcessor implements PaymentProcessor { public void processCreditCard() { /* logic */ } public void processPaypal() { throw new UnsupportedOperationException(); } public void processBitcoin() { throw new UnsupportedOperationException(); } }",
+      "completion": "Problema: A interface `PaymentProcessor` força `CreditCardProcessor` a implementar métodos que não são relevantes, como `processPaypal()` e `processBitcoin()`. As interfaces deveriam ser segregadas em interfaces menores como `CreditCardPayment`, `PaypalPayment`, e `BitcoinPayment`."
+    },
+    {
+      "prompt": "interface Animal { void walk(); void fly(); void swim(); } class Dog implements Animal { public void walk() { /* logic */ } public void fly() { throw new UnsupportedOperationException(); } public void swim() { /* logic */ } }",
+      "completion": "Problema: A interface `Animal` viola o ISP, pois a classe `Dog` é forçada a implementar `fly()`, o que não faz sentido para cães. A interface deveria ser dividida em `Walkable`, `Flyable`, e `Swimmable`."
+    },
+    {
+      "prompt": "interface Appliance { void turnOn(); void turnOff(); void cook(); void clean(); } class Microwave implements Appliance { public void turnOn() { /* logic */ } public void turnOff() { /* logic */ } public void cook() { /* logic */ } public void clean() { throw new UnsupportedOperationException(); } }",
+      "completion": "Problema: A interface `Appliance` é muito grande e viola o ISP, pois a classe `Microwave` não utiliza o método `clean()`. A interface deveria ser dividida em interfaces menores e mais específicas, como `Cookable` e `Cleanable`."
+    },
+    {
+      "prompt": "interface RestaurantWorker { void cook(); void serve(); void clean(); } class Chef implements RestaurantWorker { public void cook() { /* logic */ } public void serve() { throw new UnsupportedOperationException(); } public void clean() { throw new UnsupportedOperationException(); } }",
+      "completion": "Problema: A interface `RestaurantWorker` viola o ISP, pois a classe `Chef` não deveria ser forçada a implementar métodos de `serve()` e `clean()`. A interface deveria ser dividida em `Cookable`, `Serveable`, e `Cleanable`."
+    },
+    {
+      "prompt": "interface BankService { void deposit(); void withdraw(); void invest(); void manageLoans(); } class BasicBankService implements BankService { public void deposit() { /* logic */ } public void withdraw() { /* logic */ } public void invest() { throw new UnsupportedOperationException(); } public void manageLoans() { throw new UnsupportedOperationException(); } }",
+      "completion": "Problema: A interface `BankService` viola o ISP, pois a classe `BasicBankService` não precisa implementar `invest()` e `manageLoans()`. Interfaces específicas como `InvestmentService` e `LoanService` seriam mais apropriadas."
+    },
+    {
+      "prompt": "interface ComputerPeripheral { void print(); void scan(); void fax(); } class Printer implements ComputerPeripheral { public void print() { /* logic */ } public void scan() { throw new UnsupportedOperationException(); } public void fax() { throw new UnsupportedOperationException(); } }",
+      "completion": "Problema: A interface `ComputerPeripheral` força `Printer` a implementar métodos irrelevantes como `scan()` e `fax()`, violando o ISP. As interfaces deveriam ser separadas em `Printable`, `Scannable`, e `Faxable`."
+    },
+    {
+      "prompt": "interface SmartDevice { void playMusic(); void turnOnLights(); void controlTemperature(); void makeCalls(); } class SmartSpeaker implements SmartDevice { public void playMusic() { /* logic */ } public void turnOnLights() { throw new UnsupportedOperationException(); } public void controlTemperature() { throw new UnsupportedOperationException(); } public void makeCalls() { throw new UnsupportedOperationException(); } }",
+      "completion": "Problema: A interface `SmartDevice` é muito abrangente e força `SmartSpeaker` a implementar métodos como `turnOnLights()` e `controlTemperature()`, que não fazem sentido para um alto-falante inteligente. Interfaces mais específicas como `MusicPlayer`, `LightingController`, e `TemperatureController` seriam mais apropriadas."
+    }
+  ]
+  

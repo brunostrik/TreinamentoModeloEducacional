@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class OrderProcessor { public void processOrder(Order order) { order.getCustomer().getAddress().getCity(); } }",
+      "completion": "Problema: A classe `OrderProcessor` está violando a Lei de Demeter ao acessar diretamente o endereço e a cidade do cliente. Em vez disso, `Order` deveria fornecer um método como `getCustomerCity()` para evitar a chamada encadeada."
+    },
+    {
+      "prompt": "class Car { public void startEngine() { engine.getFuelPump().activate(); } }",
+      "completion": "Problema: A classe `Car` está violando a Lei de Demeter ao acessar o `FuelPump` através de `engine`. O método `startEngine()` deveria encapsular esse comportamento dentro da própria classe `Engine`."
+    },
+    {
+      "prompt": "class Library { public void checkoutBook(Book book) { book.getLibraryCard().getHolder().getName(); } }",
+      "completion": "Problema: A classe `Library` está violando a Lei de Demeter ao acessar o nome do titular do cartão de biblioteca por meio de múltiplas chamadas encadeadas. A classe `Book` ou `LibraryCard` deveria fornecer um método como `getCardHolderName()`."
+    },
+    {
+      "prompt": "class Flight { public void prepareForTakeoff() { cockpit.getPilot().getCredentials().validate(); } }",
+      "completion": "Problema: A classe `Flight` está violando a Lei de Demeter ao acessar as credenciais do piloto diretamente. `Cockpit` deveria fornecer um método para validar as credenciais do piloto sem expor sua estrutura interna."
+    },
+    {
+      "prompt": "class ShoppingCart { public void finalizePurchase() { customer.getPaymentInfo().getCreditCard().charge(); } }",
+      "completion": "Problema: A classe `ShoppingCart` está violando a Lei de Demeter ao acessar os detalhes do cartão de crédito do cliente por meio de múltiplas chamadas. A responsabilidade de cobrar o cartão deveria ser encapsulada em um método no objeto `PaymentInfo`."
+    },
+    {
+      "prompt": "class EmployeeManager { public void reviewEmployee(Employee employee) { employee.getDepartment().getManager().getContactInfo().sendMessage(); } }",
+      "completion": "Problema: A classe `EmployeeManager` está violando a Lei de Demeter ao acessar as informações de contato do gerente por meio de várias chamadas encadeadas. O acesso e envio da mensagem deveriam ser feitos por um método em `Department` ou `Manager`."
+    },
+    {
+      "prompt": "class House { public void openDoor() { securitySystem.getLock().getKey().unlock(); } }",
+      "completion": "Problema: A classe `House` está violando a Lei de Demeter ao acessar diretamente o cadeado e a chave do sistema de segurança. O comportamento de destrancar deveria ser encapsulado em `SecuritySystem` ou `Lock`."
+    },
+    {
+      "prompt": "class Hotel { public void bookRoom() { guest.getReservation().getRoom().getDoor().unlock(); } }",
+      "completion": "Problema: A classe `Hotel` está violando a Lei de Demeter ao acessar diretamente a porta do quarto por meio de várias chamadas. A classe `Reservation` ou `Room` deveria fornecer um método para desbloquear a porta."
+    },
+    {
+      "prompt": "class Company { public void processPayroll(Employee employee) { employee.getBankAccount().getBranch().getManager().approveTransaction(); } }",
+      "completion": "Problema: A classe `Company` está violando a Lei de Demeter ao acessar o gerente do banco por meio de várias chamadas encadeadas. `BankAccount` ou `Branch` deveria encapsular esse comportamento."
+    },
+    {
+      "prompt": "class School { public void enrollStudent(Student student) { student.getParent().getContactInfo().getPhone().dial(); } }",
+      "completion": "Problema: A classe `School` está violando a Lei de Demeter ao acessar diretamente o telefone do pai do aluno por meio de várias chamadas. `Parent` ou `ContactInfo` deveria fornecer um método para fazer a ligação."
+    }
+  ]
+  

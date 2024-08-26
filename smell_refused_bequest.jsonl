@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class Bird { public void fly() { System.out.println('Flying'); } } class Penguin extends Bird { @Override public void fly() { throw new UnsupportedOperationException('Penguins cannot fly'); } }",
+      "completion": "Problema: `Penguin` herda o método `fly()` de `Bird`, mas não pode voar. Isso é um exemplo de Refused Bequest. A herança está incorreta; `Penguin` não deveria herdar de `Bird`. Uma possível solução seria criar uma hierarquia diferente, como `FlightlessBird`."
+    },
+    {
+      "prompt": "class Employee { public void work() { System.out.println('Working'); } public void attendMeetings() { System.out.println('Attending meetings'); } } class Intern extends Employee { @Override public void attendMeetings() { throw new UnsupportedOperationException('Interns do not attend meetings'); } }",
+      "completion": "Problema: `Intern` herda o método `attendMeetings()` de `Employee`, mas não o utiliza. Isso é Refused Bequest. A hierarquia está incorreta, e talvez seja necessário repensar o design ou usar composição ao invés de herança."
+    },
+    {
+      "prompt": "class Vehicle { public void drive() { System.out.println('Driving'); } } class Bicycle extends Vehicle { @Override public void drive() { throw new UnsupportedOperationException('Bicycles cannot be driven like cars'); } }",
+      "completion": "Problema: `Bicycle` herda o método `drive()` de `Vehicle`, mas não pode ser dirigido da mesma maneira que um carro. Isso é Refused Bequest. `Bicycle` não deveria herdar de `Vehicle`; uma separação de classes seria mais apropriada."
+    },
+    {
+      "prompt": "class Manager { public void manageTeam() { System.out.println('Managing team'); } public void approveBudget() { System.out.println('Approving budget'); } } class JuniorManager extends Manager { @Override public void approveBudget() { throw new UnsupportedOperationException('Junior Managers do not approve budgets'); } }",
+      "completion": "Problema: `JuniorManager` herda o método `approveBudget()` de `Manager`, mas não precisa dele. Isso é um exemplo de Refused Bequest. Talvez `JuniorManager` e `Manager` devam implementar uma interface comum em vez de usarem herança."
+    },
+    {
+      "prompt": "class Appliance { public void turnOn() { System.out.println('Turning on'); } public void cook() { System.out.println('Cooking'); } } class WashingMachine extends Appliance { @Override public void cook() { throw new UnsupportedOperationException('Washing machines do not cook'); } }",
+      "completion": "Problema: `WashingMachine` herda o método `cook()` de `Appliance`, mas não pode cozinhar. Isso é Refused Bequest. A hierarquia está errada, e `WashingMachine` não deveria herdar de `Appliance`."
+    },
+    {
+      "prompt": "class Animal { public void makeSound() { System.out.println('Making sound'); } public void fly() { System.out.println('Flying'); } } class Dog extends Animal { @Override public void fly() { throw new UnsupportedOperationException('Dogs cannot fly'); } }",
+      "completion": "Problema: `Dog` herda o método `fly()` de `Animal`, mas não pode voar. Isso é Refused Bequest, indicando que a relação de herança está incorreta. Uma solução seria separar os animais voadores e terrestres em classes distintas."
+    },
+    {
+      "prompt": "class Database { public void connect() { System.out.println('Connecting to database'); } public void executeTransaction() { System.out.println('Executing transaction'); } } class ReadOnlyDatabase extends Database { @Override public void executeTransaction() { throw new UnsupportedOperationException('Read-only databases do not execute transactions'); } }",
+      "completion": "Problema: `ReadOnlyDatabase` herda o método `executeTransaction()` de `Database`, mas não o utiliza. Isso é Refused Bequest. O design deveria ser refatorado para que `ReadOnlyDatabase` não herde funcionalidades desnecessárias."
+    },
+    {
+      "prompt": "class Vehicle { public void drive() { System.out.println('Driving'); } public void refuel() { System.out.println('Refueling'); } } class ElectricCar extends Vehicle { @Override public void refuel() { throw new UnsupportedOperationException('Electric cars do not refuel'); } }",
+      "completion": "Problema: `ElectricCar` herda o método `refuel()` de `Vehicle`, mas não precisa dele. Isso é Refused Bequest. O design deveria ser ajustado para que `ElectricCar` não herde métodos que não faz sentido usar."
+    },
+    {
+      "prompt": "class Account { public void withdraw() { System.out.println('Withdrawing money'); } public void transferFunds() { System.out.println('Transferring funds'); } } class SavingsAccount extends Account { @Override public void transferFunds() { throw new UnsupportedOperationException('Savings accounts cannot transfer funds'); } }",
+      "completion": "Problema: `SavingsAccount` herda o método `transferFunds()` de `Account`, mas não pode transferir fundos. Isso é Refused Bequest e sugere que a hierarquia está incorreta. Talvez `SavingsAccount` deva ser separado de outras contas."
+    },
+    {
+      "prompt": "class Printer { public void print() { System.out.println('Printing document'); } public void fax() { System.out.println('Sending fax'); } } class BasicPrinter extends Printer { @Override public void fax() { throw new UnsupportedOperationException('Basic printers do not send faxes'); } }",
+      "completion": "Problema: `BasicPrinter` herda o método `fax()` de `Printer`, mas não precisa dele. Isso é Refused Bequest. Uma refatoração para remover funcionalidades desnecessárias em subclasses resolveria o problema."
+    }
+  ]
+  

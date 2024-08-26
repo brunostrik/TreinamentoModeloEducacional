@@ -1,0 +1,42 @@
+[
+  {
+    "prompt": "class ReportGenerator { public void generateReport(String type) { if (type.equals(\"PDF\")) { generatePDF(); } else if (type.equals(\"HTML\")) { generateHTML(); } } private void generatePDF() { /* logic */ } private void generateHTML() { /* logic */ } }",
+    "completion": "Problema: Esta classe viola o princípio Open/Closed. Para adicionar novos tipos de relatórios, seria necessário modificar o método `generateReport()`. Recomenda-se refatorar usando polimorfismo ou um padrão de projeto como Strategy, onde cada tipo de relatório tem sua própria implementação."
+  }
+  {
+    "prompt": "function calculateDiscount(customerType, amount) { if (customerType == 'Regular') { return amount * 0.1; } else if (customerType == 'VIP') { return amount * 0.2; } }",
+    "completion": "Problema: A função viola o princípio Open/Closed, pois, para adicionar novos tipos de clientes, será necessário modificar a função `calculateDiscount()`. O ideal seria ter uma estrutura onde cada tipo de cliente possa definir seu próprio desconto, como classes derivadas implementando uma interface comum."
+  }
+  {
+    "prompt": "class NotificationSender { public void sendNotification(String type) { if (type.equals(\"email\")) { sendEmail(); } else if (type.equals(\"sms\")) { sendSMS(); } } private void sendEmail() { /* logic */ } private void sendSMS() { /* logic */ } }",
+    "completion": "Problema: A classe `NotificationSender` viola o princípio Open/Closed. Novos tipos de notificações, como push notifications, exigiriam mudanças na lógica existente. O uso de polimorfismo ou do padrão Strategy permitiria adicionar novos tipos de notificações sem modificar a classe principal."
+  }
+  {
+    "prompt": "public class Vehicle { public void start(String vehicleType) { if (vehicleType.equals(\"car\")) { startCar(); } else if (vehicleType.equals(\"bike\")) { startBike(); } } private void startCar() { /* logic */ } private void startBike() { /* logic */ } }",
+    "completion": "Problema: A classe `Vehicle` viola o princípio Open/Closed, pois a adição de novos tipos de veículos exigiria a modificação do método `start()`. Uma abordagem melhor seria usar herança e criar subclasses específicas para cada tipo de veículo."
+  }
+  {
+    "prompt": "def calculate_tax(country, amount): if country == 'USA': return amount * 0.07 elif country == 'Canada': return amount * 0.05",
+    "completion": "Problema: Esta função viola o princípio Open/Closed, pois a adição de novos países exigiria modificar a função diretamente. Uma solução melhor seria usar uma estrutura de classes específicas para cada país ou um padrão de design que permita a extensão sem alteração."
+  }
+  {
+    "prompt": "class ShapeDrawer { public void draw(String shapeType) { if (shapeType.equals(\"circle\")) { drawCircle(); } else if (shapeType.equals(\"square\")) { drawSquare(); } } private void drawCircle() { /* logic */ } private void drawSquare() { /* logic */ } }",
+    "completion": "Problema: A classe `ShapeDrawer` viola o princípio Open/Closed. Para adicionar novas formas, seria necessário modificar o método `draw()`. Recomenda-se usar polimorfismo com uma classe base `Shape` e subclasses específicas para cada tipo de forma."
+  }
+  {
+    "prompt": "def calculate_shipping(country, weight): if country == 'US': return weight * 5 elif country == 'UK': return weight * 6",
+    "completion": "Problema: A função `calculate_shipping()` viola o princípio Open/Closed, pois a adição de novos países exigiria modificação da lógica interna. É preferível utilizar uma abordagem baseada em extensibilidade, como classes específicas para cada país, ou um serviço de cálculo de frete que pode ser estendido."
+  }
+  {
+    "prompt": "class Logger { public void log(String level, String message) { if (level.equals(\"INFO\")) { logInfo(message); } else if (level.equals(\"ERROR\")) { logError(message); } } private void logInfo(String message) { /* logic */ } private void logError(String message) { /* logic */ } }",
+    "completion": "Problema: A classe `Logger` viola o princípio Open/Closed. Novos níveis de log, como `DEBUG`, exigiriam modificações no método `log()`. O uso de polimorfismo ou um padrão de design como Strategy permitiria estender a funcionalidade sem modificar a classe original."
+  }
+  {
+    "prompt": "function calculateSalary(employeeType, hoursWorked) { if (employeeType == 'full-time') { return hoursWorked * 40; } else if (employeeType == 'part-time') { return hoursWorked * 20; } }",
+    "completion": "Problema: A função `calculateSalary` viola o princípio Open/Closed, pois a adição de novos tipos de funcionários exigiria modificar a função existente. Uma abordagem melhor seria usar classes ou objetos específicos para cada tipo de funcionário, cada um implementando sua própria lógica de cálculo salarial."
+  }
+  {
+    "prompt": "class PaymentProcessor { public void processPayment(String method) { if (method.equals(\"credit_card\")) { processCreditCard(); } else if (method.equals(\"paypal\")) { processPaypal(); } } private void processCreditCard() { /* logic */ } private void processPaypal() { /* logic */ } }",
+    "completion": "Problema: A classe `PaymentProcessor` viola o princípio Open/Closed. Adicionar novos métodos de pagamento exigiria modificar o método `processPayment()`. Um design mais flexível seria usar polimorfismo ou um padrão como Strategy para que cada método de pagamento tenha sua própria classe que implemente a interface de processamento."
+  }
+]  

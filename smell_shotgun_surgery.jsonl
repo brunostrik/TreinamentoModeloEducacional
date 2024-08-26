@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class User { public void updateUserName(String newName) { this.name = newName; updateUserInDatabase(); logUpdate(); notifyAdmin(); } } class Logger { public void logUpdate() { /* lógica de registro */ } } class AdminNotifier { public void notifyAdmin() { /* lógica de notificação */ } } class Database { public void updateUserInDatabase() { /* lógica de atualização no banco de dados */ } }",
+      "completion": "Problema: Ao alterar o nome de um usuário, você precisa modificar a lógica em várias classes (`User`, `Logger`, `AdminNotifier`, `Database`). Isso caracteriza Shotgun Surgery. Essas responsabilidades relacionadas deveriam ser centralizadas para reduzir a dispersão das mudanças."
+    },
+    {
+      "prompt": "class Employee { public void updateEmployeeRecord() { updateDatabase(); sendUpdateEmail(); updateHRSystem(); } } class EmailService { public void sendUpdateEmail() { /* lógica de envio de e-mail */ } } class HRSystem { public void updateHRSystem() { /* lógica de atualização do sistema de RH */ } } class Database { public void updateDatabase() { /* lógica de atualização no banco de dados */ } }",
+      "completion": "Problema: Ao atualizar um registro de funcionário, é necessário modificar a lógica em várias classes. Isso é Shotgun Surgery. A lógica de atualização de registro deveria ser centralizada, como em um `EmployeeService`, para evitar a necessidade de alterações espalhadas."
+    },
+    {
+      "prompt": "class Order { public void cancelOrder() { cancelDatabaseEntry(); refundPayment(); notifyCustomer(); updateInventory(); } } class PaymentProcessor { public void refundPayment() { /* lógica de reembolso */ } } class InventorySystem { public void updateInventory() { /* lógica de atualização de estoque */ } } class CustomerNotifier { public void notifyCustomer() { /* lógica de notificação ao cliente */ } } class Database { public void cancelDatabaseEntry() { /* lógica de cancelamento no banco de dados */ } }",
+      "completion": "Problema: O cancelamento de um pedido exige mudanças em várias classes, caracterizando Shotgun Surgery. A lógica de cancelamento deveria estar encapsulada em uma classe como `OrderService` para evitar a dispersão da funcionalidade."
+    },
+    {
+      "prompt": "class Vehicle { public void performMaintenance() { updateServiceLog(); notifyOwner(); orderReplacementParts(); } } class ServiceLogger { public void updateServiceLog() { /* lógica de registro de serviço */ } } class OwnerNotifier { public void notifyOwner() { /* lógica de notificação ao dono */ } } class PartsOrderSystem { public void orderReplacementParts() { /* lógica de pedido de peças */ } }",
+      "completion": "Problema: Realizar a manutenção de um veículo requer alterações em várias classes, caracterizando Shotgun Surgery. A manutenção deveria ser tratada em uma classe centralizada, como `MaintenanceService`, para reduzir a propagação de mudanças."
+    },
+    {
+      "prompt": "class Booking { public void updateBooking() { updateDatabase(); notifyGuest(); sendInvoice(); } } class GuestNotifier { public void notifyGuest() { /* lógica de notificação ao hóspede */ } } class InvoiceService { public void sendInvoice() { /* lógica de envio de fatura */ } } class Database { public void updateDatabase() { /* lógica de atualização no banco de dados */ } }",
+      "completion": "Problema: Atualizar uma reserva envolve mudanças em várias classes, caracterizando Shotgun Surgery. A lógica de atualização deveria ser centralizada, como em uma classe `BookingService`, para evitar a necessidade de alterações espalhadas."
+    },
+    {
+      "prompt": "class Product { public void updateProductDetails() { updateDatabase(); notifySuppliers(); updateWebsite(); } } class SupplierNotifier { public void notifySuppliers() { /* lógica de notificação aos fornecedores */ } } class WebsiteUpdater { public void updateWebsite() { /* lógica de atualização do site */ } } class Database { public void updateDatabase() { /* lógica de atualização no banco de dados */ } }",
+      "completion": "Problema: Atualizar os detalhes de um produto exige mudanças em várias classes, o que caracteriza Shotgun Surgery. Essa funcionalidade deveria ser centralizada em uma classe como `ProductService`."
+    },
+    {
+      "prompt": "class Account { public void deactivateAccount() { updateDatabase(); disableAccess(); notifyUser(); updateBilling(); } } class AccessManager { public void disableAccess() { /* lógica de desativação de acesso */ } } class UserNotifier { public void notifyUser() { /* lógica de notificação ao usuário */ } } class BillingSystem { public void updateBilling() { /* lógica de atualização do sistema de faturamento */ } } class Database { public void updateDatabase() { /* lógica de atualização no banco de dados */ } }",
+      "completion": "Problema: A desativação de uma conta envolve mudanças em várias classes, o que caracteriza Shotgun Surgery. A desativação deveria ser centralizada em uma classe como `AccountService` para evitar a dispersão da lógica."
+    },
+    {
+      "prompt": "class Project { public void closeProject() { archiveDocuments(); updateDatabase(); notifyTeam(); updateBilling(); } } class DocumentArchiver { public void archiveDocuments() { /* lógica de arquivamento de documentos */ } } class TeamNotifier { public void notifyTeam() { /* lógica de notificação à equipe */ } } class BillingSystem { public void updateBilling() { /* lógica de faturamento */ } } class Database { public void updateDatabase() { /* lógica de atualização no banco de dados */ } }",
+      "completion": "Problema: Fechar um projeto exige modificações em várias classes, o que caracteriza Shotgun Surgery. A lógica de fechamento de projetos deveria ser centralizada em uma classe como `ProjectService`."
+    },
+    {
+      "prompt": "class Customer { public void updateCustomerDetails() { updateDatabase(); notifyCRM(); updateLoyaltyProgram(); sendConfirmationEmail(); } } class CRMNotifier { public void notifyCRM() { /* lógica de notificação ao CRM */ } } class LoyaltyProgram { public void updateLoyaltyProgram() { /* lógica de atualização do programa de fidelidade */ } } class EmailService { public void sendConfirmationEmail() { /* lógica de envio de e-mail */ } } class Database { public void updateDatabase() { /* lógica de atualização no banco de dados */ } }",
+      "completion": "Problema: Atualizar os detalhes de um cliente envolve mudanças em várias classes, caracterizando Shotgun Surgery. A lógica deveria ser centralizada em uma classe como `CustomerService`."
+    },
+    {
+      "prompt": "class Subscription { public void renewSubscription() { updateDatabase(); chargeCustomer(); notifyUser(); updateBillingSystem(); } } class PaymentProcessor { public void chargeCustomer() { /* lógica de cobrança */ } } class UserNotifier { public void notifyUser() { /* lógica de notificação ao usuário */ } } class BillingSystem { public void updateBillingSystem() { /* lógica de atualização do sistema de faturamento */ } } class Database { public void updateDatabase() { /* lógica de atualização no banco de dados */ } }",
+      "completion": "Problema: Renovar uma assinatura envolve modificações em várias classes, caracterizando Shotgun Surgery. A lógica de renovação deveria ser centralizada em uma classe como `SubscriptionService`."
+    }
+  ]
+  

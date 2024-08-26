@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class Report { private String title; private String author; private String temporaryData; public void generateReport() { temporaryData = fetchData(); /* usa temporaryData */ } }",
+      "completion": "Problema: `Report` tem um campo `temporaryData` que é usado apenas no método `generateReport()`. Isso é um exemplo de Temporary Field. `fetchData()` pode ser chamado diretamente dentro de `generateReport()` sem precisar de um campo temporário."
+    },
+    {
+      "prompt": "class CustomerOrder { private double discount; private double totalAmount; public void applyDiscount() { double temporaryDiscount = calculateDiscount(); discount = temporaryDiscount; } }",
+      "completion": "Problema: `CustomerOrder` usa o campo `temporaryDiscount` apenas dentro do método `applyDiscount()`. Esse campo pode ser substituído por uma variável local em `applyDiscount()` para evitar o uso de campos temporários."
+    },
+    {
+      "prompt": "class Invoice { private double subtotal; private double tax; private double temporaryTotal; public void calculateTotal() { temporaryTotal = subtotal + tax; /* usa temporaryTotal */ } }",
+      "completion": "Problema: `Invoice` possui um campo `temporaryTotal` que é usado apenas no método `calculateTotal()`. Esse campo pode ser substituído por uma variável local dentro de `calculateTotal()` para eliminar o campo temporário."
+    },
+    {
+      "prompt": "class UserProfile { private String firstName; private String lastName; private String temporaryAddress; public void updateAddress() { temporaryAddress = getNewAddress(); /* usa temporaryAddress */ } }",
+      "completion": "Problema: `UserProfile` tem o campo `temporaryAddress` que é utilizado apenas no método `updateAddress()`. A função `getNewAddress()` pode ser chamada diretamente dentro de `updateAddress()` sem a necessidade de um campo temporário."
+    },
+    {
+      "prompt": "class TemperatureConverter { private double fahrenheit; private double celsius; private double temporaryResult; public void convert() { temporaryResult = (fahrenheit - 32) * 5 / 9; celsius = temporaryResult; } }",
+      "completion": "Problema: `TemperatureConverter` usa o campo `temporaryResult` apenas no método `convert()`. Esse campo pode ser substituído por uma variável local dentro de `convert()` para evitar o uso de campos temporários."
+    },
+    {
+      "prompt": "class TaskScheduler { private Date startDate; private Date endDate; private Date temporaryDate; public void scheduleTask() { temporaryDate = calculateStartDate(); /* usa temporaryDate */ } }",
+      "completion": "Problema: `TaskScheduler` possui o campo `temporaryDate` que é usado somente em `scheduleTask()`. A variável `temporaryDate` pode ser removida e o valor calculado pode ser usado diretamente no método."
+    },
+    {
+      "prompt": "class Employee { private double baseSalary; private double bonus; private double temporarySalary; public void calculateSalary() { temporarySalary = baseSalary + bonus; /* usa temporarySalary */ } }",
+      "completion": "Problema: `Employee` tem o campo `temporarySalary` que é utilizado apenas no método `calculateSalary()`. Esse campo pode ser substituído por uma variável local dentro do método para eliminar o campo temporário."
+    },
+    {
+      "prompt": "class FileProcessor { private String fileName; private String temporaryData; public void processFile() { temporaryData = readFile(fileName); /* usa temporaryData */ } }",
+      "completion": "Problema: `FileProcessor` usa o campo `temporaryData` apenas no método `processFile()`. A função `readFile(fileName)` pode ser chamada diretamente no método sem a necessidade de um campo temporário."
+    },
+    {
+      "prompt": "class Reservation { private Date checkInDate; private Date checkOutDate; private Date temporaryDate; public void extendReservation() { temporaryDate = calculateNewCheckOutDate(); /* usa temporaryDate */ } }",
+      "completion": "Problema: `Reservation` tem o campo `temporaryDate` que é usado somente no método `extendReservation()`. Esse campo pode ser substituído por uma variável local dentro do método para evitar o uso de campos temporários."
+    },
+    {
+      "prompt": "class Recipe { private List<String> ingredients; private List<String> temporaryList; public void prepareDish() { temporaryList = new ArrayList<>(ingredients); /* usa temporaryList */ } }",
+      "completion": "Problema: `Recipe` usa o campo `temporaryList` apenas no método `prepareDish()`. A lista temporária pode ser criada como uma variável local dentro do método, evitando a necessidade de um campo temporário."
+    }
+  ]
+  

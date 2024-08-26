@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class OrderProcessor { public void processOrder(Order order) { order.getCustomer().getAddress().getZipCode(); } }",
+      "completion": "Problema: `processOrder()` usa uma cadeia de mensagens (`order.getCustomer().getAddress().getZipCode()`). Isso é um exemplo de Message Chains. O método `getZipCode()` poderia ser movido diretamente para `Order` ou `Customer` para evitar a cadeia."
+    },
+    {
+      "prompt": "class FlightBooking { public void bookFlight(Reservation reservation) { reservation.getFlight().getAirline().getTicketingSystem().reserveSeat(); } }",
+      "completion": "Problema: O método `bookFlight()` usa uma cadeia de mensagens longa. Essa lógica de reserva de assento poderia ser encapsulada em um método `reserveSeat()` diretamente na classe `Reservation` para eliminar a cadeia."
+    },
+    {
+      "prompt": "class InvoiceService { public void generateInvoice(Invoice invoice) { invoice.getOrder().getCustomer().getBillingDetails().getCreditCard().charge(); } }",
+      "completion": "Problema: `generateInvoice()` apresenta uma cadeia de chamadas longa. Isso pode ser refatorado, encapsulando a lógica de cobrança em um método `chargeCustomer()` dentro da classe `Invoice`."
+    },
+    {
+      "prompt": "class CarService { public void checkCarStatus(Car car) { car.getEngine().getFuelSystem().getFuelLevel(); } }",
+      "completion": "Problema: O método `checkCarStatus()` usa uma cadeia de mensagens para acessar o nível de combustível. Essa cadeia pode ser encapsulada, fornecendo um método direto como `getFuelLevel()` na classe `Car`."
+    },
+    {
+      "prompt": "class EcommerceService { public void processOrder(Order order) { order.getCart().getCustomer().getPaymentInfo().getCreditCard().processPayment(); } }",
+      "completion": "Problema: O método `processOrder()` apresenta uma cadeia de chamadas que poderia ser encapsulada em métodos como `processCustomerPayment()` diretamente em `Order` ou `Cart`, evitando o acoplamento."
+    },
+    {
+      "prompt": "class LibrarySystem { public void borrowBook(Borrower borrower) { borrower.getLibraryCard().getLibrary().getCatalog().findBook(); } }",
+      "completion": "Problema: `borrowBook()` contém uma cadeia de mensagens que poderia ser reduzida. A lógica de encontrar o livro poderia ser movida para a classe `Borrower` ou `LibraryCard` para evitar a cadeia."
+    },
+    {
+      "prompt": "class EmployeeManager { public void promoteEmployee(Employee employee) { employee.getDepartment().getManager().approvePromotion(); } }",
+      "completion": "Problema: A cadeia de chamadas `employee.getDepartment().getManager().approvePromotion()` pode ser encapsulada em um método `approvePromotion()` diretamente na classe `Employee` ou `Department`."
+    },
+    {
+      "prompt": "class BankService { public void transferMoney(Account fromAccount, Account toAccount) { fromAccount.getBank().getBranch().getManager().approveTransfer(); } }",
+      "completion": "Problema: O método `transferMoney()` usa uma cadeia de mensagens que poderia ser eliminada. A lógica de aprovação de transferência poderia ser encapsulada diretamente em `Account` ou `Bank`."
+    },
+    {
+      "prompt": "class ShoppingCartService { public void checkout(ShoppingCart cart) { cart.getCustomer().getShippingInfo().getShippingAddress().validate(); } }",
+      "completion": "Problema: `checkout()` contém uma cadeia de mensagens que pode ser evitada. A validação do endereço poderia ser movida para `ShoppingCart` ou `Customer` para encapsular essa lógica."
+    },
+    {
+      "prompt": "class ReservationSystem { public void confirmReservation(Reservation reservation) { reservation.getHotel().getManager().getBookingSystem().confirm(); } }",
+      "completion": "Problema: A cadeia de chamadas `reservation.getHotel().getManager().getBookingSystem().confirm()` pode ser encapsulada em um método como `confirm()` diretamente na classe `Reservation` ou `Hotel`."
+    }
+  ]
+  

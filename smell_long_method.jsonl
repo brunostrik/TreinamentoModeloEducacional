@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class ReportGenerator { public void generateReport() { // Gera cabeçalho // Gera corpo do relatório // Calcula estatísticas // Formata dados // Exporta para PDF } }",
+      "completion": "Problema: O método `generateReport()` está fazendo muitas coisas: gerando cabeçalhos, corpo, calculando estatísticas, formatando dados e exportando para PDF. Esse é um exemplo de Long Method. Cada uma dessas responsabilidades deveria ser extraída para métodos menores, como `generateHeader()`, `generateBody()`, `calculateStatistics()`, etc."
+    },
+    {
+      "prompt": "class OrderProcessor { public void processOrder(Order order) { // Verifica estoque // Calcula desconto // Processa pagamento // Gera fatura // Envia notificação } }",
+      "completion": "Problema: O método `processOrder()` realiza muitas tarefas diferentes. Esse é um Long Method que deveria ser refatorado em métodos menores e específicos, como `checkStock()`, `calculateDiscount()`, `processPayment()`, etc."
+    },
+    {
+      "prompt": "class ShoppingCart { public void checkout() { // Valida o carrinho // Calcula o total // Processa o pagamento // Atualiza o estoque // Envia e-mail de confirmação } }",
+      "completion": "Problema: O método `checkout()` faz várias coisas: validação, cálculo, processamento, atualização e envio de e-mail. Esse Long Method deveria ser dividido em métodos menores, como `validateCart()`, `calculateTotal()`, `processPayment()`, etc."
+    },
+    {
+      "prompt": "class InvoiceService { public void generateInvoice(Order order) { // Gera número da fatura // Calcula impostos // Aplica descontos // Gera PDF da fatura // Armazena fatura no banco de dados } }",
+      "completion": "Problema: O método `generateInvoice()` está excessivamente longo, lidando com múltiplas tarefas. Ele deveria ser refatorado em métodos menores, como `generateInvoiceNumber()`, `calculateTaxes()`, `applyDiscounts()`, etc."
+    },
+    {
+      "prompt": "class UserManager { public void registerUser(User user) { // Valida dados do usuário // Cria registro no banco de dados // Envia e-mail de boas-vindas // Cria sessão do usuário // Loga a ação } }",
+      "completion": "Problema: O método `registerUser()` faz muitas coisas diferentes. Esse Long Method deveria ser dividido em métodos menores e mais focados, como `validateUserData()`, `createUserRecord()`, `sendWelcomeEmail()`, etc."
+    },
+    {
+      "prompt": "class PaymentService { public void processPayment(Payment payment) { // Valida detalhes do pagamento // Verifica saldo do cliente // Processa a transação // Envia notificação de pagamento } }",
+      "completion": "Problema: O método `processPayment()` está realizando várias tarefas e se tornou um Long Method. Deveria ser refatorado em métodos menores, como `validatePaymentDetails()`, `checkCustomerBalance()`, `processTransaction()`, etc."
+    },
+    {
+      "prompt": "class ReservationSystem { public void bookRoom(Reservation reservation) { // Verifica disponibilidade // Calcula o preço total // Reserva o quarto // Envia confirmação ao cliente } }",
+      "completion": "Problema: O método `bookRoom()` é um Long Method que lida com várias responsabilidades. Ele deveria ser dividido em métodos menores, como `checkAvailability()`, `calculateTotalPrice()`, `reserveRoom()`, etc."
+    },
+    {
+      "prompt": "class DataProcessor { public void processData(List<Data> dataList) { // Valida dados // Normaliza os dados // Aplica transformações // Gera relatórios // Armazena no banco de dados } }",
+      "completion": "Problema: O método `processData()` está excessivamente longo e realizando muitas tarefas. Ele deveria ser dividido em métodos menores, como `validateData()`, `normalizeData()`, `applyTransformations()`, etc."
+    },
+    {
+      "prompt": "class CustomerService { public void handleCustomerRequest(CustomerRequest request) { // Valida a solicitação // Autentica o cliente // Processa a solicitação // Envia resposta ao cliente // Loga a solicitação } }",
+      "completion": "Problema: O método `handleCustomerRequest()` é um Long Method que realiza múltiplas responsabilidades. Ele deveria ser refatorado em métodos menores, como `validateRequest()`, `authenticateCustomer()`, `processRequest()`, etc."
+    },
+    {
+      "prompt": "class FileUploader { public void uploadFile(File file) { // Valida o arquivo // Gera metadados // Faz upload para o servidor // Atualiza banco de dados // Envia notificação de sucesso } }",
+      "completion": "Problema: O método `uploadFile()` está fazendo muitas tarefas diferentes. Esse Long Method deveria ser refatorado em métodos menores e mais coesos, como `validateFile()`, `generateMetadata()`, `uploadToServer()`, etc."
+    }
+  ]
+  

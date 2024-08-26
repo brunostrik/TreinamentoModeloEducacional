@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class Address { private String street; private String city; private String zipCode; }",
+      "completion": "Problema: `street`, `city`, e `zipCode` são representados como `String`. Isso é um exemplo de Primitive Obsession. Uma classe `ZipCode` ou `Address` poderia encapsular esses valores, garantindo validações e comportamentos mais adequados."
+    },
+    {
+      "prompt": "class Order { private String productId; private int quantity; private double price; }",
+      "completion": "Problema: `productId`, `quantity`, e `price` estão sendo representados por tipos primitivos. Classes como `Product`, `Quantity`, e `Price` poderiam ser criadas para encapsular a lógica de manipulação e validação desses valores."
+    },
+    {
+      "prompt": "class Payment { private String cardNumber; private String expirationDate; private String cvv; }",
+      "completion": "Problema: `cardNumber`, `expirationDate`, e `cvv` são representados como `String`. Criar classes como `CreditCard` ou `CardDetails` encapsularia esses dados de forma mais segura e expressiva."
+    },
+    {
+      "prompt": "class Person { private String firstName; private String lastName; private int age; }",
+      "completion": "Problema: O uso de `String` para `firstName` e `lastName` e de `int` para `age` são exemplos de Primitive Obsession. Classes como `Name` ou `Age` poderiam encapsular lógica de validação e garantir consistência dos dados."
+    },
+    {
+      "prompt": "class TemperatureSensor { private double temperature; }",
+      "completion": "Problema: O uso de `double` para representar `temperature` é um exemplo de Primitive Obsession. Uma classe `Temperature` poderia encapsular a unidade de medida (Celsius, Fahrenheit) e fornecer métodos para conversão e validação."
+    },
+    {
+      "prompt": "class BankAccount { private String accountNumber; private double balance; }",
+      "completion": "Problema: `accountNumber` e `balance` são representados por `String` e `double`, respectivamente. Criar classes como `AccountNumber` e `Money` poderia encapsular validações e lógica associada a esses valores."
+    },
+    {
+      "prompt": "class Invoice { private String invoiceNumber; private double totalAmount; }",
+      "completion": "Problema: O uso de `String` para `invoiceNumber` e `double` para `totalAmount` são exemplos de Primitive Obsession. Classes como `InvoiceNumber` e `Amount` poderiam ser usadas para encapsular a lógica de manipulação e validação desses valores."
+    },
+    {
+      "prompt": "class Phone { private String countryCode; private String areaCode; private String number; }",
+      "completion": "Problema: `countryCode`, `areaCode` e `number` são todos representados por `String`. Uma classe `PhoneNumber` poderia encapsular a validação e formatação correta desses valores."
+    },
+    {
+      "prompt": "class Event { private String startDate; private String endDate; }",
+      "completion": "Problema: O uso de `String` para representar `startDate` e `endDate` é um exemplo de Primitive Obsession. Criar uma classe `DateRange` ou `EventDate` poderia encapsular a lógica de comparação, validação e formatação das datas."
+    },
+    {
+      "prompt": "class ShoppingCart { private List<String> items; private double totalPrice; }",
+      "completion": "Problema: O uso de `String` para representar `items` e `double` para `totalPrice` são exemplos de Primitive Obsession. Uma classe `Item` e `Price` poderiam encapsular essas informações e fornecer comportamentos específicos relacionados."
+    }
+  ]
+  

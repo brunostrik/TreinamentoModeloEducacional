@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class Vehicle<T> { public T move(T movementType) { /* Lógica de movimentação genérica */ return movementType; } }",
+      "completion": "Problema: A classe `Vehicle` usa o tipo genérico `T` para algo que provavelmente não precisa ser genérico, como o tipo de movimentação. Isso é uma generalidade especulativa, já que não há necessidade imediata de suportar múltiplos tipos de movimentação. Uma abordagem específica seria mais simples e direta."
+    },
+    {
+      "prompt": "interface IOperation<T> { void execute(T data); } class PrintOperation implements IOperation<String> { public void execute(String data) { System.out.println(data); } }",
+      "completion": "Problema: A interface `IOperation<T>` foi generalizada de maneira especulativa. Neste caso, `PrintOperation` só lida com `String`, e não há necessidade de uma generalização tão ampla. O design poderia ser simplificado removendo a generalidade desnecessária."
+    },
+    {
+      "prompt": "class ShapeFactory<T> { public T createShape() { // lógica de criação genérica return null; } }",
+      "completion": "Problema: A classe `ShapeFactory` está utilizando generics de maneira especulativa, sem uma necessidade clara de suportar diferentes tipos de formas. Isso adiciona complexidade desnecessária ao código. Um design mais simples específico para tipos de forma seria mais apropriado."
+    },
+    {
+      "prompt": "interface IDataProcessor<T> { void process(T data); } class StringDataProcessor implements IDataProcessor<String> { public void process(String data) { /* Lógica de processamento de strings */ } }",
+      "completion": "Problema: A interface `IDataProcessor<T>` foi generalizada sem um motivo claro. Neste contexto, o processador só lida com `String`, tornando a generalidade desnecessária e especulativa. O design poderia ser simplificado focando em tipos específicos."
+    },
+    {
+      "prompt": "abstract class AbstractManager { public abstract void manage(String resource); } class ResourceManager extends AbstractManager { @Override public void manage(String resource) { /* Lógica de gerenciamento */ } }",
+      "completion": "Problema: A classe `AbstractManager` foi introduzida sem nenhuma outra implementação ou necessidade de abstração adicional. Isso é uma generalidade especulativa e introduz uma camada extra de complexidade desnecessária. Remover a classe abstrata simplificaria o design."
+    },
+    {
+      "prompt": "class PaymentStrategy { public void pay(String method) { /* lógica de pagamento genérica */ } }",
+      "completion": "Problema: A classe `PaymentStrategy` foi criada com a intenção de suportar múltiplas estratégias de pagamento, mas no momento só implementa um único método genérico. Essa generalidade especulativa poderia ser simplificada até que realmente existam múltiplas estratégias a serem suportadas."
+    },
+    {
+      "prompt": "class DataExporter<T> { public void export(T data) { /* Exportação genérica */ } }",
+      "completion": "Problema: A classe `DataExporter<T>` usa generics de forma especulativa, sem uma necessidade real de lidar com diferentes tipos de dados. O design seria mais simples e mais fácil de manter se focasse em tipos de dados específicos."
+    },
+    {
+      "prompt": "class Command<T> { public void execute(T commandData) { /* Lógica genérica para comandos */ } }",
+      "completion": "Problema: A classe `Command<T>` introduz generalidade de forma especulativa, sem que haja uma necessidade real de suportar diferentes tipos de dados de comando. O design poderia ser simplificado até que múltiplos tipos de comando sejam realmente necessários."
+    },
+    {
+      "prompt": "interface IRepository<T> { T findById(int id); void save(T entity); } class UserRepository implements IRepository<User> { public User findById(int id) { return null; } public void save(User entity) { /* lógica de salvamento */ } }",
+      "completion": "Problema: A interface `IRepository<T>` é uma abstração excessivamente genérica, especulando sobre a necessidade de um repositório para múltiplos tipos. No momento, apenas um repositório de `User` existe. O design poderia ser simplificado até que mais repositórios sejam necessários."
+    },
+    {
+      "prompt": "class Logger<T> { public void log(T message) { /* Lógica de log genérica */ } }",
+      "completion": "Problema: A classe `Logger<T>` introduz generalidade de maneira especulativa, sem necessidade de suportar múltiplos tipos de mensagens. O design seria mais claro e simples se focasse em tipos específicos, como `String`, até que houvesse necessidade de outros tipos."
+    }
+  ]
+  

@@ -1,0 +1,43 @@
+[
+    {
+      "prompt": "class PaymentProcessor { public void processPayment(String method) { switch (method) { case 'creditCard': processCreditCard(); break; case 'paypal': processPaypal(); break; default: throw new IllegalArgumentException('Invalid payment method'); } } }",
+      "completion": "Problema: O `switch` baseado no método de pagamento indica um code smell. O polimorfismo pode ser usado, onde `CreditCardPayment` e `PaypalPayment` implementam uma interface `PaymentMethod`, eliminando a necessidade do `switch`."
+    },
+    {
+      "prompt": "class ShapeDrawer { public void drawShape(String shapeType) { switch (shapeType) { case 'circle': drawCircle(); break; case 'square': drawSquare(); break; default: throw new IllegalArgumentException('Unknown shape type'); } } }",
+      "completion": "Problema: O uso do `switch` para decidir qual forma desenhar é um code smell. Isso pode ser substituído por polimorfismo, onde `Circle` e `Square` implementam uma interface `Shape` com um método `draw()`."
+    },
+    {
+      "prompt": "class NotificationSender { public void sendNotification(String type) { switch (type) { case 'email': sendEmail(); break; case 'sms': sendSms(); break; default: throw new IllegalArgumentException('Unknown notification type'); } } }",
+      "completion": "Problema: O `switch` para decidir o tipo de notificação a ser enviada é um code smell. Interfaces como `Notification` poderiam ser criadas com implementações específicas, como `EmailNotification` e `SmsNotification`, eliminando a necessidade de `switch`."
+    },
+    {
+      "prompt": "class EmployeeManager { public void payEmployee(String employeeType) { switch (employeeType) { case 'fullTime': payFullTimeEmployee(); break; case 'partTime': payPartTimeEmployee(); break; default: throw new IllegalArgumentException('Unknown employee type'); } } }",
+      "completion": "Problema: O `switch` com base no tipo de funcionário é um code smell. O polimorfismo pode ser usado, onde `FullTimeEmployee` e `PartTimeEmployee` implementam uma interface `Employee` com um método `pay()`."
+    },
+    {
+      "prompt": "class DocumentPrinter { public void printDocument(String docType) { switch (docType) { case 'pdf': printPdf(); break; case 'word': printWord(); break; default: throw new IllegalArgumentException('Unknown document type'); } } }",
+      "completion": "Problema: O uso do `switch` para decidir o tipo de documento a ser impresso é um code smell. Criar uma interface `Document` com implementações como `PdfDocument` e `WordDocument` permitiria eliminar o `switch`."
+    },
+    {
+      "prompt": "class VehicleService { public void serviceVehicle(String vehicleType) { switch (vehicleType) { case 'car': serviceCar(); break; case 'motorcycle': serviceMotorcycle(); break; default: throw new IllegalArgumentException('Unknown vehicle type'); } } }",
+      "completion": "Problema: O `switch` para decidir o tipo de veículo a ser reparado é um code smell. Classes como `Car` e `Motorcycle` poderiam implementar uma interface `Vehicle` com um método `service()`."
+    },
+    {
+      "prompt": "class OrderProcessor { public void processOrder(String orderType) { switch (orderType) { case 'online': processOnlineOrder(); break; case 'inStore': processInStoreOrder(); break; default: throw new IllegalArgumentException('Unknown order type'); } } }",
+      "completion": "Problema: O uso do `switch` com base no tipo de pedido é um code smell. Interfaces como `Order` com implementações específicas, como `OnlineOrder` e `InStoreOrder`, eliminariam a necessidade do `switch`."
+    },
+    {
+      "prompt": "class Game { public void playGame(String gameType) { switch (gameType) { case 'chess': playChess(); break; case 'checkers': playCheckers(); break; default: throw new IllegalArgumentException('Unknown game type'); } } }",
+      "completion": "Problema: O `switch` para decidir qual jogo jogar é um code smell. Classes como `Chess` e `Checkers` poderiam implementar uma interface `Game` com um método `play()`."
+    },
+    {
+      "prompt": "class AnimalSound { public void makeSound(String animalType) { switch (animalType) { case 'dog': bark(); break; case 'cat': meow(); break; default: throw new IllegalArgumentException('Unknown animal type'); } } }",
+      "completion": "Problema: O uso de `switch` para decidir o som que o animal faz é um code smell. Classes como `Dog` e `Cat` poderiam implementar uma interface `Animal` com um método `makeSound()`."
+    },
+    {
+      "prompt": "class ShippingCalculator { public double calculateShipping(String shippingMethod) { switch (shippingMethod) { case 'standard': return calculateStandardShipping(); case 'express': return calculateExpressShipping(); default: throw new IllegalArgumentException('Unknown shipping method'); } } }",
+      "completion": "Problema: O `switch` baseado no método de envio é um code smell. Uma interface `ShippingMethod` com implementações como `StandardShipping` e `ExpressShipping` eliminaria a necessidade de `switch`."
+    }
+  ]
+  
