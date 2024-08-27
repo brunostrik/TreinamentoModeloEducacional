@@ -2,39 +2,39 @@
     {
         "prompt": "class Bird { public void fly() { System.out.println(\"Flying\"); } } class Ostrich extends Bird { @Override public void fly() { throw new UnsupportedOperationException(\"Ostriches can't fly\"); } }",
         "completion": "Problema: A subclasse `Ostrich` viola o Princípio de Substituição de Liskov, pois ao substituir `Bird`, ela lança uma exceção quando o método `fly()` é chamado. Como a superclasse `Bird` espera que todos os pássaros possam voar, isso quebra o contrato estabelecido. Recomenda-se ajustar o design para não incluir `Ostrich` na hierarquia de classes que assume a habilidade de voar."
-    }
+    },
     {
         "prompt": "class Rectangle { public void setWidth(int width) { this.width = width; } public void setHeight(int height) { this.height = height; } } class Square extends Rectangle { @Override public void setWidth(int width) { this.width = width; this.height = width; } @Override public void setHeight(int height) { this.width = height; this.height = height; } }",
         "completion": "Problema: A subclasse `Square` viola o Princípio de Substituição de Liskov. Ao substituir `Rectangle`, ela quebra a expectativa de que largura e altura possam ser ajustadas de maneira independente. Isso pode causar problemas em códigos que esperam o comportamento normal de `Rectangle`. Considere usar uma abordagem diferente para modelar quadrados e retângulos."
-    }
+    },
     {
         "prompt": "class Vehicle { public void startEngine() { System.out.println(\"Engine started\"); } } class Bicycle extends Vehicle { @Override public void startEngine() { throw new UnsupportedOperationException(\"Bicycles don't have engines\"); } }",
         "completion": "Problema: A subclasse `Bicycle` viola o Princípio de Substituição de Liskov porque não pode cumprir o contrato esperado de `Vehicle`, que assume que todos os veículos têm motores. O uso de uma exceção quebra o comportamento esperado. Considere separar a hierarquia de classes para que bicicletas não sejam tratadas como veículos motorizados."
-    }
+    },
     {
         "prompt": "class PaymentProcessor { public void processPayment(double amount) { System.out.println(\"Payment processed: \" + amount); } } class FreePlanPaymentProcessor extends PaymentProcessor { @Override public void processPayment(double amount) { if (amount > 0) { throw new UnsupportedOperationException(\"Free plans do not process payments\"); } } }",
         "completion": "Problema: A subclasse `FreePlanPaymentProcessor` viola o Princípio de Substituição de Liskov, pois lança uma exceção se um pagamento for processado. Isso quebra o contrato esperado pela superclasse, que assume que todos os planos podem processar pagamentos. Uma solução seria reestruturar o design para que planos gratuitos não sejam tratados como processadores de pagamento."
-    }
+    },
     {
         "prompt": "class Employee { public double getBonus() { return baseSalary * 0.1; } } class Intern extends Employee { @Override public double getBonus() { throw new UnsupportedOperationException(\"Interns do not receive bonuses\"); } }",
         "completion": "Problema: A subclasse `Intern` viola o Princípio de Substituição de Liskov ao lançar uma exceção no método `getBonus()`. Isso quebra o contrato da classe `Employee`, que assume que todos os funcionários podem receber um bônus. Considere tratar estagiários de uma maneira diferente para evitar a violação do LSP."
-    }
+    },
     {
         "prompt": "class Order { public void process() { System.out.println(\"Order processed\"); } } class PreOrder extends Order { @Override public void process() { throw new UnsupportedOperationException(\"Pre-orders cannot be processed yet\"); } }",
         "completion": "Problema: A subclasse `PreOrder` viola o Princípio de Substituição de Liskov porque ela quebra o comportamento esperado de `Order`. O método `process()` da superclasse assume que todos os pedidos podem ser processados, o que não é o caso para `PreOrder`. Recomenda-se criar uma abordagem separada para pedidos que ainda não podem ser processados."
-    }
+    },
     {
         "prompt": "class Animal { public void makeSound() { System.out.println(\"Some generic sound\"); } } class MuteAnimal extends Animal { @Override public void makeSound() { throw new UnsupportedOperationException(\"This animal cannot make sound\"); } }",
         "completion": "Problema: A subclasse `MuteAnimal` viola o Princípio de Substituição de Liskov, pois lança uma exceção quando o método `makeSound()` é chamado. A superclasse `Animal` espera que todos os animais possam fazer sons, o que não é cumprido por `MuteAnimal`. Uma solução seria modelar `MuteAnimal` de uma maneira diferente."
-    }
+    },
     {
         "prompt": "class Database { public void connect() { System.out.println(\"Connected to database\"); } } class ReadOnlyDatabase extends Database { @Override public void connect() { throw new UnsupportedOperationException(\"Cannot connect to read-only database\"); } }",
         "completion": "Problema: A subclasse `ReadOnlyDatabase` viola o Princípio de Substituição de Liskov, pois ela lança uma exceção no método `connect()`. Isso quebra o contrato da superclasse `Database`, que assume que todas as bases de dados podem ser conectadas. Recomenda-se redesenhar a hierarquia para separar bases de dados que podem e não podem ser conectadas."
-    }
+    },
     {
         "prompt": "class File { public void write(String data) { System.out.println(\"Writing data to file\"); } } class ReadOnlyFile extends File { @Override public void write(String data) { throw new UnsupportedOperationException(\"Cannot write to read-only file\"); } }",
         "completion": "Problema: A subclasse `ReadOnlyFile` viola o Princípio de Substituição de Liskov, pois lança uma exceção quando o método `write()` é chamado. Isso quebra o comportamento esperado da classe `File`. Considere redesenhar a hierarquia de classes para que arquivos somente leitura não sejam tratados como arquivos normais."
-    }
+    },
     {
         "prompt": "class Vehicle { public void drive() { System.out.println(\"Driving the vehicle\"); } } class Boat extends Vehicle { @Override public void drive() { throw new UnsupportedOperationException(\"Boats do not drive on roads\"); } }",
         "completion": "Problema: A subclasse `Boat` viola o Princípio de Substituição de Liskov, pois lança uma exceção ao tentar dirigir o veículo. Isso quebra o contrato da superclasse `Vehicle`, que assume que todos os veículos podem ser dirigidos. Uma solução seria criar uma hierarquia separada para veículos aquáticos."

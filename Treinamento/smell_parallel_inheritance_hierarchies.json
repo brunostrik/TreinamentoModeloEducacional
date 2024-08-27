@@ -2,39 +2,39 @@
   {
     "prompt": "class Vehicle { } class Car extends Vehicle { } class Bike extends Vehicle { } class VehicleService { } class CarService extends VehicleService { } class BikeService extends VehicleService { }",
     "completion": "Problema: O code smell de Parallel Inheritance Hierarchies está presente. Cada vez que uma nova classe `Vehicle` é adicionada, uma correspondente `VehicleService` também deve ser criada, o que duplica o esforço e torna o código mais difícil de manter. Considere unificar a lógica de serviço ou usar composição para evitar paralelismo na hierarquia."
-  }
+  },
   {
     "prompt": "class Animal { } class Dog extends Animal { } class Cat extends Animal { } class AnimalTrainer { } class DogTrainer extends AnimalTrainer { } class CatTrainer extends AnimalTrainer { }",
     "completion": "Problema: A hierarquia de classes `Animal` e `AnimalTrainer` mostram Parallel Inheritance Hierarchies. Para cada novo `Animal`, há uma nova classe `Trainer` correspondente. Isso cria duplicação desnecessária e aumenta a complexidade. Considere usar uma abordagem mais genérica para treinar diferentes animais."
-  }
+  },
   {
     "prompt": "class Product { } class Electronics extends Product { } class Food extends Product { } class ProductPricing { } class ElectronicsPricing extends ProductPricing { } class FoodPricing extends ProductPricing { }",
     "completion": "Problema: O code smell de Parallel Inheritance Hierarchies é evidente, pois a adição de novos tipos de `Product` requer a criação de uma classe correspondente em `ProductPricing`. Uma abordagem mais modular ou orientada a composição pode resolver esse problema."
-  }
+  },
   {
     "prompt": "class Document { } class PDFDocument extends Document { } class WordDocument extends Document { } class DocumentConverter { } class PDFConverter extends DocumentConverter { } class WordConverter extends DocumentConverter { }",
     "completion": "Problema: O problema de Parallel Inheritance Hierarchies ocorre quando novas subclasses de `Document` requerem a criação de novas subclasses correspondentes de `DocumentConverter`. Isso pode ser resolvido com estratégias de conversão mais flexíveis ou uso de interfaces em vez de criar classes paralelas."
-  }
+  },
   {
     "prompt": "class Shape { } class Circle extends Shape { } class Square extends Shape { } class ShapeRenderer { } class CircleRenderer extends ShapeRenderer { } class SquareRenderer extends ShapeRenderer { }",
     "completion": "Problema: A hierarquia de classes `Shape` e `ShapeRenderer` demonstra Parallel Inheritance Hierarchies. Para cada novo `Shape`, há uma classe `Renderer` correspondente. Considere uma abordagem genérica para renderização de formas para evitar essa duplicação paralela."
-  }
+  },
   {
     "prompt": "class Account { } class SavingsAccount extends Account { } class CheckingAccount extends Account { } class AccountValidator { } class SavingsAccountValidator extends AccountValidator { } class CheckingAccountValidator extends AccountValidator { }",
     "completion": "Problema: O code smell de Parallel Inheritance Hierarchies está presente aqui, pois cada novo tipo de `Account` exige a criação de uma nova classe `Validator` correspondente. Considere usar estratégias ou padrões como o Strategy para unificar a validação."
-  }
+  },
   {
     "prompt": "class Employee { } class Manager extends Employee { } class Developer extends Employee { } class EmployeeReport { } class ManagerReport extends EmployeeReport { } class DeveloperReport extends EmployeeReport { }",
     "completion": "Problema: As classes `Employee` e `EmployeeReport` sofrem de Parallel Inheritance Hierarchies, pois cada nova subclasse de `Employee` necessita de uma correspondente `Report`. Isso cria redundância e aumenta a manutenção. Considere uma abordagem genérica para relatórios."
-  }
+  },
   {
     "prompt": "class PaymentMethod { } class CreditCard extends PaymentMethod { } class PayPal extends PaymentMethod { } class PaymentProcessor { } class CreditCardProcessor extends PaymentProcessor { } class PayPalProcessor extends PaymentProcessor { }",
     "completion": "Problema: O code smell de Parallel Inheritance Hierarchies aparece aqui porque cada novo tipo de `PaymentMethod` exige a criação de um novo `PaymentProcessor` correspondente. Considere usar um design mais flexível ou unificar o processamento de pagamento."
-  }
+  },
   {
     "prompt": "class Game { } class Football extends Game { } class Basketball extends Game { } class GameRules { } class FootballRules extends GameRules { } class BasketballRules extends GameRules { }",
     "completion": "Problema: O Parallel Inheritance Hierarchies é evidente, pois cada novo tipo de `Game` requer uma nova classe de `GameRules`. Isso pode ser melhorado usando uma abordagem mais flexível, como configuração baseada em regras."
-  }
+  },
   {
     "prompt": "class Vehicle { } class Truck extends Vehicle { } class Motorcycle extends Vehicle { } class VehicleInsurance { } class TruckInsurance extends VehicleInsurance { } class MotorcycleInsurance extends VehicleInsurance { }",
     "completion": "Problema: Parallel Inheritance Hierarchies ocorre aqui, com cada novo tipo de `Vehicle` exigindo uma nova subclasse correspondente de `VehicleInsurance`. O uso de composição ou estratégias de seguro flexíveis pode ajudar a resolver essa duplicação desnecessária."

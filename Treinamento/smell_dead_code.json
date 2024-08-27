@@ -2,39 +2,39 @@
   {
     "prompt": "class User { public void login(String username, String password) { // Código de login ativo } private void oldLoginMethod(String username) { // Método obsoleto não mais utilizado } }",
     "completion": "Problema: O método `oldLoginMethod` é código morto, pois não é mais utilizado ou chamado em lugar nenhum do sistema. Esse código aumenta a complexidade desnecessária e deveria ser removido para melhorar a clareza e manutenção do código."
-  }
+  },
   {
     "prompt": "function calculate(a, b) { return a + b; } function oldCalculate(a, b) { return a * b; }",
     "completion": "Problema: A função `oldCalculate` é código morto, pois não é chamada em lugar algum no código e serve apenas para confundir. Recomenda-se remover essa função para evitar confusão e reduzir a complexidade."
-  }
+  },
   {
     "prompt": "class OrderProcessor { public void processOrder(Order order) { // Código ativo } public void legacyProcessOrder(Order order) { // Código legado não mais utilizado } }",
     "completion": "Problema: O método `legacyProcessOrder` é código morto, já que não é chamado em nenhum lugar e foi substituído pelo método `processOrder`. Ele deveria ser removido para reduzir a complexidade do sistema."
-  }
+  },
   {
     "prompt": "def calculate_discount(price): if price > 100: return price * 0.1 else: return price * 0.05 def unused_function(): pass",
     "completion": "Problema: A função `unused_function()` é código morto, pois nunca é chamada. Isso aumenta a complexidade e deve ser removido para melhorar a legibilidade e a manutenção do código."
-  }
+  },
   {
     "prompt": "public class Calculator { public int add(int a, int b) { return a + b; } private int subtract(int a, int b) { return a - b; } }",
     "completion": "Problema: O método `subtract` é código morto, pois nunca é chamado em lugar nenhum do código. Para manter o código limpo e fácil de manter, ele deveria ser removido."
-  }
+  },
   {
     "prompt": "class Customer { public void updateProfile(String newProfileData) { // Atualização de perfil ativa } private void legacyUpdateProfile(String oldProfileData) { // Código legado não utilizado } }",
     "completion": "Problema: O método `legacyUpdateProfile` é código morto, pois não é mais utilizado. Deveria ser removido para reduzir a complexidade do código e facilitar a manutenção futura."
-  }
+  },
   {
     "prompt": "def fetch_data(): # Função ativa que busca dados return [] def unused_fetch_data(): # Código legado que não é mais utilizado return {}",
     "completion": "Problema: A função `unused_fetch_data()` é código morto, pois não é chamada em nenhum lugar. Para melhorar a clareza do código e evitar confusões, ela deveria ser removida."
-  }
+  },
   {
     "prompt": "class Game { public void startGame() { // Lógica ativa do jogo } public void debugGame() { // Método de depuração não mais usado } }",
     "completion": "Problema: O método `debugGame` é código morto, já que não é mais utilizado para depuração. Esse código deve ser removido para melhorar a clareza e reduzir a complexidade desnecessária."
-  }
+  },
   {
     "prompt": "def process_order(order): # Função ativa para processar pedidos pass def legacy_process_order(order): # Função legada não mais usada pass",
     "completion": "Problema: A função `legacy_process_order()` é código morto e deveria ser removida, pois não é mais utilizada e apenas adiciona complexidade desnecessária ao código."
-  }
+  },
   {
     "prompt": "class PaymentGateway { public void processPayment() { // Método ativo de processamento de pagamento } private void legacyProcessPayment() { // Código legado de processamento não utilizado } }",
     "completion": "Problema: O método `legacyProcessPayment` é código morto, já que não é chamado em lugar algum no código. Ele deve ser removido para manter o código limpo e fácil de manter."
