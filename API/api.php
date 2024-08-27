@@ -1,6 +1,5 @@
 <?php
 require 'vendor/autoload.php';
-require 'config.php';
 
 use GuzzleHttp\Client;
 
@@ -11,6 +10,11 @@ $apiUrl = 'https://api.openai.com/v1/chat/completions';
 $apiKey = '?'; 
 $model = 'gpt-4o-mini';
 
+$host = 'localhost';
+$db = 'strikcom_mestrado';
+$user = 'strikcom_mestrado';
+$pass = 'mestradoUEL';
+
 $codigo = $_POST['codigo'] ?? '';
 $chave = $_POST['chave'] ?? '';
 
@@ -20,11 +24,15 @@ if (!$codigo || !$chave) {
 }
 
 // Verificação da chave no banco de dados
-$stmt = $pdo->prepare("SELECT * FROM chaves WHERE chave = :chave");
-$stmt->execute([':chave' => $chave]);
-$chaveData = $stmt->fetch();
+$conn = new mysqli($host, $user, $pass, $db);
+if ($conn->connect_error) {
+    echo("Erro: " . $conn->connect_error);
+    exit;
+} 
+$sql = "SELECT * FROM chaves WHERE chave = '$chave'";
+$result = $conn->query($sql);
 
-if (!$chaveData) {
+if ($result->num_rows <= 0) {
     echo ("Erro: Chave inválida.");
     exit;
 }
@@ -52,15 +60,17 @@ try {
 
     $body = json_decode($response->getBody(), true);
     $chatResponse = $body['choices'][0]['message']['content'] ?? '';
-
-    $stmt = $pdo->prepare("INSERT INTO requisicoes (chave, codigo, resposta) VALUES (:chave, :codigo, :resposta)");
-    $stmt->execute([
-        ':chave' => $chave,
-        ':codigo' => $codigo,
-        ':resposta' => $chatResponse
-    ]);
-
-    echo ($chatResponse);
+    $resp = htmlspecialchars($chatResponse);
+    $cod = htmlspecialchars($codigo);
+    $sql = "INSERT INTO requisicoes (chave, codigo, resposta) VALUES ('$chave', '$cod', '$resp')";
+    //echo $sql;
+    if ($conn->query($sql) === TRUE) {
+        echo ($chatResponse);
+      } else {
+        echo "Erro: " . $sql . " - " . $conn->error;
+      }
+      
+      $conn->close(); 
 } catch (Exception $e) {
     echo ('Erro: ' . $e->getMessage());
 }

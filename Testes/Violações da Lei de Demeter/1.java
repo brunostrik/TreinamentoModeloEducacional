@@ -1,0 +1,1 @@
+customer.getOrder().getInvoice().getTotal();

@@ -1,0 +1,1 @@
+player.getGame().getScore().increase();

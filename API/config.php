@@ -1,8 +1,8 @@
 <?php
-$host = 'strik.com.br';
+$host = 'localhost';
 $db = 'strikcom_mestrado';
 $user = 'strikcom_mestrado';
-$pass = '?';
+$pass = 'mestradoUEL';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
