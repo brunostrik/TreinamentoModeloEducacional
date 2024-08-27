@@ -8,12 +8,13 @@ header('Content-Type: application/json');
 $client = new Client();
 $apiUrl = 'https://api.openai.com/v1/chat/completions';
 $apiKey = '?'; 
-$model = 'gpt-4o-mini';
+$model = 'ft:gpt-4o-mini-2024-07-18:personal:segunda-tentativa:A0pimeji'; //TREINADO
+//$model = 'gpt-4o-mini'; //VANILLA
 
 $host = 'localhost';
 $db = 'strikcom_mestrado';
 $user = 'strikcom_mestrado';
-$pass = 'mestradoUEL';
+$pass = '?';
 
 $codigo = $_POST['codigo'] ?? '';
 $chave = $_POST['chave'] ?? '';
