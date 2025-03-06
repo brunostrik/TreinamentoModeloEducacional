@@ -1,0 +1,62 @@
+{
+  "name": "codebuddycsedu",
+  "displayName": "CodeBuddy for CS Education",
+  "description": "AI Educational Helper for Java ",
+  "publisher": "brunostrikti",
+  "version": "0.0.4",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "icon": "logomoji.png",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "luxai.analyze",
+        "title": "Analisar com CodeBuddy 👨‍💻"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "luxai.analyze",
+          "when": "resourceLangId == java",
+          "group": "navigation@1000"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "luxai.analyze",
+          "when": "editorLangId == java",
+          "group": "navigation@1000"
+        }
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brunostrik/Lux-AI.git"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.8",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.94.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.11.1"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "marked": "^14.1.4",
+    "openai": "^4.67.3"
+  }
+}

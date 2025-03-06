@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeBuddy</title>
+
+    <!-- Styles for the page -->
+    <style>
+        /* Use the VSCode color variables for background and text */
+        body {
+            background-color: var(--vscode-editor-background);
+            color: var(--vscode-editor-foreground);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Header section styling */
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: var(--vscode-sideBar-background);
+            border-bottom: 1px solid var(--vscode-sideBar-border);
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--vscode-sideBarTitle-foreground);
+        }
+
+        /* Loading bar section */
+        .loading-bar {
+            width: 100%;
+            height: 4px;
+            background-color: var(--vscode-statusBar-background);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--vscode-statusBar-foreground);
+            animation: loading 2s infinite;
+        }
+        .visivel{
+            display: block;
+        }
+        .invisivel{
+            display: none;
+        }
+
+        @keyframes loading {
+            0% {
+                left: -100%;
+            }
+            50% {
+                left: 0;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* Content styling for paragraphs */
+        .content {
+            padding: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section with logo and title -->
+    <div class="header">
+        <div class="title">👨‍💻 CodeBuddy</div>
+    </div>
+
+    <!-- Infinite loading bar -->
+    <div class="{{loadBar}} loading-bar" id="loading-bar"></div>
+
+    <!-- Main content with paragraphs -->
+    <div class="content">{{apiResponse}}</div>
+</body>
+</html>
