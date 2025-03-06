@@ -1,0 +1,31 @@
+public class Invoice {
+    private double amount;
+    private String customer;
+
+    // Methods related to invoice properties
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public String getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
+    // Method that violates SRP by handling invoice printing
+    public void printInvoice() {
+        // Code to print the invoice
+    }
+
+    // Method that violates SRP by handling invoice saving
+    public void saveToFile() {
+        // Code to save invoice to file
+    }
+}

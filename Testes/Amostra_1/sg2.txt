@@ -1,0 +1,38 @@
+public class SpeculativeGeneralityExample2 {
+
+    public static void main(String[] args) {
+        Shape shape = new Circle();
+        shape.draw();
+
+        shape = new Square();
+        shape.draw();
+    }
+}
+
+// Base class that is overly general and not really needed in this context
+abstract class Shape {
+    public abstract void draw();
+
+    // Speculative methods that are not used but are included in anticipation of future needs
+    public void resize(int newSize) {
+        System.out.println("Resizing to " + newSize);
+    }
+
+    public void rotate(int angle) {
+        System.out.println("Rotating by " + angle + " degrees");
+    }
+}
+
+class Circle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+class Square extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a square");
+    }
+}

@@ -1,0 +1,19 @@
+class Car {
+    public void startEngine() {
+        System.out.println("Engine started");
+    }
+}
+
+class ElectricCar extends Car {
+    @Override
+    public void startEngine() {
+        throw new UnsupportedOperationException("Electric cars don't have engines");
+    }
+}
+
+public class Example3 {
+    public static void main(String[] args) {
+        Car myCar = new ElectricCar();
+        myCar.startEngine(); // This will throw an exception, violating LSP
+    }
+}

@@ -1,0 +1,28 @@
+public class Exemplo1 {
+    public static void main(String[] args) {
+        Pessoa pessoa = new Pessoa("João", 30);
+        if (pessoa.getIdade() > 18) {
+            System.out.println(pessoa.getNome() + " é maior de idade.");
+        } else {
+            System.out.println(pessoa.getNome() + " é menor de idade.");
+        }
+    }
+}
+
+class Pessoa {
+    private String nome;
+    private int idade;
+
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+}

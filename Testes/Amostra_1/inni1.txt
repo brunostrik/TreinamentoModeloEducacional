@@ -1,0 +1,65 @@
+// Classe Address
+public class Address {
+    private String street;
+    private String city;
+    private String state;
+    private String zipCode;
+
+    public Address(String street, String city, String state, String zipCode) {
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+}
+
+// Classe Person
+public class Person {
+    private String name;
+    private Address address;
+
+    public Person(String name, Address address) {
+        this.name = name;
+        this.address = address;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+}
+
+// Classe Order
+public class Order {
+    private Person person;
+    private double amount;
+
+    public Order(Person person, double amount) {
+        this.person = person;
+        this.amount = amount;
+    }
+
+    public String getShippingAddress() {
+        Address address = person.getAddress();
+        return address.getStreet() + ", " + address.getCity() + ", " + address.getState() + " " + address.getZipCode();
+    }
+}

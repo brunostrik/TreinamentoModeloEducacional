@@ -1,0 +1,148 @@
+// Exemplo de Shotgun Surgery em Java
+
+// A classe Employee representa um funcionário em um sistema de gerenciamento de funcionários
+public class Employee {
+    private String employeeId;
+    private String name;
+    private double salary;
+
+    public Employee(String employeeId, String name, double salary) {
+        this.employeeId = employeeId;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    // Método para aplicar aumento de salário ao funcionário
+    public void applySalaryIncrease(double increasePercentage) {
+        salary += salary * (increasePercentage / 100);
+        System.out.println("Aumento de " + increasePercentage + "% aplicado ao funcionário " + name);
+    }
+
+    // Método para calcular o bônus do funcionário
+    public double calculateBonus() {
+        return salary * 0.1; // 10% de bônus
+    }
+
+    // Método para enviar notificação de avaliação anual ao funcionário
+    public void sendAnnualReviewNotification() {
+        // Lógica para enviar notificação
+        System.out.println("Notificação de avaliação anual enviada para o funcionário " + name);
+    }
+}
+
+// A classe Department representa um departamento no sistema
+public class Department {
+    private String departmentId;
+    private String name;
+
+    public Department(String departmentId, String name) {
+        this.departmentId = departmentId;
+        this.name = name;
+    }
+
+    public String getDepartmentId() {
+        return departmentId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    // Método para aplicar aumento de orçamento ao departamento
+    public void applyBudgetIncrease(double increasePercentage) {
+        // Lógica para aplicar aumento de orçamento
+        System.out.println("Aumento de orçamento de " + increasePercentage + "% aplicado ao departamento " + name);
+    }
+
+    // Método para calcular o orçamento anual do departamento
+    public double calculateAnnualBudget() {
+        // Lógica para calcular orçamento anual
+        return 100000; // Valor fictício
+    }
+
+    // Método para enviar notificação de reunião ao departamento
+    public void sendMeetingNotification() {
+        // Lógica para enviar notificação
+        System.out.println("Notificação de reunião enviada para o departamento " + name);
+    }
+}
+
+// A classe Project representa um projeto no sistema
+public class Project {
+    private String projectId;
+    private String name;
+    private double budget;
+
+    public Project(String projectId, String name, double budget) {
+        this.projectId = projectId;
+        this.name = name;
+        this.budget = budget;
+    }
+
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getBudget() {
+        return budget;
+    }
+
+    // Método para aplicar aumento de orçamento ao projeto
+    public void applyBudgetIncrease(double increasePercentage) {
+        budget += budget * (increasePercentage / 100);
+        System.out.println("Aumento de orçamento de " + increasePercentage + "% aplicado ao projeto " + name);
+    }
+
+    // Método para calcular o custo total do projeto
+    public double calculateTotalCost() {
+        // Lógica para calcular custo total
+        return budget * 1.1; // 10% de custo adicional
+    }
+
+    // Método para enviar notificação de entrega do projeto
+    public void sendDeliveryNotification() {
+        // Lógica para enviar notificação
+        System.out.println("Notificação de entrega enviada para o projeto " + name);
+    }
+}
+
+// Classe principal para testar o exemplo de Shotgun Surgery
+public class AnotherShotgunSurgeryExample {
+    public static void main(String[] args) {
+        // Criando instâncias de Employee, Department e Project
+        Employee employee = new Employee("EMP123", "Alice", 50000.0);
+        Department department = new Department("DEP456", "Recursos Humanos");
+        Project project = new Project("PROJ789", "Implementação de Sistema", 100000.0);
+
+        // Aplicando aumento
+        employee.applySalaryIncrease(5);
+        department.applyBudgetIncrease(10);
+        project.applyBudgetIncrease(15);
+
+        // Calculando bônus, orçamento anual e custo total
+        System.out.println("Bônus do funcionário: " + employee.calculateBonus());
+        System.out.println("Orçamento anual do departamento: " + department.calculateAnnualBudget());
+        System.out.println("Custo total do projeto: " + project.calculateTotalCost());
+
+        // Enviando notificações
+        employee.sendAnnualReviewNotification();
+        department.sendMeetingNotification();
+        project.sendDeliveryNotification();
+    }
+}

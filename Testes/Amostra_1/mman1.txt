@@ -1,0 +1,43 @@
+class Order {
+    private Customer customer;
+
+    public Order(Customer customer) {
+        this.customer = customer;
+    }
+
+    public String getCustomerName() {
+        return customer.getName();
+    }
+
+    public String getCustomerAddress() {
+        return customer.getAddress();
+    }
+}
+
+class Customer {
+    private String name;
+    private String address;
+
+    public Customer(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Customer customer = new Customer("John Doe", "1234 Elm Street");
+        Order order = new Order(customer);
+
+        System.out.println("Customer Name: " + order.getCustomerName());
+        System.out.println("Customer Address: " + order.getCustomerAddress());
+    }
+}

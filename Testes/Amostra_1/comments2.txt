@@ -1,0 +1,61 @@
+public class BankAccount {
+    
+    private String accountNumber; // The account number
+    private double balance; // The balance of the account
+
+    // Constructor to initialize account number and balance
+    public BankAccount(String accountNumber, double initialBalance) {
+        this.accountNumber = accountNumber; // Set the account number
+        this.balance = initialBalance; // Set the initial balance
+    }
+
+    // Method to deposit money to the account
+    public void deposit(double amount) {
+        if (amount > 0) { // Check if the amount is greater than 0
+            balance += amount; // Add the amount to the balance
+        }
+    }
+
+    // Method to withdraw money from the account
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) { // Check if the amount is greater than 0 and less than or equal to the balance
+            balance -= amount; // Subtract the amount from the balance
+        } else {
+            System.out.println("Insufficient funds"); // Print insufficient funds message
+        }
+    }
+
+    // Method to check the balance of the account
+    public double getBalance() {
+        return balance; // Return the balance
+    }
+
+    // Method to get the account number
+    public String getAccountNumber() {
+        return accountNumber; // Return the account number
+    }
+
+    // Main method to test the BankAccount class
+    public static void main(String[] args) {
+        // Create a new BankAccount object with account number "123456" and initial balance 1000.0
+        BankAccount account = new BankAccount("123456", 1000.0);
+
+        // Deposit 500.0 to the account
+        account.deposit(500.0);
+
+        // Print the balance of the account
+        System.out.println("Balance: " + account.getBalance());
+
+        // Withdraw 200.0 from the account
+        account.withdraw(200.0);
+
+        // Print the balance of the account
+        System.out.println("Balance: " + account.getBalance());
+
+        // Try to withdraw 1500.0 from the account (should print insufficient funds)
+        account.withdraw(1500.0);
+
+        // Print the balance of the account
+        System.out.println("Balance: " + account.getBalance());
+    }
+}

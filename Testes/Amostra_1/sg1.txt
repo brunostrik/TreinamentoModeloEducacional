@@ -1,0 +1,38 @@
+public class SpeculativeGeneralityExample {
+
+    public static void main(String[] args) {
+        Animal animal = new Dog();
+        animal.makeSound();
+
+        animal = new Cat();
+        animal.makeSound();
+    }
+}
+
+// Base class that is overly general and not really needed in this context
+abstract class Animal {
+    public abstract void makeSound();
+
+    // Speculative methods that are not used but are included in anticipation of future needs
+    public void eat() {
+        System.out.println("Eating...");
+    }
+
+    public void sleep() {
+        System.out.println("Sleeping...");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Woof!");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Meow!");
+    }
+}

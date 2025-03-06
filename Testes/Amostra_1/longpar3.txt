@@ -1,0 +1,30 @@
+public class Vehicle {
+    private String make;
+    private String model;
+    private int year;
+    private String color;
+    private String vin;
+    private double price;
+    private String ownerName;
+    private String ownerAddress;
+    private String ownerPhone;
+    private String insuranceCompany;
+    private String insurancePolicyNumber;
+
+    public Vehicle(String make, String model, int year, String color, String vin, double price, String ownerName,
+                   String ownerAddress, String ownerPhone, String insuranceCompany, String insurancePolicyNumber) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.color = color;
+        this.vin = vin;
+        this.price = price;
+        this.ownerName = ownerName;
+        this.ownerAddress = ownerAddress;
+        this.ownerPhone = ownerPhone;
+        this.insuranceCompany = insuranceCompany;
+        this.insurancePolicyNumber = insurancePolicyNumber;
+    }
+
+    // Métodos para gerenciar o veículo...
+}

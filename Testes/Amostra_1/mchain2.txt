@@ -1,0 +1,77 @@
+class Country {
+    private String name;
+
+    public Country(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+class State {
+    private String name;
+    private Country country;
+
+    public State(String name, Country country) {
+        this.name = name;
+        this.country = country;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+}
+
+class City {
+    private String name;
+    private State state;
+
+    public City(String name, State state) {
+        this.name = name;
+        this.state = state;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public State getState() {
+        return state;
+    }
+}
+
+class Person {
+    private String name;
+    private City city;
+
+    public Person(String name, City city) {
+        this.name = name;
+        this.city = city;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public City getCity() {
+        return city;
+    }
+}
+
+public class Example2 {
+    public static void main(String[] args) {
+        Country country = new Country("USA");
+        State state = new State("California", country);
+        City city = new City("Los Angeles", state);
+        Person person = new Person("Alice", city);
+
+        String countryName = person.getCity().getState().getCountry().getName();
+        System.out.println("Country name: " + countryName);
+    }
+}

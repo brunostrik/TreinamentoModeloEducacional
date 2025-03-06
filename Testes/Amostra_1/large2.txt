@@ -1,0 +1,203 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class AnotherClassExample {
+    private String firstName;
+    private String lastName;
+    private int age;
+    private String address;
+    private String city;
+    private String state;
+    private String zipCode;
+    private String phoneNumber;
+    private String email;
+    private String jobTitle;
+    private String department;
+    private double salary;
+    private List<String> tasks;
+    private List<String> completedTasks;
+    private List<String> ongoingProjects;
+    private List<String> completedProjects;
+    private List<String> skills;
+    private List<String> certifications;
+
+    public AnotherClassExample(String firstName, String lastName, int age, String address, String city, String state, String zipCode, String phoneNumber, String email, String jobTitle, String department, double salary) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.jobTitle = jobTitle;
+        this.department = department;
+        this.salary = salary;
+        this.tasks = new ArrayList<>();
+        this.completedTasks = new ArrayList<>();
+        this.ongoingProjects = new ArrayList<>();
+        this.completedProjects = new ArrayList<>();
+        this.skills = new ArrayList<>();
+        this.certifications = new ArrayList<>();
+    }
+
+    // Métodos para manipular tarefas
+    public void addTask(String task) {
+        tasks.add(task);
+    }
+
+    public void completeTask(String task) {
+        tasks.remove(task);
+        completedTasks.add(task);
+    }
+
+    public List<String> getTasks() {
+        return tasks;
+    }
+
+    public List<String> getCompletedTasks() {
+        return completedTasks;
+    }
+
+    // Métodos para manipular projetos
+    public void addProject(String project) {
+        ongoingProjects.add(project);
+    }
+
+    public void completeProject(String project) {
+        ongoingProjects.remove(project);
+        completedProjects.add(project);
+    }
+
+    public List<String> getOngoingProjects() {
+        return ongoingProjects;
+    }
+
+    public List<String> getCompletedProjects() {
+        return completedProjects;
+    }
+
+    // Métodos para manipular habilidades
+    public void addSkill(String skill) {
+        skills.add(skill);
+    }
+
+    public void removeSkill(String skill) {
+        skills.remove(skill);
+    }
+
+    public List<String> getSkills() {
+        return skills;
+    }
+
+    // Métodos para manipular certificações
+    public void addCertification(String certification) {
+        certifications.add(certification);
+    }
+
+    public void removeCertification(String certification) {
+        certifications.remove(certification);
+    }
+
+    public List<String> getCertifications() {
+        return certifications;
+    }
+
+    // Getters e Setters
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+}

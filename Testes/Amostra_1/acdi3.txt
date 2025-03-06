@@ -1,0 +1,27 @@
+public class Dog {
+    private String breed;
+    private int age;
+
+    public Dog(String breed, int age) {
+        this.breed = breed;
+        this.age = age;
+    }
+
+    public String getDogDetails() {
+        return "Breed: " + breed + ", Age: " + age;
+    }
+}
+
+public class Cat {
+    private String color;
+    private int age;
+
+    public Cat(String color, int age) {
+        this.color = color;
+        this.age = age;
+    }
+
+    public String getCatDetails() {
+        return "Color: " + color + ", Age: " + age;
+    }
+}

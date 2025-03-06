@@ -1,0 +1,65 @@
+abstract class Shape {
+    private String color;
+
+    public Shape(String color) {
+        this.color = color;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public abstract double calculateArea();
+
+    // Método que algumas subclasses podem não precisar
+    public void printShape() {
+        System.out.println("This is a shape.");
+    }
+}
+
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(String color, double radius) {
+        super(color);
+        this.radius = radius;
+    }
+
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    // Circle não precisa do método printShape, mas o herda de Shape
+}
+
+class Square extends Shape {
+    private double side;
+
+    public Square(String color, double side) {
+        super(color);
+        this.side = side;
+    }
+
+    @Override
+    public double calculateArea() {
+        return side * side;
+    }
+
+    // Square não precisa do método printShape, mas o herda de Shape
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape circle = new Circle("Red", 5.0);
+        Shape square = new Square("Blue", 4.0);
+
+        System.out.println("Circle area: " + circle.calculateArea());
+        System.out.println("Circle color: " + circle.getColor());
+        circle.printShape(); 
+
+        System.out.println("Square area: " + square.calculateArea());
+        System.out.println("Square color: " + square.getColor());
+        square.printShape();
+    }
+}

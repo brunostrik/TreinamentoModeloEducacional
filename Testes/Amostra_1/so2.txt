@@ -1,0 +1,19 @@
+public class DiscountCalculator {
+    public double calculateDiscount(Object customer) {
+        double discount = 0;
+        if (customer instanceof RegularCustomer) {
+            discount = 0.05; // 5% discount for regular customers
+        } else if (customer instanceof PremiumCustomer) {
+            discount = 0.10; // 10% discount for premium customers
+        }
+        return discount;
+    }
+}
+
+class RegularCustomer {
+    // properties and methods for regular customer
+}
+
+class PremiumCustomer {
+    // properties and methods for premium customer
+}

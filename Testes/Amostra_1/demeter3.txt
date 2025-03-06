@@ -1,0 +1,31 @@
+class Wheel {
+    public void rotate() {
+        System.out.println("Wheel is rotating.");
+    }
+}
+
+class Bicycle {
+    private Wheel frontWheel;
+    private Wheel backWheel;
+
+    public Bicycle() {
+        frontWheel = new Wheel();
+        backWheel = new Wheel();
+    }
+
+    public Wheel getFrontWheel() {
+        return frontWheel;
+    }
+
+    public Wheel getBackWheel() {
+        return backWheel;
+    }
+}
+
+class Cyclist {
+    public static void main(String[] args) {
+        Bicycle bicycle = new Bicycle();
+        bicycle.getFrontWheel().rotate(); // Violação da Lei de Demeter
+        bicycle.getBackWheel().rotate();  // Violação da Lei de Demeter
+    }
+}

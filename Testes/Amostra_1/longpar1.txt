@@ -1,0 +1,24 @@
+public class Order {
+    private String product;
+    private int quantity;
+    private double price;
+    private String customerName;
+    private String customerAddress;
+    private String customerPhone;
+    private String paymentMethod;
+    private String deliveryDate;
+
+    public Order(String product, int quantity, double price, String customerName, String customerAddress,
+                 String customerPhone, String paymentMethod, String deliveryDate) {
+        this.product = product;
+        this.quantity = quantity;
+        this.price = price;
+        this.customerName = customerName;
+        this.customerAddress = customerAddress;
+        this.customerPhone = customerPhone;
+        this.paymentMethod = paymentMethod;
+        this.deliveryDate = deliveryDate;
+    }
+
+    // Métodos para processar a order...
+}

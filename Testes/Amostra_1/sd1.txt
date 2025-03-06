@@ -1,0 +1,21 @@
+public class LightBulb {
+    public void turnOn() {
+        System.out.println("LightBulb turned on");
+    }
+
+    public void turnOff() {
+        System.out.println("LightBulb turned off");
+    }
+}
+
+public class Switch {
+    private LightBulb lightBulb;
+
+    public Switch() {
+        this.lightBulb = new LightBulb();
+    }
+
+    public void operate() {
+        lightBulb.turnOn();
+    }
+}

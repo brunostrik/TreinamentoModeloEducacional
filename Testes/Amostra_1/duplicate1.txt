@@ -1,0 +1,21 @@
+public class CodeExample {
+    
+    public static void main(String[] args) {
+        printHello();
+        printGoodbye();
+        printHello();
+        printGoodbye();
+    }
+
+    public static void printHello() {
+        System.out.println("Hello, World!");
+        System.out.println("Welcome to the example of some code.");
+        System.out.println("Have a great day!");
+    }
+
+    public static void printGoodbye() {
+        System.out.println("Goodbye, World!");
+        System.out.println("Thanks for visiting the example of some code.");
+        System.out.println("Have a great day!");
+    }
+}

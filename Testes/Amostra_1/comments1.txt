@@ -1,0 +1,26 @@
+public class Calculator {
+    
+    // This method adds two numbers
+    public int add(int a, int b) {
+        return a + b; // return the sum of a and b
+    }
+    
+    // This method subtracts the second number from the first number
+    public int subtract(int a, int b) {
+        return a - b; // return the difference of a and b
+    }
+    
+    // This method multiplies two numbers
+    public int multiply(int a, int b) {
+        return a * b; // return the product of a and b
+    }
+    
+    // This method divides the first number by the second number
+    // It throws an ArithmeticException if the second number is zero
+    public int divide(int a, int b) throws ArithmeticException {
+        if (b == 0) {
+            throw new ArithmeticException("Division by zero is not allowed");
+        }
+        return a / b; // return the quotient of a and b
+    }
+}

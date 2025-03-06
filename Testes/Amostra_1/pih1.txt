@@ -1,0 +1,82 @@
+// Base classes for two different hierarchies
+abstract class Employee {
+    protected String name;
+
+    public Employee(String name) {
+        this.name = name;
+    }
+
+    public abstract void work();
+}
+
+abstract class EmployeeReport {
+    protected Employee employee;
+
+    public EmployeeReport(Employee employee) {
+        this.employee = employee;
+    }
+
+    public abstract void generateReport();
+}
+
+// First hierarchy
+class Developer extends Employee {
+    public Developer(String name) {
+        super(name);
+    }
+
+    @Override
+    public void work() {
+        System.out.println(name + " is writing code.");
+    }
+}
+
+class DeveloperReport extends EmployeeReport {
+    public DeveloperReport(Employee employee) {
+        super(employee);
+    }
+
+    @Override
+    public void generateReport() {
+        System.out.println("Generating report for developer: " + employee.name);
+    }
+}
+
+// Second hierarchy
+class Manager extends Employee {
+    public Manager(String name) {
+        super(name);
+    }
+
+    @Override
+    public void work() {
+        System.out.println(name + " is managing the team.");
+    }
+}
+
+class ManagerReport extends EmployeeReport {
+    public ManagerReport(Employee employee) {
+        super(employee);
+    }
+
+    @Override
+    public void generateReport() {
+        System.out.println("Generating report for manager: " + employee.name);
+    }
+}
+
+public class Example {
+    public static void main(String[] args) {
+        Employee dev = new Developer("Alice");
+        Employee mgr = new Manager("Bob");
+
+        EmployeeReport devReport = new DeveloperReport(dev);
+        EmployeeReport mgrReport = new ManagerReport(mgr);
+
+        dev.work();
+        devReport.generateReport();
+
+        mgr.work();
+        mgrReport.generateReport();
+    }
+}

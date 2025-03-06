@@ -1,0 +1,55 @@
+import java.util.List;
+
+public class EmployeePayrollProcessor {
+
+    public void processPayroll(List<Employee> employees) {
+        // Step 1: Validate employee list
+        if (employees == null || employees.isEmpty()) {
+            throw new IllegalArgumentException("Employee list cannot be null or empty");
+        }
+
+        // Step 2: Initialize payroll report
+        StringBuilder payrollReport = new StringBuilder();
+        payrollReport.append("Employee Payroll Report\n");
+        payrollReport.append("-----------------------\n");
+
+        // Step 3: Process each employee
+        for (Employee employee : employees) {
+            // Calculate gross salary
+            double grossSalary = employee.getBaseSalary();
+            for (Bonus bonus : employee.getBonuses()) {
+                grossSalary += bonus.getAmount();
+            }
+
+            // Calculate deductions
+            double deductions = 0;
+            for (Deduction deduction : employee.getDeductions()) {
+                deductions += deduction.getAmount();
+            }
+
+            // Calculate net salary
+            double netSalary = grossSalary - deductions;
+
+            // Append employee payroll information to report
+            payrollReport.append("Employee ID: ").append(employee.getId()).append("\n");
+            payrollReport.append("Name: ").append(employee.getName()).append("\n");
+            payrollReport.append("Gross Salary: ").append(grossSalary).append("\n");
+            payrollReport.append("Deductions: ").append(deductions).append("\n");
+            payrollReport.append("Net Salary: ").append(netSalary).append("\n");
+            payrollReport.append("\n");
+        }
+
+        // Step 4: Print payroll report
+        System.out.println(payrollReport.toString());
+
+        // Step 5: Save payroll report to file
+        try {
+            java.nio.file.Files.write(
+                java.nio.file.Paths.get("payroll_report.txt"), 
+                payrollReport.toString().getBytes()
+            );
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

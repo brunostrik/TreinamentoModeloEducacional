@@ -1,0 +1,37 @@
+public class Example {
+
+    public static void main(String[] args) {
+        // Criando uma pessoa com informações de contato
+        Person person = new Person("John Doe", "123456789", "john.doe@example.com");
+
+        // Exibindo as informações da pessoa
+        System.out.println("Nome: " + person.getName());
+        System.out.println("Telefone: " + person.getPhoneNumber());
+        System.out.println("Email: " + person.getEmail());
+    }
+
+}
+
+class Person {
+    private String name;
+    private String phoneNumber;
+    private String email;
+
+    public Person(String name, String phoneNumber, String email) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+}

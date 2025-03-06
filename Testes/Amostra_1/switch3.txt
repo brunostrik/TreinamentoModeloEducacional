@@ -1,0 +1,28 @@
+public class Example3 {
+    public static void main(String[] args) {
+        String operation = "ADD"; // ADD, SUBTRACT, MULTIPLY, DIVIDE
+        double num1 = 10.0;
+        double num2 = 5.0;
+        double result = calculate(operation, num1, num2);
+        System.out.println("Result: " + result);
+    }
+
+    public static double calculate(String operation, double num1, double num2) {
+        switch (operation) {
+            case "ADD":
+                return num1 + num2;
+            case "SUBTRACT":
+                return num1 - num2;
+            case "MULTIPLY":
+                return num1 * num2;
+            case "DIVIDE":
+                if (num2 != 0) {
+                    return num1 / num2;
+                } else {
+                    throw new IllegalArgumentException("Cannot divide by zero");
+                }
+            default:
+                throw new IllegalArgumentException("Invalid operation");
+        }
+    }
+}

@@ -1,0 +1,27 @@
+public class Example1 {
+    public enum Day {
+        MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+    }
+
+    public static void main(String[] args) {
+        Day day = Day.MONDAY;
+        String typeOfDay = getTypeOfDay(day);
+        System.out.println("Today is a " + typeOfDay);
+    }
+
+    public static String getTypeOfDay(Day day) {
+        switch (day) {
+            case MONDAY:
+            case TUESDAY:
+            case WEDNESDAY:
+            case THURSDAY:
+            case FRIDAY:
+                return "Weekday";
+            case SATURDAY:
+            case SUNDAY:
+                return "Weekend";
+            default:
+                return "Invalid day";
+        }
+    }
+}

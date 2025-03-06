@@ -1,0 +1,43 @@
+class Book {
+    private Author author;
+
+    public Book(Author author) {
+        this.author = author;
+    }
+
+    public String getAuthorName() {
+        return author.getName();
+    }
+
+    public String getAuthorBio() {
+        return author.getBio();
+    }
+}
+
+class Author {
+    private String name;
+    private String bio;
+
+    public Author(String name, String bio) {
+        this.name = name;
+        this.bio = bio;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+}
+
+public class Main2 {
+    public static void main(String[] args) {
+        Author author = new Author("Jane Austen", "English novelist known primarily for her six major novels");
+        Book book = new Book(author);
+
+        System.out.println("Author Name: " + book.getAuthorName());
+        System.out.println("Author Bio: " + book.getAuthorBio());
+    }
+}

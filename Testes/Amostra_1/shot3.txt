@@ -1,0 +1,152 @@
+// Exemplo de Shotgun Surgery em Java
+
+// A classe Student representa um estudante em um sistema de gerenciamento escolar
+public class Student {
+    private String studentId;
+    private String name;
+    private double gpa;
+
+    public Student(String studentId, String name, double gpa) {
+        this.studentId = studentId;
+        this.name = name;
+        this.gpa = gpa;
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getGpa() {
+        return gpa;
+    }
+
+    // Método para aplicar aumento de nota ao estudante
+    public void applyGpaBoost(double boostPercentage) {
+        gpa += gpa * (boostPercentage / 100);
+        System.out.println("Aumento de " + boostPercentage + "% aplicado ao GPA do estudante " + name);
+    }
+
+    // Método para calcular a média de notas do estudante
+    public double calculateAverageGrade() {
+        return gpa * 10; // GPA convertido para uma escala de 100
+    }
+
+    // Método para enviar notificação de boletim ao estudante
+    public void sendReportCardNotification() {
+        // Lógica para enviar notificação
+        System.out.println("Notificação de boletim enviada para o estudante " + name);
+    }
+}
+
+// A classe Teacher representa um professor no sistema
+public class Teacher {
+    private String teacherId;
+    private String name;
+    private double salary;
+
+    public Teacher(String teacherId, String name, double salary) {
+        this.teacherId = teacherId;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    public String getTeacherId() {
+        return teacherId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    // Método para aplicar aumento de salário ao professor
+    public void applySalaryIncrease(double increasePercentage) {
+        salary += salary * (increasePercentage / 100);
+        System.out.println("Aumento de " + increasePercentage + "% aplicado ao salário do professor " + name);
+    }
+
+    // Método para calcular o bônus do professor
+    public double calculateBonus() {
+        return salary * 0.1; // 10% de bônus
+    }
+
+    // Método para enviar notificação de avaliação ao professor
+    public void sendEvaluationNotification() {
+        // Lógica para enviar notificação
+        System.out.println("Notificação de avaliação enviada para o professor " + name);
+    }
+}
+
+// A classe Course representa um curso no sistema
+public class Course {
+    private String courseId;
+    private String title;
+    private double fee;
+
+    public Course(String courseId, String title, double fee) {
+        this.courseId = courseId;
+        this.title = title;
+        this.fee = fee;
+    }
+
+    public String getCourseId() {
+        return courseId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public double getFee() {
+        return fee;
+    }
+
+    // Método para aplicar desconto ao curso
+    public void applyDiscount(double discountPercentage) {
+        fee -= fee * (discountPercentage / 100);
+        System.out.println("Desconto de " + discountPercentage + "% aplicado ao curso " + title);
+    }
+
+    // Método para calcular o imposto sobre o curso
+    public double calculateTax() {
+        return fee * 0.2; // 20% de imposto
+    }
+
+    // Método para enviar notificação de inscrição ao curso
+    public void sendEnrollmentNotification() {
+        // Lógica para enviar notificação
+        System.out.println("Notificação de inscrição enviada para o curso " + title);
+    }
+}
+
+// Classe principal para testar o exemplo de Shotgun Surgery
+public class YetAnotherShotgunSurgeryExample {
+    public static void main(String[] args) {
+        // Criando instâncias de Student, Teacher e Course
+        Student student = new Student("STU123", "Carlos", 3.5);
+        Teacher teacher = new Teacher("TEA456", "Dra. Silva", 60000.0);
+        Course course = new Course("COUR789", "Matemática Avançada", 200.0);
+
+        // Aplicando aumento/desconto
+        student.applyGpaBoost(5);
+        teacher.applySalaryIncrease(7);
+        course.applyDiscount(10);
+
+        // Calculando média de notas, bônus e imposto
+        System.out.println("Média de notas do estudante: " + student.calculateAverageGrade());
+        System.out.println("Bônus do professor: " + teacher.calculateBonus());
+        System.out.println("Imposto sobre o curso: " + course.calculateTax());
+
+        // Enviando notificações
+        student.sendReportCardNotification();
+        teacher.sendEvaluationNotification();
+        course.sendEnrollmentNotification();
+    }
+}

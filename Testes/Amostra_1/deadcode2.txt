@@ -1,0 +1,113 @@
+package com.imagereader;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/image")
+public class ImageReader {
+
+    @PostMapping("/process")
+    public ResponseEntity<Map<String, Object>> processImage(@RequestBody Map<String, Object> request) {
+        String geminiApiUrl = "http://example.com/api";
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+
+        HttpEntity<Map<String, Object>> requestEntity = new HttpEntity<>(request, headers);
+        RestTemplate restTemplate = new RestTemplate();
+
+        try {
+            ResponseEntity<Map> response = restTemplate.exchange(geminiApiUrl, HttpMethod.POST, requestEntity, Map.class);
+
+            @SuppressWarnings("unchecked")
+            Map<String, Object> responseBody = response.getBody();
+
+            // Simulação de verificação de leitura duplicada
+            boolean exists = false; // Substitua com lógica real de banco de dados
+            if (exists) {
+                Map<String, String> error = new HashMap<>();
+                error.put("error_code", "DOUBLE_REPORT");
+                error.put("error_description", "Leitura do mês já realizada");
+                return new ResponseEntity<>(error, HttpStatus.CONFLICT);
+            }
+
+            return new ResponseEntity<>(responseBody, HttpStatus.OK);
+        } catch (Exception e) {
+            Map<String, String> error = new HashMap<>();
+            error.put("error_code", "INTERNAL_ERROR");
+            error.put("error_description", "Erro ao processar a imagem");
+            return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PatchMapping("/confirm")
+    public ResponseEntity<Map<String, Object>> confirmMeasurement(@RequestBody Map<String, Object> request) {
+        String measureUuid = (String) request.get("measure_uuid");
+        Integer confirmedValue = (Integer) request.get("confirmed_value");
+
+        if (measureUuid == null || confirmedValue == null) {
+            Map<String, String> error = new HashMap<>();
+            error.put("error_code", "INVALID_DATA");
+            error.put("error_description", "Dados fornecidos são inválidos");
+            return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+        }
+
+        try {
+            // Simulação de verificação de leitura
+            boolean measureExists = true; // Substitua com lógica real de banco de dados
+            boolean alreadyConfirmed = false; // Substitua com lógica real de banco de dados
+            if (!measureExists) {
+                Map<String, String> error = new HashMap<>();
+                error.put("error_code", "MEASURE_NOT_FOUND");
+                error.put("error_description", "Leitura não encontrada");
+                return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+            }
+            if (alreadyConfirmed) {
+                Map<String, String> error = new HashMap<>();
+                error.put("error_code", "CONFIRMATION_DUPLICATE");
+                error.put("error_description", "Leitura já confirmada");
+                return new ResponseEntity<>(error, HttpStatus.CONFLICT);
+            }
+
+            // Simulação de salvamento da leitura
+            System.out.println("Leitura confirmada: " + measureUuid + " com valor " + confirmedValue);
+
+            Map<String, Object> response = new HashMap<>();
+            response.put("success", true);
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } catch (Exception e) {
+            Map<String, String> error = new HashMap<>();
+            error.put("error_code", "INTERNAL_ERROR");
+            error.put("error_description", "Erro ao confirmar a leitura");
+            return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/{customer_code}/list")
+    public ResponseEntity<Map<String, Object>> listMeasurements(@PathVariable String customer_code, @RequestParam(required = false) String measure_type) {
+        if (measure_type != null && !measure_type.equalsIgnoreCase("WATER") && !measure_type.equalsIgnoreCase("GAS")) {
+            Map<String, String> error = new HashMap<>();
+            error.put("error_code", "INVALID_TYPE");
+            error.put("error_description", "Tipo de medição não permitido");
+            return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+        }
+
+        try {
+            // Simulação de busca de medições
+            Map<String, Object> measurements = new HashMap<>();
+            measurements.put("measure1", "value1"); // Substitua com lógica real de banco de dados
+            measurements.put("measure2", "value2"); // Substitua com lógica real de banco de dados
+
+            return new ResponseEntity<>(measurements, HttpStatus.OK);
+        } catch (Exception e) {
+            Map<String, String> error = new HashMap<>();
+            error.put("error_code", "INTERNAL_ERROR");
+            error.put("error_description", "Erro ao buscar medições");
+            return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+}

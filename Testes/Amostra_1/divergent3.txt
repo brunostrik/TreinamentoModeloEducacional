@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.List;
+
+// Classe que gerencia serviços relacionados ao cliente
+public class CustomerService {
+    private List<Customer> customers = new ArrayList<>();
+
+    // Adiciona um cliente à lista
+    public void addCustomer(Customer customer) {
+        customers.add(customer);
+    }
+
+    // Atualiza as informações do cliente
+    public void updateCustomer(Customer customer) {
+        for (Customer c : customers) {
+            if (c.getId().equals(customer.getId())) {
+                c.setName(customer.getName());
+                c.setAddress(customer.getAddress());
+            }
+        }
+    }
+
+    // Processa pedidos dos clientes
+    public void processOrders() {
+        for (Customer customer : customers) {
+            // Lógica de processamento de pedidos
+            System.out.println("Processando pedidos para o cliente: " + customer.getId());
+        }
+    }
+
+    // Gera relatórios de clientes
+    public void generateReports() {
+        // Lógica de geração de relatórios
+        System.out.println("Gerando relatório de clientes...");
+        for (Customer customer : customers) {
+            System.out.println("Cliente ID: " + customer.getId() + ", Nome: " + customer.getName() + ", Endereço: " + customer.getAddress());
+        }
+    }
+}

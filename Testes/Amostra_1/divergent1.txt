@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+import java.util.List;
+
+// Classe que processa pedidos
+public class OrderProcessor {
+    private List<Order> orders = new ArrayList<>();
+
+    // Adiciona um pedido à lista
+    public void addOrder(Order order) {
+        orders.add(order);
+    }
+
+    // Processa o pagamento dos pedidos
+    public void processPayments() {
+        for (Order order : orders) {
+            // Lógica de processamento de pagamento
+            System.out.println("Processando pagamento para o pedido: " + order.getId());
+        }
+    }
+
+    // Gera relatórios de pedidos
+    public void generateReports() {
+        // Lógica de geração de relatórios
+        System.out.println("Gerando relatório de pedidos...");
+        for (Order order : orders) {
+            System.out.println("Pedido ID: " + order.getId() + ", Valor: " + order.getAmount());
+        }
+    }
+
+    // Envia notificações para os clientes
+    public void sendNotifications() {
+        // Lógica de envio de notificações
+        System.out.println("Enviando notificações para os clientes...");
+        for (Order order : orders) {
+            System.out.println("Notificação enviada para o pedido: " + order.getId());
+        }
+    }
+}

@@ -1,0 +1,27 @@
+public class Exemplo3 {
+    public static void main(String[] args) {
+        Carro carro = new Carro(false);
+        if (!carro.isLigado()) {
+            carro.ligar();
+        } else {
+            System.out.println("O carro já está ligado.");
+        }
+    }
+}
+
+class Carro {
+    private boolean ligado;
+
+    public Carro(boolean ligado) {
+        this.ligado = ligado;
+    }
+
+    public boolean isLigado() {
+        return ligado;
+    }
+
+    public void ligar() {
+        ligado = true;
+        System.out.println("O carro foi ligado.");
+    }
+}

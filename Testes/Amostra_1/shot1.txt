@@ -1,0 +1,134 @@
+// Exemplo de Shotgun Surgery em Java
+
+// A classe Order representa um pedido em um sistema de compras
+public class Order {
+    private String orderId;
+    private double totalAmount;
+
+    public Order(String orderId, double totalAmount) {
+        this.orderId = orderId;
+        this.totalAmount = totalAmount;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public double getTotalAmount() {
+        return totalAmount;
+    }
+
+    // Método para aplicar desconto ao pedido
+    public void applyDiscount(double discountPercentage) {
+        totalAmount -= totalAmount * (discountPercentage / 100);
+    }
+
+    // Método para calcular o imposto sobre o pedido
+    public double calculateTax() {
+        return totalAmount * 0.1; // 10% de imposto
+    }
+
+    // Método para enviar notificação de confirmação do pedido
+    public void sendOrderConfirmation() {
+        // Lógica para enviar notificação
+        System.out.println("Confirmação do pedido " + orderId + " enviada.");
+    }
+}
+
+// A classe Customer representa um cliente no sistema
+public class Customer {
+    private String customerId;
+    private String name;
+
+    public Customer(String customerId, String name) {
+        this.customerId = customerId;
+        this.name = name;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    // Método para aplicar desconto ao cliente
+    public void applyDiscount(double discountPercentage) {
+        // Lógica para aplicar desconto ao cliente
+        System.out.println("Desconto de " + discountPercentage + "% aplicado ao cliente " + name);
+    }
+
+    // Método para calcular o imposto sobre o cliente
+    public double calculateTax() {
+        // Lógica para calcular imposto do cliente
+        return 0; // Clientes não pagam imposto no momento
+    }
+
+    // Método para enviar notificação de boas-vindas ao cliente
+    public void sendWelcomeNotification() {
+        // Lógica para enviar notificação
+        System.out.println("Notificação de boas-vindas enviada para o cliente " + name);
+    }
+}
+
+// A classe Product representa um produto no sistema
+public class Product {
+    private String productId;
+    private double price;
+
+    public Product(String productId, double price) {
+        this.productId = productId;
+        this.price = price;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    // Método para aplicar desconto ao produto
+    public void applyDiscount(double discountPercentage) {
+        price -= price * (discountPercentage / 100);
+        System.out.println("Desconto de " + discountPercentage + "% aplicado ao produto " + productId);
+    }
+
+    // Método para calcular o imposto sobre o produto
+    public double calculateTax() {
+        return price * 0.2; // 20% de imposto
+    }
+
+    // Método para enviar notificação de lançamento do produto
+    public void sendLaunchNotification() {
+        // Lógica para enviar notificação
+        System.out.println("Notificação de lançamento do produto " + productId + " enviada.");
+    }
+}
+
+// Classe principal para testar o exemplo de Shotgun Surgery
+public class ShotgunSurgeryExample {
+    public static void main(String[] args) {
+        // Criando instâncias de Order, Customer e Product
+        Order order = new Order("ORD123", 100.0);
+        Customer customer = new Customer("CUST456", "Bruno");
+        Product product = new Product("PROD789", 50.0);
+
+        // Aplicando desconto
+        order.applyDiscount(10);
+        customer.applyDiscount(5);
+        product.applyDiscount(15);
+
+        // Calculando imposto
+        System.out.println("Imposto sobre o pedido: " + order.calculateTax());
+        System.out.println("Imposto sobre o cliente: " + customer.calculateTax());
+        System.out.println("Imposto sobre o produto: " + product.calculateTax());
+
+        // Enviando notificações
+        order.sendOrderConfirmation();
+        customer.sendWelcomeNotification();
+        product.sendLaunchNotification();
+    }
+}

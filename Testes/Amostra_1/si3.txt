@@ -1,0 +1,41 @@
+interface Shape {
+    double area();
+    double volume();
+}
+
+class Circle implements Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    public double area() {
+        return Math.PI * radius * radius;
+    }
+
+    // Violação do ISP: Circle não deveria precisar implementar o método volume
+    @Override
+    public double volume() {
+        throw new UnsupportedOperationException("Circle does not have volume");
+    }
+}
+
+class Cube implements Shape {
+    private double side;
+
+    public Cube(double side) {
+        this.side = side;
+    }
+
+    @Override
+    public double area() {
+        return 6 * side * side;
+    }
+
+    @Override
+    public double volume() {
+        return side * side * side;
+    }
+}

@@ -1,0 +1,38 @@
+// Classe Address que não faz muito e poderia ser combinada com outra classe
+class Address {
+    private String street;
+
+    public Address(String street) {
+        this.street = street;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+}
+
+// Classe Person que utiliza a classe Address
+public class ClassExample {
+    private String name;
+    private Address address;
+
+    public LazyClassExample(String name, String street) {
+        this.name = name;
+        this.address = new Address(street);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getStreet() {
+        return address.getStreet();
+    }
+
+    public static void main(String[] args) {
+        ClassExample person = new ClassExample("John Doe", "123 Main St");
+        System.out.println("Name: " + person.getName());
+        System.out.println("Street: " + person.getStreet());
+    }
+}

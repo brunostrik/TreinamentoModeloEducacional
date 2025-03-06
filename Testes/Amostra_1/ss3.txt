@@ -1,0 +1,31 @@
+public class Report {
+    private String title;
+    private String content;
+
+    // Methods related to report properties
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    // Method that violates SRP by handling report formatting
+    public String formatReport() {
+        return title + "\n" + content;
+    }
+
+    // Method that violates SRP by handling report sending
+    public void sendByEmail(String email) {
+        // Code to send report by email
+    }
+}

@@ -1,0 +1,35 @@
+public class NotificationService {
+    public void sendNotification(Object notification) {
+        if (notification instanceof EmailNotification) {
+            EmailNotification emailNotification = (EmailNotification) notification;
+            System.out.println("Sending email to: " + emailNotification.getEmailAddress());
+        } else if (notification instanceof SMSNotification) {
+            SMSNotification smsNotification = (SMSNotification) notification;
+            System.out.println("Sending SMS to: " + smsNotification.getPhoneNumber());
+        }
+    }
+}
+
+class EmailNotification {
+    private String emailAddress;
+
+    public EmailNotification(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+}
+
+class SMSNotification {
+    private String phoneNumber;
+
+    public SMSNotification(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+}

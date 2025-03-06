@@ -1,0 +1,169 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class YetAnotherClassExample {
+    private String id;
+    private String name;
+    private String description;
+    private String category;
+    private double price;
+    private int stockQuantity;
+    private String supplierName;
+    private String supplierContact;
+    private String manufacturer;
+    private String warrantyPeriod;
+    private List<String> reviews;
+    private List<String> ratings;
+    private List<String> tags;
+    private List<String> relatedProducts;
+
+    public YetAnotherClassExample(String id, String name, String description, String category, double price, int stockQuantity, String supplierName, String supplierContact, String manufacturer, String warrantyPeriod) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
+        this.supplierName = supplierName;
+        this.supplierContact = supplierContact;
+        this.manufacturer = manufacturer;
+        this.warrantyPeriod = warrantyPeriod;
+        this.reviews = new ArrayList<>();
+        this.ratings = new ArrayList<>();
+        this.tags = new ArrayList<>();
+        this.relatedProducts = new ArrayList<>();
+    }
+
+    // Métodos para manipular reviews
+    public void addReview(String review) {
+        reviews.add(review);
+    }
+
+    public void removeReview(String review) {
+        reviews.remove(review);
+    }
+
+    public List<String> getReviews() {
+        return reviews;
+    }
+
+    // Métodos para manipular ratings
+    public void addRating(String rating) {
+        ratings.add(rating);
+    }
+
+    public void removeRating(String rating) {
+        ratings.remove(rating);
+    }
+
+    public List<String> getRatings() {
+        return ratings;
+    }
+
+    // Métodos para manipular tags
+    public void addTag(String tag) {
+        tags.add(tag);
+    }
+
+    public void removeTag(String tag) {
+        tags.remove(tag);
+    }
+
+    public List<String> getTags() {
+        return tags;
+    }
+
+    // Métodos para manipular produtos relacionados
+    public void addRelatedProduct(String productId) {
+        relatedProducts.add(productId);
+    }
+
+    public void removeRelatedProduct(String productId) {
+        relatedProducts.remove(productId);
+    }
+
+    public List<String> getRelatedProducts() {
+        return relatedProducts;
+    }
+
+    // Getters e Setters
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getStockQuantity() {
+        return stockQuantity;
+    }
+
+    public void setStockQuantity(int stockQuantity) {
+        this.stockQuantity = stockQuantity;
+    }
+
+    public String getSupplierName() {
+        return supplierName;
+    }
+
+    public void setSupplierName(String supplierName) {
+        this.supplierName = supplierName;
+    }
+
+    public String getSupplierContact() {
+        return supplierContact;
+    }
+
+    public void setSupplierContact(String supplierContact) {
+        this.supplierContact = supplierContact;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public String getWarrantyPeriod() {
+        return warrantyPeriod;
+    }
+
+    public void setWarrantyPeriod(String warrantyPeriod) {
+        this.warrantyPeriod = warrantyPeriod;
+    }
+}

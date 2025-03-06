@@ -1,0 +1,20 @@
+public class Example2 {
+    public static void main(String[] args) {
+        int userType = 2; // 1 for Admin, 2 for Editor, 3 for Viewer
+        String message = getWelcomeMessage(userType);
+        System.out.println(message);
+    }
+
+    public static String getWelcomeMessage(int userType) {
+        switch (userType) {
+            case 1:
+                return "Welcome Admin!";
+            case 2:
+                return "Welcome Editor!";
+            case 3:
+                return "Welcome Viewer!";
+            default:
+                return "Welcome Guest!";
+        }
+    }
+}

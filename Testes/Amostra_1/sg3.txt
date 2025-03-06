@@ -1,0 +1,38 @@
+public class SpeculativeGeneralityExample3 {
+
+    public static void main(String[] args) {
+        Vehicle vehicle = new Car();
+        vehicle.start();
+
+        vehicle = new Bike();
+        vehicle.start();
+    }
+}
+
+// Base class that is overly general and not really needed in this context
+abstract class Vehicle {
+    public abstract void start();
+
+    // Speculative methods that are not used but are included in anticipation of future needs
+    public void stop() {
+        System.out.println("Stopping...");
+    }
+
+    public void refuel() {
+        System.out.println("Refueling...");
+    }
+}
+
+class Car extends Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Car is starting");
+    }
+}
+
+class Bike extends Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Bike is starting");
+    }
+}

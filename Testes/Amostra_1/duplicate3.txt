@@ -1,0 +1,23 @@
+public class CodeExample3 {
+
+    public static void main(String[] args) {
+        printUserDetails("Alice", 25);
+        printUserDetails("Bob", 30);
+        printAdminDetails("Charlie", 35);
+        printAdminDetails("Dave", 40);
+    }
+
+    public static void printUserDetails(String name, int age) {
+        System.out.println("User Name: " + name);
+        System.out.println("User Age: " + age);
+        System.out.println("User Role: User");
+        System.out.println("----------");
+    }
+
+    public static void printAdminDetails(String name, int age) {
+        System.out.println("Admin Name: " + name);
+        System.out.println("Admin Age: " + age);
+        System.out.println("User Role: Admin");
+        System.out.println("----------");
+    }
+}

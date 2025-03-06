@@ -1,0 +1,60 @@
+// Classe BankAccount
+public class BankAccount {
+    private String accountNumber;
+    private double balance;
+
+    public BankAccount(String accountNumber, double balance) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        balance -= amount;
+    }
+}
+
+// Classe Customer
+public class Customer {
+    private String name;
+    private BankAccount bankAccount;
+
+    public Customer(String name, BankAccount bankAccount) {
+        this.name = name;
+        this.bankAccount = bankAccount;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public BankAccount getBankAccount() {
+        return bankAccount;
+    }
+}
+
+// Classe Bank
+public class Bank {
+    public void transferFunds(Customer fromCustomer, Customer toCustomer, double amount) {
+        BankAccount fromAccount = fromCustomer.getBankAccount();
+        BankAccount toAccount = toCustomer.getBankAccount();
+
+        if (fromAccount.getBalance() >= amount) {
+            fromAccount.withdraw(amount);
+            toAccount.deposit(amount);
+        } else {
+            System.out.println("Insufficient funds for transfer.");
+        }
+    }
+}

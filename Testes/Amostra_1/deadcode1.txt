@@ -1,0 +1,25 @@
+//Pedir dos valores y en caso de que no sean iguales indicar cuál es el mayor.
+
+import java.util.Scanner;
+
+public class Mayor{
+  public static void main(String[] args){
+
+  Scanner sc = new Scanner(System.in);
+   int num1, num2;
+   System.out.println("Introduzca el primer valor");
+   num1 = sc.nextInt();
+   System.out.println("Introduzca el segundo valor");
+   num2 = sc.nextInt();
+   if(num1 > num2 ){
+   System.out.println("El primer número es el mayor");
+
+  } else {
+   if(num1 < num2){
+     System.out.println("El segundo número es el mayor");
+   } else {
+     System.out.println("Ambos números son iguales");
+   }
+  }
+ }
+}

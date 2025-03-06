@@ -1,0 +1,6 @@
+public class CartService {
+    public double calculateTotalPrice(CartItem cartItem) {
+        Product product = cartItem.getProduct();
+        return product.getPrice() * cartItem.getQuantity();
+    }
+}

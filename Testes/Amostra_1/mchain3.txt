@@ -1,0 +1,58 @@
+class Engine {
+    private String model;
+
+    public Engine(String model) {
+        this.model = model;
+    }
+
+    public String getModel() {
+        return model;
+    }
+}
+
+class Car {
+    private String make;
+    private Engine engine;
+
+    public Car(String make, Engine engine) {
+        this.make = make;
+        this.engine = engine;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+}
+
+class Owner {
+    private String name;
+    private Car car;
+
+    public Owner(String name, Car car) {
+        this.name = name;
+        this.car = car;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+}
+
+public class Example3 {
+    public static void main(String[] args) {
+        Engine engine = new Engine("V8");
+        Car car = new Car("Ford", engine);
+        Owner owner = new Owner("Bob", car);
+
+        String engineModel = owner.getCar().getEngine().getModel();
+        System.out.println("Engine model: " + engineModel);
+    }
+}

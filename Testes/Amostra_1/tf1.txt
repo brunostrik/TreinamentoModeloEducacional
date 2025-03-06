@@ -1,0 +1,15 @@
+public class TemporaryFieldExample1 {
+    private double tempResult; // Temporary field
+
+    public double calculate(double value) {
+        tempResult = Math.sqrt(value); // Temporary use of the field
+        // Some other operations
+        tempResult = tempResult / 2; // Temporary use of the field
+        return tempResult;
+    }
+
+    public static void main(String[] args) {
+        TemporaryFieldExample1 example = new TemporaryFieldExample1();
+        System.out.println(example.calculate(16)); // Output: 2.0
+    }
+}

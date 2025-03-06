@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+import java.util.List;
+
+// Classe que gerencia contas de usuário
+public class UserAccountManager {
+    private List<User> users = new ArrayList<>();
+
+    // Adiciona um usuário à lista
+    public void addUser(User user) {
+        users.add(user);
+    }
+
+    // Atualiza as informações do usuário
+    public void updateUser(User user) {
+        for (User u : users) {
+            if (u.getId().equals(user.getId())) {
+                u.setName(user.getName());
+                u.setEmail(user.getEmail());
+            }
+        }
+    }
+
+    // Autentica o usuário
+    public boolean authenticate(String email, String password) {
+        for (User user : users) {
+            if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Gera relatórios de usuários
+    public void generateReports() {
+        System.out.println("Gerando relatório de usuários...");
+        for (User user : users) {
+            System.out.println("Usuário ID: " + user.getId() + ", Nome: " + user.getName() + ", Email: " + user.getEmail());
+        }
+    }
+}

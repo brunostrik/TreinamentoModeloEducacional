@@ -1,0 +1,17 @@
+public class Keyboard {
+    public void connect() {
+        System.out.println("Keyboard connected");
+    }
+}
+
+public class Computer {
+    private Keyboard keyboard;
+
+    public Computer() {
+        this.keyboard = new Keyboard();
+    }
+
+    public void start() {
+        keyboard.connect();
+    }
+}

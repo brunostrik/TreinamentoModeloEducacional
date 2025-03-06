@@ -1,0 +1,40 @@
+interface Printer {
+    void print();
+    void scan();
+    void fax();
+}
+
+class AllInOnePrinter implements Printer {
+    @Override
+    public void print() {
+        System.out.println("Printing document");
+    }
+
+    @Override
+    public void scan() {
+        System.out.println("Scanning document");
+    }
+
+    @Override
+    public void fax() {
+        System.out.println("Sending fax");
+    }
+}
+
+class BasicPrinter implements Printer {
+    @Override
+    public void print() {
+        System.out.println("Printing document");
+    }
+
+    // Violação do ISP: BasicPrinter não deveria precisar implementar os métodos scan e fax
+    @Override
+    public void scan() {
+        throw new UnsupportedOperationException("Basic printer cannot scan");
+    }
+
+    @Override
+    public void fax() {
+        throw new UnsupportedOperationException("Basic printer cannot fax");
+    }
+}

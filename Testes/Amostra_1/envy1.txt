@@ -1,0 +1,13 @@
+public class BankService {
+    public void transferFunds(Customer fromCustomer, Customer toCustomer, double amount) {
+        Account fromAccount = fromCustomer.getAccount();
+        Account toAccount = toCustomer.getAccount();
+
+        if (fromAccount.getBalance() >= amount) {
+            fromAccount.withdraw(amount);
+            toAccount.deposit(amount);
+        } else {
+            System.out.println("Insufficient funds");
+        }
+    }
+}

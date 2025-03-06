@@ -1,0 +1,9 @@
+public class OrderService {
+    public void printOrderDetails(Order order) {
+        Customer customer = order.getCustomer();
+        System.out.println("Order ID: " + order.getOrderId());
+        System.out.println("Amount: " + order.getAmount());
+        System.out.println("Customer ID: " + customer.getCustomerId());
+        System.out.println("Customer Address: " + customer.getAddress());
+    }
+}

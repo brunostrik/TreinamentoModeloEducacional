@@ -1,0 +1,44 @@
+class Address {
+    private String street;
+
+    public Address(String street) {
+        this.street = street;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+}
+
+class Person {
+    private Address address;
+
+    public Person(Address address) {
+        this.address = address;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+}
+
+class Company {
+    private Person manager;
+
+    public Company(Person manager) {
+        this.manager = manager;
+    }
+
+    public Person getManager() {
+        return manager;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Address address = new Address("123 Main St");
+        Person manager = new Person(address);
+        Company company = new Company(manager);
+        System.out.println(company.getManager().getAddress().getStreet()); // Violação da Lei de Demeter
+    }
+}

@@ -1,0 +1,54 @@
+public class AddressExample {
+
+    public static void main(String[] args) {
+        // Criando uma pessoa com endereço
+        Person person = new Person("John Doe", "123 Main St", "Apartment 4B", "New York", "NY", "10001");
+
+        // Exibindo as informações da pessoa
+        System.out.println("Nome: " + person.getName());
+        System.out.println("Endereço: " + person.getStreet() + ", " + person.getApartment() + ", " + person.getCity() + ", " + person.getState() + ", " + person.getZipCode());
+    }
+
+}
+
+class Person {
+    private String name;
+    private String street;
+    private String apartment;
+    private String city;
+    private String state;
+    private String zipCode;
+
+    public Person(String name, String street, String apartment, String city, String state, String zipCode) {
+        this.name = name;
+        this.street = street;
+        this.apartment = apartment;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getApartment() {
+        return apartment;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+}

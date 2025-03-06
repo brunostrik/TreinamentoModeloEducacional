@@ -1,0 +1,82 @@
+// Base classes for two different hierarchies
+abstract class Vehicle {
+    protected String model;
+
+    public Vehicle(String model) {
+        this.model = model;
+    }
+
+    public abstract void drive();
+}
+
+abstract class VehicleMaintenance {
+    protected Vehicle vehicle;
+
+    public VehicleMaintenance(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public abstract void performMaintenance();
+}
+
+// First hierarchy
+class Car extends Vehicle {
+    public Car(String model) {
+        super(model);
+    }
+
+    @Override
+    public void drive() {
+        System.out.println("Driving car: " + model);
+    }
+}
+
+class CarMaintenance extends VehicleMaintenance {
+    public CarMaintenance(Vehicle vehicle) {
+        super(vehicle);
+    }
+
+    @Override
+    public void performMaintenance() {
+        System.out.println("Performing maintenance on car: " + vehicle.model);
+    }
+}
+
+// Second hierarchy
+class Motorcycle extends Vehicle {
+    public Motorcycle(String model) {
+        super(model);
+    }
+
+    @Override
+    public void drive() {
+        System.out.println("Riding motorcycle: " + model);
+    }
+}
+
+class MotorcycleMaintenance extends VehicleMaintenance {
+    public MotorcycleMaintenance(Vehicle vehicle) {
+        super(vehicle);
+    }
+
+    @Override
+    public void performMaintenance() {
+        System.out.println("Performing maintenance on motorcycle: " + vehicle.model);
+    }
+}
+
+public class Example3 {
+    public static void main(String[] args) {
+        Vehicle car = new Car("Tesla Model S");
+        Vehicle motorcycle = new Motorcycle("Harley Davidson");
+
+        VehicleMaintenance carMaintenance = new CarMaintenance(car);
+        VehicleMaintenance motorcycleMaintenance = new MotorcycleMaintenance(motorcycle);
+
+        car.drive();
+        carMaintenance.performMaintenance();
+
+        motorcycle.drive();
+        motorcycleMaintenance.performMaintenance();
+    }
+}

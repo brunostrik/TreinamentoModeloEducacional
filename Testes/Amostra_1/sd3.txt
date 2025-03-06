@@ -1,0 +1,17 @@
+public class InkPrinter {
+    public void print() {
+        System.out.println("Printing using InkPrinter");
+    }
+}
+
+public class Document {
+    private InkPrinter inkPrinter;
+
+    public Document() {
+        this.inkPrinter = new InkPrinter();
+    }
+
+    public void printDocument() {
+        inkPrinter.print();
+    }
+}

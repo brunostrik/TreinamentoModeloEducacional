@@ -1,0 +1,81 @@
+// Base classes for two different hierarchies
+abstract class Product {
+    protected String name;
+
+    public Product(String name) {
+        this.name = name;
+    }
+
+    public abstract void produce();
+}
+
+abstract class ProductInventory {
+    protected Product product;
+
+    public ProductInventory(Product product) {
+        this.product = product;
+    }
+
+    public abstract void manageInventory();
+}
+
+// First hierarchy
+class Electronics extends Product {
+    public Electronics(String name) {
+        super(name);
+    }
+
+    @Override
+    public void produce() {
+        System.out.println("Producing electronics: " + name);
+    }
+}
+
+class ElectronicsInventory extends ProductInventory {
+    public ElectronicsInventory(Product product) {
+        super(product);
+    }
+
+    @Override
+    public void manageInventory() {
+        System.out.println("Managing inventory for electronics: " + product.name);
+    }
+}
+
+// Second hierarchy
+class Furniture extends Product {
+    public Furniture(String name) {
+        super(name);
+    }
+
+    @Override
+    public void produce() {
+        System.out.println("Producing furniture: " + name);
+    }
+}
+
+class FurnitureInventory extends ProductInventory {
+    public FurnitureInventory(Product product) {
+        super(product);
+    }
+
+    @Override
+    public void manageInventory() {
+        System.out.println("Managing inventory for furniture: " + product.name);
+    }
+}
+public class Example2 {
+    public static void main(String[] args) {
+        Product electronics = new Electronics("Smartphone");
+        Product furniture = new Furniture("Chair");
+
+        ProductInventory electronicsInventory = new ElectronicsInventory(electronics);
+        ProductInventory furnitureInventory = new FurnitureInventory(furniture);
+
+        electronics.produce();
+        electronicsInventory.manageInventory();
+
+        furniture.produce();
+        furnitureInventory.manageInventory();
+    }
+}

@@ -1,0 +1,48 @@
+// Classe Dimensions que não faz muito e poderia ser combinada com outra classe
+class Dimensions {
+    private int width;
+    private int height;
+
+    public Dimensions(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+}
+
+// Classe Rectangle que utiliza a classe Dimensions
+public class ClassExample2 {
+    private String name;
+    private Dimensions dimensions;
+
+    public ClassExample2(String name, int width, int height) {
+        this.name = name;
+        this.dimensions = new Dimensions(width, height);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getWidth() {
+        return dimensions.getWidth();
+    }
+
+    public int getHeight() {
+        return dimensions.getHeight();
+    }
+
+    public static void main(String[] args) {
+        ClassExample2 rectangle = new ClassExample2("MyRectangle", 50, 100);
+        System.out.println("Name: " + rectangle.getName());
+        System.out.println("Width: " + rectangle.getWidth());
+        System.out.println("Height: " + rectangle.getHeight());
+    }
+}

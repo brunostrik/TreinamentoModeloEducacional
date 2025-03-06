@@ -1,0 +1,44 @@
+import java.util.List;
+
+public class StudentReportGenerator {
+
+    public void generateReport(List<Student> students) {
+        // Step 1: Validate students list
+        if (students == null || students.isEmpty()) {
+            throw new IllegalArgumentException("Student list cannot be null or empty");
+        }
+
+        // Step 2: Prepare report header
+        StringBuilder report = new StringBuilder();
+        report.append("Student Report\n");
+        report.append("--------------\n");
+
+        // Step 3: Generate report content
+        for (Student student : students) {
+            report.append("Name: ").append(student.getName()).append("\n");
+            report.append("Age: ").append(student.getAge()).append("\n");
+            report.append("Grade: ").append(student.getGrade()).append("\n");
+            report.append("Subjects:\n");
+
+            for (Subject subject : student.getSubjects()) {
+                report.append("  - ").append(subject.getName())
+                      .append(": ").append(subject.getScore()).append("\n");
+            }
+
+            report.append("\n");
+        }
+
+        // Step 4: Print report
+        System.out.println(report.toString());
+
+        // Step 5: Save report to file
+        try {
+            java.nio.file.Files.write(
+                java.nio.file.Paths.get("student_report.txt"), 
+                report.toString().getBytes()
+            );
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

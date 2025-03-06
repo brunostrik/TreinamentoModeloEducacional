@@ -1,0 +1,79 @@
+class Animal {
+    private String name;
+    private int age;
+
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void eat() {
+        System.out.println(name + " is eating.");
+    }
+
+    // Método que algumas subclasses podem não precisar
+    public void sleep() {
+        System.out.println(name + " is sleeping.");
+    }
+}
+
+class Dog extends Animal {
+    private String breed;
+
+    public Dog(String name, int age, String breed) {
+        super(name, age);
+        this.breed = breed;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    @Override
+    public void eat() {
+        System.out.println(getName() + " is eating dog food.");
+    }
+
+    // Dog não precisa do método sleep, mas o herda de Animal
+}
+
+class Bird extends Animal {
+    private String species;
+
+    public Bird(String name, int age, String species) {
+        super(name, age);
+        this.species = species;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    @Override
+    public void eat() {
+        System.out.println(getName() + " is eating seeds.");
+    }
+
+    // Bird não precisa do método sleep, mas o herda de Animal
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal dog = new Dog("Buddy", 3, "Golden Retriever");
+        Animal bird = new Bird("Tweety", 1, "Canary");
+
+        dog.eat();
+        dog.sleep();
+
+        bird.eat();
+        bird.sleep();
+    }
+}

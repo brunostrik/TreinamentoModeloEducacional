@@ -1,0 +1,16 @@
+public class TemporaryFieldExample3 {
+    private StringBuilder temporaryString; // Temporary field
+
+    public String buildString(String[] words) {
+        temporaryString = new StringBuilder(); // Initialize temporary field
+        for (String word : words) {
+            temporaryString.append(word).append(" "); // Temporary use of the field
+        }
+        return temporaryString.toString().trim();
+    }
+
+    public static void main(String[] args) {
+        TemporaryFieldExample3 example = new TemporaryFieldExample3();
+        System.out.println(example.buildString(new String[]{"Hello", "World", "!"})); // Output: Hello World !
+    }
+}

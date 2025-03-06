@@ -1,0 +1,20 @@
+// Classe SomeClass que não faz muito e poderia ser combinada com outra classe
+public class SomeClass {
+    private String value;
+
+    public SomeClass(String value) {
+        this.value = value;
+    }
+
+    public String getValue() {
+        return value;
+    }
+}
+
+// Classe Main que utiliza a SomeClass
+public class Main {
+    public static void main(String[] args) {
+        SomeClass class = new SomeClass("Hello, World!");
+        System.out.println(class.getValue());
+    }
+}

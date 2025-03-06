@@ -1,0 +1,75 @@
+public class Employee {
+
+    private String name; // The name of the employee
+    private int age; // The age of the employee
+    private String position; // The position of the employee
+    private double salary; // The salary of the employee
+
+    // Constructor to initialize name, age, position, and salary
+    public Employee(String name, int age, String position, double salary) {
+        this.name = name; // Set the name
+        this.age = age; // Set the age
+        this.position = position; // Set the position
+        this.salary = salary; // Set the salary
+    }
+
+    // Method to get the name of the employee
+    public String getName() {
+        return name; // Return the name
+    }
+
+    // Method to get the age of the employee
+    public int getAge() {
+        return age; // Return the age
+    }
+
+    // Method to get the position of the employee
+    public String getPosition() {
+        return position; // Return the position
+    }
+
+    // Method to get the salary of the employee
+    public double getSalary() {
+        return salary; // Return the salary
+    }
+
+    // Method to set the name of the employee
+    public void setName(String name) {
+        this.name = name; // Set the name
+    }
+
+    // Method to set the age of the employee
+    public void setAge(int age) {
+        this.age = age; // Set the age
+    }
+
+    // Method to set the position of the employee
+    public void setPosition(String position) {
+        this.position = position; // Set the position
+    }
+
+    // Method to set the salary of the employee
+    public void setSalary(double salary) {
+        this.salary = salary; // Set the salary
+    }
+
+    // Main method to test the Employee class
+    public static void main(String[] args) {
+        // Create a new Employee object with name "John Doe", age 30, position "Developer", and salary 60000.0
+        Employee employee = new Employee("John Doe", 30, "Developer", 60000.0);
+
+        // Print the details of the employee
+        System.out.println("Name: " + employee.getName());
+        System.out.println("Age: " + employee.getAge());
+        System.out.println("Position: " + employee.getPosition());
+        System.out.println("Salary: " + employee.getSalary());
+
+        // Update the employee's position to "Senior Developer" and salary to 80000.0
+        employee.setPosition("Senior Developer");
+        employee.setSalary(80000.0);
+
+        // Print the updated details of the employee
+        System.out.println("Updated Position: " + employee.getPosition());
+        System.out.println("Updated Salary: " + employee.getSalary());
+    }
+}

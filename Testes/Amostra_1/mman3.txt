@@ -1,0 +1,43 @@
+class Car {
+    private Engine engine;
+
+    public Car(Engine engine) {
+        this.engine = engine;
+    }
+
+    public int getEngineHorsePower() {
+        return engine.getHorsePower();
+    }
+
+    public String getEngineType() {
+        return engine.getType();
+    }
+}
+
+class Engine {
+    private int horsePower;
+    private String type;
+
+    public Engine(int horsePower, String type) {
+        this.horsePower = horsePower;
+        this.type = type;
+    }
+
+    public int getHorsePower() {
+        return horsePower;
+    }
+
+    public String getType() {
+        return type;
+    }
+}
+
+public class Main3 {
+    public static void main(String[] args) {
+        Engine engine = new Engine(300, "V8");
+        Car car = new Car(engine);
+
+        System.out.println("Engine HorsePower: " + car.getEngineHorsePower());
+        System.out.println("Engine Type: " + car.getEngineType());
+    }
+}

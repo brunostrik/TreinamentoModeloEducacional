@@ -1,0 +1,27 @@
+public class Exemplo2 {
+    public static void main(String[] args) {
+        ContaBancaria conta = new ContaBancaria(1000);
+        if (conta.getSaldo() >= 200) {
+            conta.sacar(200);
+        } else {
+            System.out.println("Saldo insuficiente.");
+        }
+    }
+}
+
+class ContaBancaria {
+    private double saldo;
+
+    public ContaBancaria(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void sacar(double valor) {
+        saldo -= valor;
+        System.out.println("Saque de " + valor + " realizado. Saldo atual: " + saldo);
+    }
+}
